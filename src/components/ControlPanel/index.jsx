@@ -15,16 +15,21 @@ import {
 
 class ControlPanel extends React.Component {
   updateStr(el) {
-    if (el.type === 'clear') {
-      this.props.clearDisplay()
-    } else if (el.type === 'clearEntry') {
-      this.props.clearEnteryDisplay()
-    } else if (el.type === 'equal') {
-      this.props.calculateExpression()
-    } else if (el.type === 'operators') {
-      this.props.addOperator(el.value)
-    } else {
-      this.props.addNumber(el.value)
+    switch (el.type) {
+      case 'clear':
+        this.props.clearDisplay()
+        break
+      case 'clearEntry':
+        this.props.clearEnteryDisplay()
+        break
+      case 'equal':
+        this.props.calculateExpression()
+        break
+      case 'operators':
+        this.props.addOperator(el.value)
+        break
+      default:
+        this.props.addNumber(el.value)
     }
   }
 

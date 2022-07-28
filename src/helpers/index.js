@@ -19,6 +19,20 @@ function replacer(match) {
   return match.split('(')[0] + '*('
 }
 
+function add(x, y) {
+  return x + y
+}
+function sub(x, y) {
+  return x - y
+}
+function mul(x, y) {
+  return x * y
+}
+function div(x, y) {
+  if (!y) return 'Division by zero'
+  else return x / y
+}
+
 export function calculateExpression(expr) {
   const arrExpr = expr
     .replace(/[0-9]\(/g, replacer)
@@ -67,15 +81,12 @@ function calculate(exprArr) {
   for (let i = 0; i < exprArr.length; i++) {
     let res = 0
     if (exprArr[i] === '*') {
-      res = +exprArr[i - 1] * +exprArr[i + 1]
+      res = mul(+exprArr[i - 1], +exprArr[i + 1])
       exprArr.splice(i - 1, 3, res)
       i--
     }
     if (exprArr[i] === '/') {
-      if (!+exprArr[i + 1]) {
-        return 'Division by zero'
-      }
-      res = +exprArr[i - 1] / +exprArr[i + 1]
+      res = div(+exprArr[i - 1], +exprArr[i + 1])
       exprArr.splice(i - 1, 3, res)
       i--
     }
@@ -83,12 +94,12 @@ function calculate(exprArr) {
   for (let i = 0; i < exprArr.length; i++) {
     let res = 0
     if (exprArr[i] === '+') {
-      res = +exprArr[i - 1] + +exprArr[i + 1]
+      res = add(+exprArr[i - 1], +exprArr[i + 1])
       exprArr.splice(i - 1, 3, res)
       i--
     }
     if (exprArr[i] === '-') {
-      res = +exprArr[i - 1] - +exprArr[i + 1]
+      res = sub(+exprArr[i - 1], +exprArr[i + 1])
       exprArr.splice(i - 1, 3, res)
       i--
     }
