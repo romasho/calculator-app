@@ -1,38 +1,10 @@
 import React from 'react'
-import { connect } from 'react-redux'
 
 import { ButtonsContainer } from './components'
 import Button from '@/components/Button'
 import { buttons } from '@/constants'
 
-import {
-  clear,
-  clearEntery,
-  calculate,
-  addOperator,
-  addNumber,
-} from '@/reducers/CalculatorReducer/actions'
-
-class ControlPanel extends React.Component {
-  updateStr(el) {
-    switch (el.type) {
-      case 'clear':
-        this.props.clearDisplay()
-        break
-      case 'clearEntry':
-        this.props.clearEnteryDisplay()
-        break
-      case 'equal':
-        this.props.calculateExpression()
-        break
-      case 'operators':
-        this.props.addOperator(el.value)
-        break
-      default:
-        this.props.addNumber(el.value)
-    }
-  }
-
+export default class ControlPanel extends React.Component {
   render() {
     return (
       <ButtonsContainer>
@@ -40,35 +12,12 @@ class ControlPanel extends React.Component {
           <Button
             key={el.value}
             value={el.value}
-            onClick={() => this.updateStr(el)}
+            onClick={() => {
+              this.props.setCurrentValue(el)
+            }}
           />
         ))}
       </ButtonsContainer>
     )
   }
 }
-
-const mapDispatchToProps = dispatch => {
-  return {
-    clearDisplay: () => {
-      dispatch(clear())
-    },
-    clearEnteryDisplay: () => {
-      dispatch(clearEntery())
-    },
-    calculateExpression: () => {
-      dispatch(calculate())
-    },
-    addOperator: operator => {
-      dispatch(addOperator(operator))
-    },
-    addNumber: number => {
-      dispatch(addNumber(number))
-    },
-  }
-}
-
-export default connect(
-  null,
-  mapDispatchToProps,
-)(ControlPanel)

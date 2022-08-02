@@ -1,5 +1,4 @@
 import React from 'react'
-import { connect } from 'react-redux'
 
 import {
   CustomDiv,
@@ -8,7 +7,7 @@ import {
   DivWithCustomScroll,
 } from './components'
 
-class History extends React.Component {
+export default class History extends React.Component {
   render() {
     return (
       <CustomDiv>
@@ -24,14 +23,3 @@ class History extends React.Component {
     )
   }
 }
-
-const mapStateToProps = state => {
-  return {
-    history: state.calculatorReducer.history,
-  }
-}
-
-export default connect(
-  mapStateToProps,
-  null,
-)(History)

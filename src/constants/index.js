@@ -17,7 +17,7 @@ export const buttons = [
   { value: '2', type: 'number' },
   { value: '3', type: 'number' },
   { value: '=', type: 'equal' },
-  { value: '.', type: 'operators' },
+  { value: '.', type: 'dot' },
   { value: '(', type: 'number' },
   { value: '0', type: 'number' },
   { value: ')', type: 'number' },
