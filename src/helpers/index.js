@@ -1,5 +1,15 @@
 // @todo: add some helpers
 
+import CalculatorStore from './CalculatorPattern'
+import {
+  AddCommand,
+  SubCommand,
+  MulCommand,
+  DivCommand,
+} from './CalculatorPattern/command'
+
+const calc = new CalculatorStore()
+
 function checkBrackets(arr) {
   const countBracket = [0, 0]
   arr.forEach(item => {
@@ -17,20 +27,6 @@ function checkBrackets(arr) {
 
 function replacer(match) {
   return match.split('(')[0] + '*('
-}
-
-function add(x, y) {
-  return x + y
-}
-function sub(x, y) {
-  return x - y
-}
-function mul(x, y) {
-  return x * y
-}
-function div(x, y) {
-  if (!y) return 'Division by zero'
-  else return x / y
 }
 
 export function calculateExpression(expr) {
@@ -79,30 +75,34 @@ function calculate(exprArr) {
   }
 
   for (let i = 0; i < exprArr.length; i++) {
-    let res = 0
     if (exprArr[i] === '*') {
-      res = mul(+exprArr[i - 1], +exprArr[i + 1])
-      exprArr.splice(i - 1, 3, res)
+      calc.setCurrentValue(exprArr[i - 1])
+      calc.execute(new MulCommand(exprArr[i + 1]))
+      exprArr.splice(i - 1, 3, calc.CurrentValue)
+
       i--
     }
     if (exprArr[i] === '/') {
-      res = div(+exprArr[i - 1], +exprArr[i + 1])
-      exprArr.splice(i - 1, 3, res)
+      calc.setCurrentValue(exprArr[i - 1])
+      calc.execute(new DivCommand(exprArr[i + 1]))
+      exprArr.splice(i - 1, 3, calc.CurrentValue)
       i--
     }
   }
   for (let i = 0; i < exprArr.length; i++) {
-    let res = 0
     if (exprArr[i] === '+') {
-      res = add(+exprArr[i - 1], +exprArr[i + 1])
-      exprArr.splice(i - 1, 3, res)
+      calc.setCurrentValue(exprArr[i - 1])
+      calc.execute(new AddCommand(exprArr[i + 1]))
+      exprArr.splice(i - 1, 3, calc.CurrentValue)
+
       i--
     }
     if (exprArr[i] === '-') {
-      res = sub(+exprArr[i - 1], +exprArr[i + 1])
-      exprArr.splice(i - 1, 3, res)
+      calc.setCurrentValue(exprArr[i - 1])
+      calc.execute(new SubCommand(exprArr[i + 1]))
+      exprArr.splice(i - 1, 3, calc.CurrentValue)
       i--
     }
   }
-  return exprArr[0]
+  return calc.CurrentValue
 }

@@ -4,7 +4,6 @@ export const CALCULATE = 'CALCULATE'
 export const ADD_OPERATOR = 'ADD_OPERATOR'
 export const ADD_NUMBER = 'ADD_NUMBER'
 export const CLEAR_HISTORY = 'CLEAR_HISTORY'
-export const ADD_DOT = 'ADD_DOT'
 
 export function clear() {
   return { type: CLEAR }
@@ -14,8 +13,8 @@ export function clearEntery() {
   return { type: CLEAR_ENTRY }
 }
 
-export function calculate(value) {
-  return { type: CALCULATE, value }
+export function calculate() {
+  return { type: CALCULATE }
 }
 
 export function addOperator(opertor) {
@@ -24,10 +23,6 @@ export function addOperator(opertor) {
 
 export function addNumber(number) {
   return { type: ADD_NUMBER, number }
-}
-
-export function addDot() {
-  return { type: ADD_DOT }
 }
 
 export function clearHistory() {
