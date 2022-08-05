@@ -6,6 +6,7 @@ import {
   ADD_NUMBER,
   CLEAR_HISTORY,
   ADD_DOT,
+  BRACKETS,
 } from './actions'
 import {
   AddCommand,
@@ -41,6 +42,8 @@ const initialState = {
   isResettable: true,
   history: [],
   expression: '',
+  counterBrackets: 0,
+  bracketExpression: '',
 }
 
 export default function calculatorReducer(
@@ -49,7 +52,15 @@ export default function calculatorReducer(
 ) {
   switch (action.type) {
     case ADD_NUMBER:
-      if (!state.operator) {
+      if (state.counterBrackets > 0) {
+        return {
+          ...state,
+          bracketExpression:
+            state.bracketExpression + action.number,
+          displayValue:
+            state.bracketExpression + action.number,
+        }
+      } else if (!state.operator) {
         calculator.addToCurrentValue(action.number)
         return {
           ...state,
@@ -75,7 +86,15 @@ export default function calculatorReducer(
         }
       }
     case ADD_OPERATOR:
-      if (state.operator && !state.isResettable) {
+      if (state.counterBrackets > 0) {
+        return {
+          ...state,
+          bracketExpression:
+            state.bracketExpression + action.opertor,
+          displayValue:
+            state.bracketExpression + action.opertor,
+        }
+      } else if (state.operator && !state.isResettable) {
         swithCase(state.operator, state.displayValue)
         return {
           ...state,
@@ -149,6 +168,7 @@ export default function calculatorReducer(
         displayValue: calculator.CurrentValue,
         operator: null,
         expression: '0',
+        bracketExpression: '',
       }
     case CLEAR_ENTRY:
       if (!state.isResettable) {
@@ -166,8 +186,41 @@ export default function calculatorReducer(
           displayValue: calculator.CurrentValue,
           operator: null,
           expression: '0',
+          counterBrackets: 0,
         }
       }
+    case BRACKETS:
+      if (action.bracket === '(') {
+        return {
+          ...state,
+          counterBrackets: state.counterBrackets + 1,
+          bracketExpression:
+            state.bracketExpression + action.bracket,
+          displayValue:
+            state.displayValue === '0' ||
+            !state.displayValue
+              ? action.bracket
+              : state.displayValue + action.bracket,
+        }
+      } else {
+        return {
+          ...state,
+          counterBrackets:
+            state.counterBrackets > 0
+              ? state.counterBrackets - 1
+              : state.counterBrackets,
+          bracketExpression:
+            state.bracketExpression +
+            (state.counterBrackets > 0
+              ? action.bracket
+              : ''),
+          displayValue:
+            state.counterBrackets > 0
+              ? state.displayValue + action.bracket
+              : state.displayValue,
+        }
+      }
+
     default:
       return state
   }

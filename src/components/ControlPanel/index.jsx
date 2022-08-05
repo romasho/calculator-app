@@ -12,6 +12,7 @@ import {
   addOperator,
   addNumber,
   addDot,
+  brackets,
 } from '@/reducers/CalculatorReducer/actions'
 
 class ControlPanel extends React.Component {
@@ -34,6 +35,9 @@ class ControlPanel extends React.Component {
         break
       case 'dot':
         this.props.addDot()
+        break
+      case 'bracket':
+        this.props.addBrackets(el.value)
         break
       default:
         this.props.addNumber(el.value)
@@ -76,6 +80,9 @@ const mapDispatchToProps = dispatch => {
     },
     addDot: () => {
       dispatch(addDot())
+    },
+    addBrackets: bracket => {
+      dispatch(brackets(bracket))
     },
   }
 }

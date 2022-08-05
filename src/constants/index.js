@@ -18,8 +18,8 @@ export const buttons = [
   { value: '3', type: 'number' },
   { value: '=', type: 'equal' },
   { value: '.', type: 'dot' },
-  { value: '(', type: 'number' },
+  { value: '(', type: 'bracket' },
   { value: '0', type: 'number' },
-  { value: ')', type: 'number' },
+  { value: ')', type: 'bracket' },
   { value: 'CE', type: 'clearEntry' },
 ]

@@ -5,6 +5,7 @@ import { CustomInput } from './components'
 
 class Display extends React.Component {
   render() {
+    console.log(this.props.state)
     const { expressionString } = this.props
     return <CustomInput>{expressionString}</CustomInput>
   }
