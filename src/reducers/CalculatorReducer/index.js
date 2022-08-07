@@ -16,6 +16,7 @@ import {
 } from '@/helpers/CalculatorPattern/command'
 
 import CalculatorStore from '@/helpers/CalculatorPattern'
+import { calculateExpression } from '@/helpers'
 
 const calculator = new CalculatorStore()
 
@@ -52,13 +53,23 @@ export default function calculatorReducer(
 ) {
   switch (action.type) {
     case ADD_NUMBER:
-      if (state.counterBrackets > 0) {
+      if (state.counterBrackets > 0 && !state.operator) {
         return {
           ...state,
           bracketExpression:
             state.bracketExpression + action.number,
           displayValue:
             state.bracketExpression + action.number,
+          expression: state.bracketExpression + action.number,
+        }
+      } else if (state.counterBrackets > 0 && state.operator) {
+        return {
+          ...state,
+          bracketExpression:
+            state.bracketExpression + action.number,
+          displayValue:
+            state.bracketExpression + action.number,
+          expression: state.expression + action.number,
         }
       } else if (!state.operator) {
         calculator.addToCurrentValue(action.number)
@@ -71,7 +82,7 @@ export default function calculatorReducer(
         return {
           ...state,
           displayValue: action.number,
-          expression: `${calculator.CurrentValue} ${state.operator} ${action.number}`,
+          expression: state.expression + action.number,
           isResettable: false,
         }
       } else {
@@ -82,7 +93,7 @@ export default function calculatorReducer(
         return {
           ...state,
           displayValue: res,
-          expression: `${calculator.CurrentValue} ${state.operator} ${res}`,
+          expression: state.expression + action.number,
         }
       }
     case ADD_OPERATOR:
@@ -93,37 +104,65 @@ export default function calculatorReducer(
             state.bracketExpression + action.opertor,
           displayValue:
             state.bracketExpression + action.opertor,
+          expression: `${state.bracketExpression} ${action.opertor}`,
         }
-      } else if (state.operator && !state.isResettable) {
+      } else if (state.counterBrackets === 0 && state.bracketExpression) {
+        calculator.setCurrentValue(calculateExpression(state.bracketExpression))
+        return {
+          ...state,
+          displayValue: calculateExpression(state.bracketExpression),
+          operator: action.opertor,
+          isResettable: true,
+          bracketExpression: '',
+          expression: `${state.bracketExpression} ${action.opertor} `,
+        }
+      }
+      else if (state.operator && !state.isResettable) {
         swithCase(state.operator, state.displayValue)
         return {
           ...state,
           displayValue: calculator.CurrentValue,
           operator: action.opertor,
           isResettable: true,
-          expression: `${calculator.CurrentValue} ${action.opertor}`,
+          expression: `${calculator.CurrentValue} ${action.opertor} `,
           history: !state.operator
             ? [...state.history]
             : [state.expression, ...state.history],
+          bracketExpression: '',
         }
       } else {
         return {
           ...state,
           operator: action.opertor,
-          expression: `${calculator.CurrentValue} ${action.opertor}`,
+          expression: `${calculator.CurrentValue} ${action.opertor} `,
         }
       }
     case CALCULATE:
-      swithCase(state.operator, state.displayValue)
-      return {
-        ...state,
-        displayValue: calculator.CurrentValue,
-        operator: action.value,
-        isResettable: true,
-        expression: calculator.CurrentValue,
-        history: !state.operator
-          ? [...state.history]
-          : [state.expression, ...state.history],
+      if (state.bracketExpression) {
+        swithCase(state.operator, calculateExpression(state.bracketExpression))
+        return {
+          ...state,
+          displayValue: calculator.CurrentValue,
+          operator: action.value,
+          isResettable: true,
+          expression: calculator.CurrentValue,
+          history: !state.operator
+            ? [...state.history]
+            : [state.expression, ...state.history],
+          bracketExpression: '',
+        }
+      } else {
+        swithCase(state.operator, state.displayValue)
+        return {
+          ...state,
+          displayValue: calculator.CurrentValue,
+          operator: action.value,
+          isResettable: true,
+          expression: calculator.CurrentValue,
+          history: !state.operator
+            ? [...state.history]
+            : [state.expression, ...state.history],
+        }
       }
     case CLEAR_HISTORY:
       return {
@@ -153,8 +192,8 @@ export default function calculatorReducer(
           state.displayValue === '0' || !state.displayValue
             ? '0.'
             : !state.displayValue.includes('.')
-            ? state.displayValue + '.'
-            : state.displayValue
+              ? state.displayValue + '.'
+              : state.displayValue
         return {
           ...state,
           displayValue: res,
@@ -169,6 +208,8 @@ export default function calculatorReducer(
         operator: null,
         expression: '0',
         bracketExpression: '',
+        counterBrackets: 0,
+        isResettable: true,
       }
     case CLEAR_ENTRY:
       if (!state.isResettable) {
@@ -198,9 +239,10 @@ export default function calculatorReducer(
             state.bracketExpression + action.bracket,
           displayValue:
             state.displayValue === '0' ||
-            !state.displayValue
+              !state.displayValue || state.isResettable
               ? action.bracket
               : state.displayValue + action.bracket,
+          isResettable: state.isResettable ? !state.isResettable : state.isResettable,
         }
       } else {
         return {
@@ -218,6 +260,9 @@ export default function calculatorReducer(
             state.counterBrackets > 0
               ? state.displayValue + action.bracket
               : state.displayValue,
+          expression: state.counterBrackets > 0
+            ? state.expression + action.bracket
+            : state.expression,
         }
       }
 
