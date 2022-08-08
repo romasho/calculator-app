@@ -10,21 +10,6 @@ import {
 
 const calc = new CalculatorStore()
 
-function checkBrackets(arr) {
-  const countBracket = [0, 0]
-  arr.forEach(item => {
-    if (item === '(') {
-      countBracket[0]++
-    }
-
-    if (item === ')') {
-      countBracket[1]++
-    }
-  })
-
-  return countBracket[0] === countBracket[1]
-}
-
 function replacer(match) {
   return match.split('(')[0] + '*('
 }
@@ -34,10 +19,13 @@ export function calculateExpression(expr) {
     .replace(/[0-9]\(/g, replacer)
     .match(/[^\d()]+|[\d.]+|[()]/g)
 
-  if (!checkBrackets(arrExpr)) {
-    return 'Brackets must be paired'
-  }
-
+  console.log(
+    'str res',
+    expr
+      .replace(/[0-9]\(/g, replacer)
+      .match(/[^\d()]+|[\d.]+|[()]/g),
+    expr,
+  )
   while (arrExpr.includes('(')) {
     let openBracket = -1
     let closeBracket = -1
@@ -104,5 +92,5 @@ function calculate(exprArr) {
       i--
     }
   }
-  return calc.CurrentValue
+  return exprArr[0]
 }

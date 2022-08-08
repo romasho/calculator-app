@@ -9,12 +9,21 @@ import {
 
 class History extends React.Component {
   render() {
-    const { history, expression } = this.props
+    const {
+      firstOperand,
+      secondOperand,
+      operator,
+      history,
+    } = this.props
     return (
       <CustomDiv>
         <Heading>History</Heading>
         <DivWithCustomScroll>
-          {[expression, ...history].map((el, index) => (
+          {[
+            `${firstOperand} ${operator ||
+              ''} ${secondOperand || ''}`,
+            ...history,
+          ].map((el, index) => (
             <HistoryExpression key={index}>
               {el}
             </HistoryExpression>
@@ -27,8 +36,10 @@ class History extends React.Component {
 
 const mapStateToProps = state => {
   return {
+    firstOperand: state.calculatorReducer.firstOperand,
+    secondOperand: state.calculatorReducer.secondOperand,
+    operator: state.calculatorReducer.operator,
     history: state.calculatorReducer.history,
-    expression: state.calculatorReducer.expression,
   }
 }
 

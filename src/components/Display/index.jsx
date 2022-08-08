@@ -6,14 +6,19 @@ import { CustomInput } from './components'
 class Display extends React.Component {
   render() {
     console.log(this.props.state)
-    const { expressionString } = this.props
-    return <CustomInput>{expressionString}</CustomInput>
+    const { firstOperand, secondOperand } = this.props
+    return (
+      <CustomInput>
+        {secondOperand || firstOperand}
+      </CustomInput>
+    )
   }
 }
 
 const mapStateToProps = state => {
   return {
-    expressionString: state.calculatorReducer.displayValue,
+    firstOperand: state.calculatorReducer.firstOperand,
+    secondOperand: state.calculatorReducer.secondOperand,
     state: state.calculatorReducer,
   }
 }
