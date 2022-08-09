@@ -5,17 +5,25 @@ export default class CalculatorStore {
   }
 
   execute(command) {
-    this.value = command.execute(this.value, command.value)
+    this.value = this.roundTo(
+      command.execute(this.value, command.value),
+    )
     this.history.push(command)
   }
 
   undo() {
     const command = this.history.pop()
-    this.value = command.undo(this.value, command.value)
+    this.value = this.roundTo(
+      command.undo(this.value, command.value),
+    )
   }
 
   setCurrentValue(str) {
     this.value = str
+  }
+
+  roundTo(e) {
+    return e % 1 === 0 ? e.toFixed(0) : e.toFixed(3)
   }
 
   addToCurrentValue(str) {
@@ -38,6 +46,7 @@ export default class CalculatorStore {
 
   clear() {
     this.value = 0
+    this.history = []
   }
 
   get CurrentValue() {

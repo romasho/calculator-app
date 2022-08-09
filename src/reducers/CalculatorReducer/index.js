@@ -22,7 +22,7 @@ const calculator = new CalculatorStore()
 
 const operators = ['/', '+', '*', '-', '.']
 
-function swithCase(str, operand) {
+function swithCommand(str, operand) {
   switch (str) {
     case '+':
       calculator.execute(new AddCommand(operand))
@@ -130,7 +130,7 @@ export default function calculatorReducer(
           ],
         }
       } else if (state.operator && state.secondOperand) {
-        swithCase(state.operator, state.secondOperand)
+        swithCommand(state.operator, state.secondOperand)
         return {
           ...state,
           firstOperand: calculator.CurrentValue,
@@ -150,7 +150,7 @@ export default function calculatorReducer(
       }
     case CALCULATE:
       if (state.bracketExpression && state.secondOperand) {
-        swithCase(
+        swithCommand(
           state.operator,
           calculateExpression(
             state.bracketExpression +
@@ -199,14 +199,15 @@ export default function calculatorReducer(
           counterBrackets: 0,
         }
       } else {
-        swithCase(state.operator, state.secondOperand)
+        swithCommand(state.operator, state.secondOperand)
         return {
           ...state,
           firstOperand: calculator.CurrentValue,
           secondOperand: '',
           operator: action.value,
           history: [
-            `${state.firstOperand} ${state.operator} ${state.secondOperand}`,
+            `${state.firstOperand} ${state.operator ||
+              ''} ${state.secondOperand}`,
             ...state.history,
           ],
         }
@@ -228,8 +229,6 @@ export default function calculatorReducer(
           !lastElement.includes('.')
             ? state.bracketExpression + '.'
             : state.bracketExpression
-
-        console.log(lastElement)
         return {
           ...state,
           bracketExpression: res,

@@ -5,7 +5,6 @@ import { CustomInput } from '../components'
 
 class Display extends React.Component {
   render() {
-    console.log(this.props.state)
     const { firstOperand, secondOperand } = this.props
     return (
       <CustomInput>

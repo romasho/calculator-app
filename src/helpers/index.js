@@ -19,13 +19,6 @@ export function calculateExpression(expr) {
     .replace(/[0-9]\(/g, replacer)
     .match(/[^\d()]+|[\d.]+|[()]/g)
 
-  console.log(
-    'str res',
-    expr
-      .replace(/[0-9]\(/g, replacer)
-      .match(/[^\d()]+|[\d.]+|[()]/g),
-    expr,
-  )
   while (arrExpr.includes('(')) {
     let openBracket = -1
     let closeBracket = -1

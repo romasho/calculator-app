@@ -17,6 +17,7 @@ import {
 
 class ControlPanel extends React.Component {
   updateStr(el) {
+    console.log('click')
     switch (el.type) {
       case 'clear':
         this.props.clearDisplay()
