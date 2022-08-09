@@ -1,8 +1,9 @@
 import React from 'react'
 import { Header, Title, CustomNavLink } from './components'
 import {
-  HOME_PAGE_ROUTE,
+  CALCULATOR_ROUTE,
   SETTING_PAGE_ROUTE,
+  CALCULATOR_FUNC_ROUTE,
 } from '@/constants'
 
 const activeLink = {
@@ -20,8 +21,13 @@ export default () => {
         <CustomNavLink
           exact
           activeStyle={activeLink}
-          to={HOME_PAGE_ROUTE}>
+          to={CALCULATOR_ROUTE}>
           Home
+        </CustomNavLink>
+        <CustomNavLink
+          activeStyle={activeLink}
+          to={CALCULATOR_FUNC_ROUTE}>
+          Home Functional
         </CustomNavLink>
         <CustomNavLink
           activeStyle={activeLink}

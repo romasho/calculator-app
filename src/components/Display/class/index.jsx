@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import { CustomInput } from './components'
+import { CustomInput } from '../components'
 
 class Display extends React.Component {
   render() {

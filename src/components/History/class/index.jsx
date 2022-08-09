@@ -5,7 +5,7 @@ import {
   Heading,
   HistoryExpression,
   DivWithCustomScroll,
-} from './components'
+} from '../components'
 
 class History extends React.Component {
   render() {
