@@ -671,6 +671,204 @@
 
 /* 7 */
 
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/inheritsLoose.js
+
+// EXTERNAL MODULE: ./node_modules/react/index.js
+
+// CONCATENATED MODULE: ./node_modules/react-router/esm/react-router.js
+
+/* unused harmony export MemoryRouter */
+
+/* unused harmony export Prompt */
+
+/* unused harmony export Redirect */
+
+/* unused harmony export StaticRouter */
+
+/* unused harmony export generatePath */
+
+/* unused harmony export useHistory */
+
+/* unused harmony export useLocation */
+
+/* unused harmony export useParams */
+
+/* unused harmony export useRouteMatch */
+
+/* unused harmony export withRouter */
+
+// TODO: Replace with React.createContext once we can assume React 16+
+
+// This is a bit of a hack. We have to start listening for location
+
+// changes here in the constructor in case there are any <Redirect>s
+
+// on the initial render. If there are, they will replace/push when
+
+// they mount and since cDM fires in children before parents, we may
+
+// get a new location before the <Router> is mounted.
+
+/**
+ * The public API for a <Router> that stores location in memory.
+ */
+
+/**
+ * The public API for prompting the user before navigating away from a screen.
+ */
+
+/**
+ * Public API for matching a URL pathname to a path.
+ */
+
+// the path used to match
+
+// the matched portion of the URL
+
+// whether or not we matched exactly
+
+/**
+ * The public API for matching a single path and rendering.
+ */
+
+// Preact uses an empty array as children by
+
+// default, so use null if that's the case.
+
+/**
+ * The public top-level API for a "static" <Router>, so-called because it
+ * can't actually change the current location. Instead, it just records
+ * location changes in a context object. Useful mainly in testing and
+ * server-rendering scenarios.
+ */
+
+/**
+ * The public API for rendering the first <Route> that matches.
+ */
+
+// We use React.Children.forEach instead of React.Children.toArray().find()
+
+// here because toArray adds keys to all child elements and we do not want
+
+// to trigger an unmount/remount for two <Route>s that render the same
+
+// component at different URLs.
+
+/* 8 */
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/extends.js
+
+// CONCATENATED MODULE: ./node_modules/resolve-pathname/esm/resolve-pathname.js
+
+// About 1.5x faster than the two-arg version of Array#splice()
+
+// This implementation is based heavily on node's url.parse
+
+// to is absolute
+
+// to is relative, drop the filename
+
+// CONCATENATED MODULE: ./node_modules/value-equal/esm/value-equal.js
+
+// Test for strict equality first.
+
+// Otherwise, if either of them == null they are not equal.
+
+// EXTERNAL MODULE: ./node_modules/tiny-invariant/dist/tiny-invariant.esm.js
+
+// Two-arg form: push(path, state)
+
+// One-arg form: push(location)
+
+// Resolve incomplete/relative pathname relative to current location.
+
+// When there is no prior location and pathname is empty, set it to /
+
+// TODO: If another transition starts while we're still confirming
+
+// the previous one, we may end up in a weird state. Figure out the
+
+// best way to handle this.
+
+// Return false from a transition hook to cancel the transition.
+
+// CONCATENATED MODULE: ./node_modules/history/esm/history.js
+
+/* unused harmony export parsePath */
+
+// eslint-disable-line no-alert
+
+/**
+ * Returns true if the HTML5 history API is supported. Taken from Modernizr.
+ *
+ * https://github.com/Modernizr/Modernizr/blob/master/LICENSE
+ * https://github.com/Modernizr/Modernizr/blob/master/feature-detects/history.js
+ * changed to avoid false negatives for Windows Phones: https://github.com/reactjs/react-router/issues/586
+ */
+
+// IE 11 sometimes throws when accessing window.history.state
+
+// See https://github.com/ReactTraining/history/pull/289
+
+/**
+ * Creates a history object that uses the HTML5 history API including
+ * pushState, replaceState, and the popstate event.
+ */
+
+// Ignore extraneous popstate events in WebKit.
+
+/**
+ * Returns true if a given popstate event is an extraneous WebKit event.
+ * Accounts for the fact that Chrome on iOS fires real popstate events
+ * containing undefined state when pressing the back button.
+ */
+
+// TODO: We could probably make this more reliable by
+
+// keeping a list of keys we've seen in sessionStorage.
+
+// Instead, we just default to 0 for keys we don't know.
+
+// Public interface
+
+// We can't use window.location.hash here because it's not
+
+// consistent across browsers - Firefox will pre-decode it!
+
+// Ensure we always have a properly-encoded hash.
+
+// A hashchange doesn't always == location change.
+
+// Ignore this change; we already setState in push/replace.
+
+// keeping a list of paths we've seen in sessionStorage.
+
+// Instead, we just default to 0 for paths we don't know.
+
+// Ensure the hash is encoded properly before doing anything else.
+
+// We cannot tell if a hashchange was caused by a PUSH, so we'd
+
+// rather setState here and ignore the hashchange. The caveat here
+
+// is that other hash histories in the page will consider it a POP.
+
+// We cannot tell if a hashchange was caused by a REPLACE, so we'd
+
+/**
+ * Creates a history object that stores locations in memory.
+ */
+
+// Mimic the behavior of DOM histories by
+
+// causing a render after a cancelled POP.
+
+/* 9 */
+
+/* 10 */
+
+/* 11 */
+
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -691,9 +889,9 @@
 
 // we don't care about invariant's own frame
 
-/* 8 */
+/* 12 */
 
-/* 9 */
+/* 13 */
 
 // CONCATENATED MODULE: ./src/constants/actions.js
 
@@ -707,26 +905,13 @@
 
 /* concated harmony reexport CALCULATOR_FUNC_ROUTE */
 
-/* 10 */
-
-/* 11 */
-
-/* 12 */
-
-// Color palette
-
-/* 13 */
-
 /* 14 */
 
 /* 15 */
 
-/**
- * Copyright 2015, Yahoo! Inc.
- * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
- */
-
 /* 16 */
+
+// Color palette
 
 /* 17 */
 
@@ -734,7 +919,42 @@
 
 /* 19 */
 
-// EXTERNAL MODULE: ./node_modules/react/index.js
+/* unused harmony export HashRouter */
+
+/* unused harmony export Link */
+
+/**
+ * The public API for a <Router> that uses window.location.hash.
+ */
+
+// onClick prevented default
+
+// ignore everything but left clicks
+
+// React 15 compat
+
+/**
+ * The public API for rendering a history-aware <a>.
+ */
+
+/**
+ * A <Link> wrapper that knows if it's "active" or not.
+ */
+
+/* 20 */
+
+/**
+ * Copyright 2015, Yahoo! Inc.
+ * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
+ */
+
+/* 21 */
+
+/* 22 */
+
+/* 23 */
+
+/* 24 */
 
 // CONCATENATED MODULE: ./node_modules/react-redux/es/utils/batch.js
 
@@ -743,8 +963,6 @@
 // Allow injecting another batching function later
 
 // CONCATENATED MODULE: ./node_modules/react-redux/es/components/Provider.js
-
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/extends.js
 
 // React currently throws a warning when using useLayoutEffect on the server.
 
@@ -1140,7 +1358,7 @@
 
 /* unused concated harmony import shallowEqual */
 
-/* 20 */
+/* 25 */
 
 /*
   MIT License http://www.opensource.org/licenses/mit-license.php
@@ -1167,7 +1385,7 @@
 
 // I hope this will never occur (Hey this way we have smaller bundles)
 
-/* 21 */
+/* 26 */
 
 // DCE check should happen before ReactDOM bundle executes so that
 
@@ -1181,23 +1399,23 @@
 
 // We should still report in case we break this code.
 
-/* 22 */
-
-/* 23 */
-
-/* 24 */
-
-/* global window */
-
-/* 25 */
-
-//# sourceMappingURL=stylis.min.js.map
-
-/* 26 */
-
 /* 27 */
 
 /* 28 */
+
+/* 29 */
+
+/* global window */
+
+/* 30 */
+
+//# sourceMappingURL=stylis.min.js.map
+
+/* 31 */
+
+/* 32 */
+
+/* 33 */
 
 /**
  * Expose `pathToRegexp`.
@@ -1366,11 +1584,11 @@
 
 /** @type {string} */
 
-/* 29 */
+/* 34 */
 
-/* 30 */
+/* 35 */
 
-/* 31 */
+/* 36 */
 
 /*
 object-assign
@@ -1390,7 +1608,7 @@ object-assign
 
 // We don't expect any of the above to throw, but better to be safe.
 
-/* 32 */
+/* 37 */
 
 // This works in non-strict mode
 
@@ -1404,9 +1622,43 @@ object-assign
 
 // easier to handle this case. if(!global) { ...}
 
-/* 33 */
+/* 38 */
 
-/* 34 */
+// shim for using process in browser
+
+// cached from whatever global is present so that test runners that stub it
+
+// don't break things.  But we need to wrap it in a try catch in case it is
+
+// wrapped in strict mode code which doesn't define any globals.  It's inside a
+
+// function because try/catches deoptimize in certain engines.
+
+//normal enviroments in sane situations
+
+// if setTimeout wasn't available but was latter defined
+
+// when when somebody has screwed with setTimeout but no I.E. maddness
+
+// When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
+
+// same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
+
+// if clearTimeout wasn't available but was latter defined
+
+// When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
+
+// same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
+
+// Some versions of I.E. have different rules for clearTimeout vs setTimeout
+
+// v8 likes predictible objects
+
+// empty string to avoid regexp issues
+
+/* 39 */
+
+/* 40 */
 
 // property
 
@@ -1418,21 +1670,29 @@ object-assign
 
 // @font-face, @page
 
-/* 35 */
+/* 41 */
 
 // SVG-related properties
 
-/* 36 */
+/* 42 */
 
-/* 37 */
+/* import() */
+
+/* 43 */
+
+/* 44 */
 
 // @flow
 
-/* 38 */
+/* 45 */
 
-/* 39 */
+/* 46 */
 
-/* 40 */
+/* 47 */
+
+/* 48 */
+
+/* 49 */
 
 // CONCATENATED MODULE: ./node_modules/@emotion/memoize/dist/memoize.browser.esm.js
 
@@ -1444,7 +1704,7 @@ object-assign
 
 // CONCATENATED MODULE: ./node_modules/@emotion/is-prop-valid/dist/is-prop-valid.browser.esm.js
 
-/* 41 */
+/* 50 */
 
 // CONCATENATED MODULE: ./node_modules/is-what/dist/index.esm.js
 
@@ -1525,23 +1785,23 @@ object-assign
 
 // When newVal is an object do the merge recursively
 
-/* 42 */
+/* 51 */
 
-/* 43 */
+/* 52 */
 
-/* 44 */
+/* 53 */
 
 // Imports
 
 // Module
 
-/* 45 */
+/* 54 */
 
-/* 46 */
+/* 55 */
 
-/* 47 */
+/* 56 */
 
-/* 48 */
+/* 57 */
 
 // Test for IE <= 9 as proposed by Browserhacks
 
@@ -1573,7 +1833,7 @@ object-assign
 
 // tags it will allow on a page
 
-/* 49 */
+/* 58 */
 
 /** @license React v16.11.0
  * react.production.min.js
@@ -1584,7 +1844,7 @@ object-assign
  * LICENSE file in the root directory of this source tree.
  */
 
-/* 50 */
+/* 59 */
 
 /** @license React v16.11.0
  * react-dom.production.min.js
@@ -1599,9 +1859,9 @@ object-assign
  Modernizr 3.0.0pre (Custom Build) | MIT
 */
 
-/* 51 */
+/* 60 */
 
-/* 52 */
+/* 61 */
 
 /** @license React v0.17.0
  * scheduler.production.min.js
@@ -1612,15 +1872,15 @@ object-assign
  * LICENSE file in the root directory of this source tree.
  */
 
-/* 53 */
+/* 62 */
 
 // Important!
 
 // Keep this list in sync with production version in `./factoryWithTypeCheckers.js`.
 
-/* 54 */
+/* 63 */
 
-/* 55 */
+/* 64 */
 
 /** @license React v16.11.0
  * react-is.production.min.js
@@ -1631,69 +1891,19 @@ object-assign
  * LICENSE file in the root directory of this source tree.
  */
 
-/* 56 */
+/* 65 */
 
 // module.parent = undefined by default
-
-/* 57 */
-
-/* 58 */
-
-/* 59 */
-
-// shim for using process in browser
-
-// cached from whatever global is present so that test runners that stub it
-
-// don't break things.  But we need to wrap it in a try catch in case it is
-
-// wrapped in strict mode code which doesn't define any globals.  It's inside a
-
-// function because try/catches deoptimize in certain engines.
-
-//normal enviroments in sane situations
-
-// if setTimeout wasn't available but was latter defined
-
-// when when somebody has screwed with setTimeout but no I.E. maddness
-
-// When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
-
-// same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
-
-// if clearTimeout wasn't available but was latter defined
-
-// When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
-
-// same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
-
-// Some versions of I.E. have different rules for clearTimeout vs setTimeout
-
-// v8 likes predictible objects
-
-// empty string to avoid regexp issues
-
-/* 60 */
-
-/**
-   * @return {null}
-   */
-
-/* 61 */
-
-/* 62 */
-
-/* 63 */
-
-/* 64 */
-
-/* 65 */
 
 /* 66 */
 
 /* 67 */
 
 /* 68 */
+
+/**
+   * @return {null}
+   */
 
 /* 69 */
 
@@ -1724,6 +1934,22 @@ object-assign
 /* 82 */
 
 /* 83 */
+
+/* 84 */
+
+/* 85 */
+
+/* 86 */
+
+/* 87 */
+
+/* 88 */
+
+/* 89 */
+
+/* 90 */
+
+/* 91 */
 
 /**
  * Copyright (c) 2014-present, Facebook, Inc.
@@ -1982,203 +2208,19 @@ object-assign
 
 // problems, please detail your unique predicament in a GitHub issue.
 
-/* 84 */
+/* 92 */
 
-/* 85 */
+/* 93 */
 
-/* 86 */
+/* 94 */
 
 // EXTERNAL MODULE: ./node_modules/react-loader-spinner/dist/loader/css/react-spinner-loader.css
-
-// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/inheritsLoose.js
-
-// EXTERNAL MODULE: ./node_modules/prop-types/index.js
-
-// CONCATENATED MODULE: ./node_modules/resolve-pathname/esm/resolve-pathname.js
-
-// About 1.5x faster than the two-arg version of Array#splice()
-
-// This implementation is based heavily on node's url.parse
-
-// to is absolute
-
-// to is relative, drop the filename
-
-// CONCATENATED MODULE: ./node_modules/value-equal/esm/value-equal.js
-
-// CONCATENATED MODULE: ./node_modules/tiny-invariant/dist/tiny-invariant.esm.js
-
-// CONCATENATED MODULE: ./node_modules/history/esm/history.js
-
-// Two-arg form: push(path, state)
-
-// One-arg form: push(location)
-
-// Resolve incomplete/relative pathname relative to current location.
-
-// When there is no prior location and pathname is empty, set it to /
-
-// TODO: If another transition starts while we're still confirming
-
-// the previous one, we may end up in a weird state. Figure out the
-
-// best way to handle this.
-
-// Return false from a transition hook to cancel the transition.
-
-// eslint-disable-line no-alert
-
-/**
- * Returns true if the HTML5 history API is supported. Taken from Modernizr.
- *
- * https://github.com/Modernizr/Modernizr/blob/master/LICENSE
- * https://github.com/Modernizr/Modernizr/blob/master/feature-detects/history.js
- * changed to avoid false negatives for Windows Phones: https://github.com/reactjs/react-router/issues/586
- */
-
-// IE 11 sometimes throws when accessing window.history.state
-
-// See https://github.com/ReactTraining/history/pull/289
-
-/**
- * Creates a history object that uses the HTML5 history API including
- * pushState, replaceState, and the popstate event.
- */
-
-// Ignore extraneous popstate events in WebKit.
-
-/**
- * Returns true if a given popstate event is an extraneous WebKit event.
- * Accounts for the fact that Chrome on iOS fires real popstate events
- * containing undefined state when pressing the back button.
- */
-
-// TODO: We could probably make this more reliable by
-
-// keeping a list of keys we've seen in sessionStorage.
-
-// Instead, we just default to 0 for keys we don't know.
-
-// Public interface
-
-// We can't use window.location.hash here because it's not
-
-// consistent across browsers - Firefox will pre-decode it!
-
-// Ensure we always have a properly-encoded hash.
-
-// A hashchange doesn't always == location change.
-
-// Ignore this change; we already setState in push/replace.
-
-// keeping a list of paths we've seen in sessionStorage.
-
-// Instead, we just default to 0 for paths we don't know.
-
-// Ensure the hash is encoded properly before doing anything else.
-
-// We cannot tell if a hashchange was caused by a PUSH, so we'd
-
-// rather setState here and ignore the hashchange. The caveat here
-
-// is that other hash histories in the page will consider it a POP.
-
-// We cannot tell if a hashchange was caused by a REPLACE, so we'd
-
-/**
- * Creates a history object that stores locations in memory.
- */
-
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/inheritsLoose.js
-
-// This is a bit of a hack. We have to start listening for location
-
-// changes here in the constructor in case there are any <Redirect>s
-
-// on the initial render. If there are, they will replace/push when
-
-// they mount and since cDM fires in children before parents, we may
-
-// get a new location before the <Router> is mounted.
-
-/**
- * The public API for a <Router> that stores location in memory.
- */
-
-/**
- * The public API for prompting the user before navigating away from a screen.
- */
-
-/**
- * Public API for matching a URL pathname to a path.
- */
-
-// the path used to match
-
-// the matched portion of the URL
-
-// whether or not we matched exactly
-
-/**
- * The public API for matching a single path and rendering.
- */
-
-// Preact uses an empty array as children by
-
-// default, so use null if that's the case.
-
-/**
- * The public top-level API for a "static" <Router>, so-called because it
- * can't actually change the current location. Instead, it just records
- * location changes in a context object. Useful mainly in testing and
- * server-rendering scenarios.
- */
-
-/**
- * The public API for rendering the first <Route> that matches.
- */
-
-// We use React.Children.forEach instead of React.Children.toArray().find()
-
-// here because toArray adds keys to all child elements and we do not want
-
-// to trigger an unmount/remount for two <Route>s that render the same
-
-// component at different URLs.
-
-//# sourceMappingURL=react-router.js.map
-
-// CONCATENATED MODULE: ./node_modules/react-router-dom/esm/react-router-dom.js
-
-/**
- * The public API for a <Router> that uses HTML5 history.
- */
-
-/**
- * The public API for a <Router> that uses window.location.hash.
- */
-
-// onClick prevented default
-
-// ignore everything but left clicks
-
-// React 15 compat
-
-/**
- * The public API for rendering a history-aware <a>.
- */
-
-/**
- * A <Link> wrapper that knows if it's "active" or not.
- */
 
 // CONCATENATED MODULE: ./node_modules/redux-persist/es/integration/react.js
 
 // eslint-disable-line import/no-unresolved
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/classCallCheck.js
-
-/* import() */
 
 // CONCATENATED MODULE: ./node_modules/@redux-saga/core/dist/io-427945dd.js
 
@@ -2381,6 +2423,8 @@ object-assign
 // CONCATENATED MODULE: ./src/reducers/CalculatorReducer/index.js
 
 // EXTERNAL MODULE: ./src/reducers/ThemeReducer/actions.js
+
+// EXTERNAL MODULE: ./src/theme.js
 
 // CONCATENATED MODULE: ./src/reducers/ThemeReducer/index.js
 
