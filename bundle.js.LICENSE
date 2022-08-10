@@ -90,8 +90,6 @@
 
 /* 3 */
 
-/* 4 */
-
 /* WEBPACK VAR INJECTION */
 
 /* unused harmony export isStyledComponent */
@@ -437,6 +435,8 @@
 
 /* harmony default export */
 
+/* 4 */
+
 /* 5 */
 
 /* unused harmony export __DO_NOT_USE__ActionTypes */
@@ -693,6 +693,8 @@
 
 /* 8 */
 
+/* 9 */
+
 // CONCATENATED MODULE: ./src/constants/actions.js
 
 // CONCATENATED MODULE: ./src/constants/index.js
@@ -705,28 +707,32 @@
 
 /* concated harmony reexport CALCULATOR_FUNC_ROUTE */
 
-/* 9 */
-
 /* 10 */
 
 /* 11 */
 
-// Color palette
-
 /* 12 */
+
+// Color palette
 
 /* 13 */
 
 /* 14 */
+
+/* 15 */
 
 /**
  * Copyright 2015, Yahoo! Inc.
  * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
  */
 
-/* 15 */
-
 /* 16 */
+
+/* 17 */
+
+/* 18 */
+
+/* 19 */
 
 // EXTERNAL MODULE: ./node_modules/react/index.js
 
@@ -1134,7 +1140,7 @@
 
 /* unused concated harmony import shallowEqual */
 
-/* 17 */
+/* 20 */
 
 /*
   MIT License http://www.opensource.org/licenses/mit-license.php
@@ -1161,7 +1167,7 @@
 
 // I hope this will never occur (Hey this way we have smaller bundles)
 
-/* 18 */
+/* 21 */
 
 // DCE check should happen before ReactDOM bundle executes so that
 
@@ -1175,23 +1181,23 @@
 
 // We should still report in case we break this code.
 
-/* 19 */
-
-/* 20 */
-
-/* 21 */
-
-/* global window */
-
 /* 22 */
-
-//# sourceMappingURL=stylis.min.js.map
 
 /* 23 */
 
 /* 24 */
 
+/* global window */
+
 /* 25 */
+
+//# sourceMappingURL=stylis.min.js.map
+
+/* 26 */
+
+/* 27 */
+
+/* 28 */
 
 /**
  * Expose `pathToRegexp`.
@@ -1360,15 +1366,11 @@
 
 /** @type {string} */
 
-/* 26 */
-
-/* 27 */
-
-/* 28 */
-
 /* 29 */
 
 /* 30 */
+
+/* 31 */
 
 /*
 object-assign
@@ -1388,7 +1390,7 @@ object-assign
 
 // We don't expect any of the above to throw, but better to be safe.
 
-/* 31 */
+/* 32 */
 
 // This works in non-strict mode
 
@@ -1402,9 +1404,9 @@ object-assign
 
 // easier to handle this case. if(!global) { ...}
 
-/* 32 */
-
 /* 33 */
+
+/* 34 */
 
 // property
 
@@ -1416,21 +1418,21 @@ object-assign
 
 // @font-face, @page
 
-/* 34 */
+/* 35 */
 
 // SVG-related properties
 
-/* 35 */
-
 /* 36 */
 
-// @flow
-
 /* 37 */
+
+// @flow
 
 /* 38 */
 
 /* 39 */
+
+/* 40 */
 
 // CONCATENATED MODULE: ./node_modules/@emotion/memoize/dist/memoize.browser.esm.js
 
@@ -1442,7 +1444,7 @@ object-assign
 
 // CONCATENATED MODULE: ./node_modules/@emotion/is-prop-valid/dist/is-prop-valid.browser.esm.js
 
-/* 40 */
+/* 41 */
 
 // CONCATENATED MODULE: ./node_modules/is-what/dist/index.esm.js
 
@@ -1523,23 +1525,23 @@ object-assign
 
 // When newVal is an object do the merge recursively
 
-/* 41 */
-
 /* 42 */
 
 /* 43 */
 
+/* 44 */
+
 // Imports
 
 // Module
-
-/* 44 */
 
 /* 45 */
 
 /* 46 */
 
 /* 47 */
+
+/* 48 */
 
 // Test for IE <= 9 as proposed by Browserhacks
 
@@ -1571,7 +1573,7 @@ object-assign
 
 // tags it will allow on a page
 
-/* 48 */
+/* 49 */
 
 /** @license React v16.11.0
  * react.production.min.js
@@ -1582,7 +1584,7 @@ object-assign
  * LICENSE file in the root directory of this source tree.
  */
 
-/* 49 */
+/* 50 */
 
 /** @license React v16.11.0
  * react-dom.production.min.js
@@ -1597,9 +1599,9 @@ object-assign
  Modernizr 3.0.0pre (Custom Build) | MIT
 */
 
-/* 50 */
-
 /* 51 */
+
+/* 52 */
 
 /** @license React v0.17.0
  * scheduler.production.min.js
@@ -1610,15 +1612,15 @@ object-assign
  * LICENSE file in the root directory of this source tree.
  */
 
-/* 52 */
+/* 53 */
 
 // Important!
 
 // Keep this list in sync with production version in `./factoryWithTypeCheckers.js`.
 
-/* 53 */
-
 /* 54 */
+
+/* 55 */
 
 /** @license React v16.11.0
  * react-is.production.min.js
@@ -1629,15 +1631,15 @@ object-assign
  * LICENSE file in the root directory of this source tree.
  */
 
-/* 55 */
+/* 56 */
 
 // module.parent = undefined by default
-
-/* 56 */
 
 /* 57 */
 
 /* 58 */
+
+/* 59 */
 
 // shim for using process in browser
 
@@ -1671,13 +1673,11 @@ object-assign
 
 // empty string to avoid regexp issues
 
-/* 59 */
+/* 60 */
 
 /**
    * @return {null}
    */
-
-/* 60 */
 
 /* 61 */
 
@@ -1722,6 +1722,8 @@ object-assign
 /* 81 */
 
 /* 82 */
+
+/* 83 */
 
 /**
  * Copyright (c) 2014-present, Facebook, Inc.
@@ -1980,11 +1982,11 @@ object-assign
 
 // problems, please detail your unique predicament in a GitHub issue.
 
-/* 83 */
-
 /* 84 */
 
 /* 85 */
+
+/* 86 */
 
 // EXTERNAL MODULE: ./node_modules/react-loader-spinner/dist/loader/css/react-spinner-loader.css
 
