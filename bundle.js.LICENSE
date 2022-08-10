@@ -697,8 +697,6 @@
 
 // CONCATENATED MODULE: ./src/constants/actions.js
 
-// EXTERNAL MODULE: ./src/constants/router.js
-
 // CONCATENATED MODULE: ./src/constants/index.js
 
 /* unused concated harmony import ACTION_PREFIX */
@@ -1408,43 +1406,7 @@ object-assign
 
 /* 33 */
 
-// shim for using process in browser
-
-// cached from whatever global is present so that test runners that stub it
-
-// don't break things.  But we need to wrap it in a try catch in case it is
-
-// wrapped in strict mode code which doesn't define any globals.  It's inside a
-
-// function because try/catches deoptimize in certain engines.
-
-//normal enviroments in sane situations
-
-// if setTimeout wasn't available but was latter defined
-
-// when when somebody has screwed with setTimeout but no I.E. maddness
-
-// When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
-
-// same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
-
-// if clearTimeout wasn't available but was latter defined
-
-// When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
-
-// same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
-
-// Some versions of I.E. have different rules for clearTimeout vs setTimeout
-
-// v8 likes predictible objects
-
-// empty string to avoid regexp issues
-
 /* 34 */
-
-/* 35 */
-
-/* 36 */
 
 // property
 
@@ -1456,21 +1418,21 @@ object-assign
 
 // @font-face, @page
 
-/* 37 */
+/* 35 */
 
 // SVG-related properties
+
+/* 36 */
+
+/* 37 */
+
+// @flow
 
 /* 38 */
 
 /* 39 */
 
-// @flow
-
 /* 40 */
-
-/* 41 */
-
-/* 42 */
 
 // CONCATENATED MODULE: ./node_modules/@emotion/memoize/dist/memoize.browser.esm.js
 
@@ -1482,7 +1444,7 @@ object-assign
 
 // CONCATENATED MODULE: ./node_modules/@emotion/is-prop-valid/dist/is-prop-valid.browser.esm.js
 
-/* 43 */
+/* 41 */
 
 // CONCATENATED MODULE: ./node_modules/is-what/dist/index.esm.js
 
@@ -1563,23 +1525,23 @@ object-assign
 
 // When newVal is an object do the merge recursively
 
+/* 42 */
+
+/* 43 */
+
 /* 44 */
-
-/* 45 */
-
-/* 46 */
 
 // Imports
 
 // Module
 
+/* 45 */
+
+/* 46 */
+
 /* 47 */
 
 /* 48 */
-
-/* 49 */
-
-/* 50 */
 
 // Test for IE <= 9 as proposed by Browserhacks
 
@@ -1611,7 +1573,7 @@ object-assign
 
 // tags it will allow on a page
 
-/* 51 */
+/* 49 */
 
 /** @license React v16.11.0
  * react.production.min.js
@@ -1622,7 +1584,7 @@ object-assign
  * LICENSE file in the root directory of this source tree.
  */
 
-/* 52 */
+/* 50 */
 
 /** @license React v16.11.0
  * react-dom.production.min.js
@@ -1637,9 +1599,9 @@ object-assign
  Modernizr 3.0.0pre (Custom Build) | MIT
 */
 
-/* 53 */
+/* 51 */
 
-/* 54 */
+/* 52 */
 
 /** @license React v0.17.0
  * scheduler.production.min.js
@@ -1650,15 +1612,15 @@ object-assign
  * LICENSE file in the root directory of this source tree.
  */
 
-/* 55 */
+/* 53 */
 
 // Important!
 
 // Keep this list in sync with production version in `./factoryWithTypeCheckers.js`.
 
-/* 56 */
+/* 54 */
 
-/* 57 */
+/* 55 */
 
 /** @license React v16.11.0
  * react-is.production.min.js
@@ -1669,19 +1631,55 @@ object-assign
  * LICENSE file in the root directory of this source tree.
  */
 
-/* 58 */
+/* 56 */
 
 // module.parent = undefined by default
 
+/* 57 */
+
+/* 58 */
+
 /* 59 */
 
-/* 60 */
+// shim for using process in browser
 
-/* 61 */
+// cached from whatever global is present so that test runners that stub it
+
+// don't break things.  But we need to wrap it in a try catch in case it is
+
+// wrapped in strict mode code which doesn't define any globals.  It's inside a
+
+// function because try/catches deoptimize in certain engines.
+
+//normal enviroments in sane situations
+
+// if setTimeout wasn't available but was latter defined
+
+// when when somebody has screwed with setTimeout but no I.E. maddness
+
+// When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
+
+// same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
+
+// if clearTimeout wasn't available but was latter defined
+
+// When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
+
+// same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
+
+// Some versions of I.E. have different rules for clearTimeout vs setTimeout
+
+// v8 likes predictible objects
+
+// empty string to avoid regexp issues
+
+/* 60 */
 
 /**
    * @return {null}
    */
+
+/* 61 */
 
 /* 62 */
 
@@ -1726,8 +1724,6 @@ object-assign
 /* 82 */
 
 /* 83 */
-
-/* 84 */
 
 /**
  * Copyright (c) 2014-present, Facebook, Inc.
@@ -1986,11 +1982,11 @@ object-assign
 
 // problems, please detail your unique predicament in a GitHub issue.
 
+/* 84 */
+
 /* 85 */
 
 /* 86 */
-
-/* 87 */
 
 // EXTERNAL MODULE: ./node_modules/react-loader-spinner/dist/loader/css/react-spinner-loader.css
 
