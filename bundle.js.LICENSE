@@ -1,0 +1,2489 @@
+/******/
+
+// webpackBootstrap
+
+// install a JSONP callback for chunk loading
+
+// The module cache
+
+// object to store loaded and loading chunks
+
+// undefined = chunk not loaded, null = chunk preloaded/prefetched
+
+// Promise = chunk loading, 0 = chunk loaded
+
+// The require function
+
+// Check if module is in cache
+
+// Create a new module (and put it into the cache)
+
+// Execute the module function
+
+// Return the exports of the module
+
+// Flag the module as loaded
+
+// This file contains only the entry chunk.
+
+// The chunk loading function for additional chunks
+
+// JSONP chunk loading for javascript
+
+// 0 means "already installed".
+
+// a Promise means "currently loading".
+
+// setup Promise in chunk cache
+
+// start chunk loading
+
+// script path function
+
+// create error before stack unwound to get useful stacktrace later
+
+// avoid mem leaks in IE.
+
+// expose the modules object (__webpack_modules__)
+
+// expose the module cache
+
+// define getter function for harmony exports
+
+// define __esModule on exports
+
+// create a fake namespace object
+
+// mode & 1: value is a module id, require it
+
+// mode & 2: merge all properties of value into the ns
+
+// mode & 4: return value when already ns object
+
+// mode & 8|1: behave like require
+
+// getDefaultExport function for compatibility with non-harmony modules
+
+// Object.prototype.hasOwnProperty.call
+
+// __webpack_public_path__
+
+// on error function for async loading
+
+// Load entry module and return exports
+
+/************************************************************************/
+
+/* 0 */
+
+/***/
+
+/* 1 */
+
+/* harmony export (binding) */
+
+/* 2 */
+
+// By explicitly using `prop-types` you are opting into new production behavior.
+
+// http://fb.me/prop-types-in-prod
+
+/* 3 */
+
+/* 4 */
+
+/* WEBPACK VAR INJECTION */
+
+/* unused harmony export isStyledComponent */
+
+/* unused harmony export keyframes */
+
+/* unused harmony export ServerStyleSheet */
+
+/* unused harmony export StyleSheetConsumer */
+
+/* unused harmony export StyleSheetContext */
+
+/* unused harmony export StyleSheetManager */
+
+/* unused harmony export ThemeConsumer */
+
+/* unused harmony export ThemeContext */
+
+/* unused harmony export withTheme */
+
+/* unused harmony export __DO_NOT_USE_OR_YOU_WILL_BE_HAUNTED_BY_SPOOKY_GHOSTS */
+
+/* harmony import */
+
+/*#__PURE__*/
+
+// 
+
+/**
+ * Create an error file out of errors.md for development and a simple web link to the full errors
+ * in production mode.
+ */
+
+// Definitely a string, and a clone
+
+// the first self-ref is always untouched
+
+// there should be at least two self-refs to do a replacement (.b > .b)
+
+// no consecutive self refs (.b.b); that is a precedence boost and treated differently
+
+// eslint-disable-next-line no-param-reassign
+
+// stylis has no concept of state to be passed to plugins
+
+// but since JS is single=threaded, we can rely on that to ensure
+
+// these properties stay in sync with the current stylis run
+
+/* eslint-disable camelcase, no-undef */
+
+// eslint-disable-next-line guard-for-in
+
+// $FlowFixMe
+
+/* Firefox quirk requires us to step through all stylesheets to find one owned by the given tag */
+
+/* we should always be able to find a tag */
+
+/* abort early if cssRule string is falsy */
+
+/* use insertRule and cap passed index with maxIndex (no of cssRules) */
+
+/* any error indicates an invalid rule */
+
+// eslint-disable-next-line react/no-danger
+
+/* Work around insertRule quirk in EdgeHTML */
+
+/* Append to target when no previous element was passed */
+
+/* Insert new style tag after the previous one */
+
+/* create new empty text node and replace the current one */
+
+/* @import rules are reordered to appear first */
+
+/* add up no of injected rules */
+
+/* These are helpers for the StyleTags to keep track of the injected
+ * rule names for each (component) ID that they're keeping track of.
+ * They're crucial for detecting whether a name has already been
+ * injected.
+ * (This excludes rehydrated names) */
+
+/* adds a new ID:name pairing to a names dictionary */
+
+/* in speedy mode we can keep a lot more rules in a sheet before a slowdown can be expected */
+
+/* a map from ids to tags */
+
+/* deferred rules for a given id */
+
+/* this is used for not reinjecting rules via hasNameForId() */
+
+/* when rules for an id are removed using remove() we have to ignore rehydratedNames for it */
+
+/* a list of tags belonging to this StyleSheet */
+
+/* a tag for import rules */
+
+/* current capacity until a new tag must be created */
+
+/* children (aka clones) of this StyleSheet inheriting all and future injections */
+
+/* rehydrate all SSR'd style tags */
+
+/* abort rehydration if no previous style tags were found */
+
+/* check if style tag is a streamed tag */
+
+/* retrieve all component names */
+
+/* add rehydrated name to sheet to avoid re-adding styles */
+
+/* extract all components and their CSS */
+
+/* store original HTMLStyleElement */
+
+/* abort rehydration if nothing was extracted */
+
+/* create a tag to be used for rehydration */
+
+/* add all extracted components to the new tag */
+
+/* remove old HTMLStyleElements, since they have been rehydrated */
+
+/* reset capacity and adjust MAX_SIZE by the initial size of the rehydration */
+
+/* retrieve all component ids */
+
+/* retrieve a "master" instance of StyleSheet which is typically used when no other is available
+   * The master StyleSheet is targeted by createGlobalStyle, keyframes, and components outside of any
+    * StyleSheetManager's context */
+
+/* reset the internal "master" instance */
+
+/* adds "children" to the StyleSheet that inherit all of the parents' rules
+   * while their own rules do not affect the parent */
+
+/* add to clone array */
+
+/* clone all tags */
+
+/* reconstruct tagMap */
+
+/* clone other maps */
+
+/* force StyleSheet to create a new tag on the next injection */
+
+/* get a tag for a given componentId, assign the componentId to one, or shard */
+
+/* simply return a tag, when the componentId was already assigned one */
+
+/* shard (create a new tag) if the tag is exhausted (See MAX_SIZE) */
+
+/* mainly for createGlobalStyle to check for its id */
+
+/* caching layer checking id+name to already have a corresponding tag and injected rules */
+
+/* exception for rehydrated names which are checked separately */
+
+/* registers a componentId and registers it on its tag */
+
+/* don't inject when the id is already registered */
+
+/* injects rules for a given id with a name that will need to be cached */
+
+/* add deferred rules for component */
+
+// Combine passed cssRules with previously deferred CSS rules
+
+// NOTE: We cannot mutate the deferred array itself as all clones
+
+// do the same (see clones[i].inject)
+
+/* removes all rules for a given id, which doesn't remove its marker but resets it */
+
+/* remove all rules from the tag */
+
+/* ignore possible rehydrated names */
+
+/* delete possible deferred rules */
+
+/* NOTE: This is just for backwards-compatibility with jest-styled-components */
+
+/**
+ * Hyphenates a camelcased CSS property name, for example:
+ *
+ *   > hyphenateStyleName('backgroundColor')
+ *   < "background-color"
+ *   > hyphenateStyleName('MozTransition')
+ *   < "-moz-transition"
+ *   > hyphenateStyleName('msTransition')
+ *   < "-ms-transition"
+ *
+ * As Modernizr suggests (http://modernizr.com/docs/#prefixed), an `ms` prefix
+ * is converted to `-ms-`.
+ *
+ * @param {string} string
+ * @return {string}
+ */
+
+// Taken from https://github.com/facebook/react/blob/b87aabdfe1b7461e7331abb3601d9e6bb27544bc/packages/react-dom/src/shared/dangerousStyleValue.js
+
+/**
+ * It's falsish not falsy because 0 is allowed.
+ */
+
+// https://github.com/amilajack/eslint-plugin-flowtype-errors/issues/133
+
+/* Handle other components */
+
+/* Either execute or defer the function */
+
+/* Handle objects */
+
+// Source: https://github.com/garycourt/murmurhash-js/blob/master/murmurhash2_gc.js
+
+/* eslint-disable no-bitwise */
+
+/* This is the "capacity" of our alphabet i.e. 2x26 for all letters plus their capitalised
+ * counterparts */
+
+/* start at 75 for 'a' until 'z' (25) and then start at 65 for capitalised letters */
+
+/* input a number, usually a hash and convert it to base-52 */
+
+/* get a char and divide by alphabet-length */
+
+// recursive case
+
+// functions are allowed to be static if they're just being
+
+// used to get the classname of a nested styled component
+
+// eslint-disable-next-line guard-for-in, no-restricted-syntax
+
+/* combines hashStr (murmurhash) and nameGenerator for convenience */
+
+/*
+   * Flattens a rule set into valid CSS
+   * Hashes it, wraps the whole chunk in a .hash1234 {}
+   * Returns the hash to be injected on render()
+   * */
+
+// Props should take precedence over ThemeProvider, which should take precedence over
+
+// defaultProps, but React automatically puts defaultProps on props.
+
+/* eslint-disable react/prop-types, flowtype-errors/show-errors */
+
+/* eslint-enable */
+
+/*
+ ComponentStyle is all the CSS-specific stuff, not
+ the React-specific stuff.
+ */
+
+/**
+ * TODO: Explore using CSS.escape when it becomes more available
+ * in evergreen browsers.
+ */
+
+// don't hoist over string (html) components
+
+// eslint-disable-next-line no-plusplus
+
+// Avoid failures from read-only properties
+
+/* fail silently */
+
+// Helper to call a given function, only once
+
+/**
+   * Get the theme from the props, supporting both (outerTheme) => {}
+   * as well as object notation
+   */
+
+/* The master sheet might be reset, so keep a reference here */
+
+/**
+   * Mark the ServerStyleSheet as being fully emitted and manually GC it from the
+   * StyleSheet singleton.
+   */
+
+/* Remove sealed StyleSheets from the master sheet */
+
+// No need to subscribe a static component to theme changes, it won't change anything
+
+// Don't pass through non HTML tags through to HTML elements
+
+/* eslint-disable guard-for-in */
+
+// statically styled-components don't need to build an execution context object,
+
+// and shouldn't be increasing the number of class names
+
+/* We depend on components having unique IDs */
+
+/**
+   * This ensures uniqueness if two components happen to share
+   * the same displayName.
+   */
+
+// fold the underlying StyledComponent rules up (implicit extend)
+
+// fold the underlying StyledComponent target up since we folded the styles
+
+// all SC-specific things should not be hoisted
+
+// Thanks to ReactDOMFactories for this handy list!
+
+/* This is callable directly as a template function */
+
+// $FlowFixMe: Not typed to avoid destructuring arguments
+
+/* If config methods are called, wrap up a new template function and merge options */
+
+/* Modify/inject new props at runtime */
+
+// Shorthands for all valid HTML Elements
+
+// SVG
+
+// TODO: overwrite in-place instead of remove+create?
+
+// place our cache into shared context so it'll persist between HMRs
+
+/**
+       * This fixes HMR compatibility. Don't ask me why, but this combination of
+       * caching the closure variables via statics and then persisting the statics in
+       * state works across HMR where no other combination did. ¯\_(ツ)_/¯
+       */
+
+/**
+       * Depending on the order "render" is called this can cause the styles to be lost
+       * until the next render pass of the remaining instance, which may
+       * not be immediate.
+       */
+
+//
+
+/* harmony default export */
+
+/* 5 */
+
+/* unused harmony export __DO_NOT_USE__ActionTypes */
+
+/**
+ * These are private action types reserved by Redux.
+ * For any unknown actions, you must return the current state.
+ * If the current state is undefined, you must return the initial state.
+ * Do not reference these action types directly in your code.
+ */
+
+/**
+ * @param {any} obj The object to inspect.
+ * @returns {boolean} True if the argument appears to be a plain object.
+ */
+
+/**
+ * Creates a Redux store that holds the state tree.
+ * The only way to change the data in the store is to call `dispatch()` on it.
+ *
+ * There should only be a single store in your app. To specify how different
+ * parts of the state tree respond to actions, you may combine several reducers
+ * into a single reducer function by using `combineReducers`.
+ *
+ * @param {Function} reducer A function that returns the next state tree, given
+ * the current state tree and the action to handle.
+ *
+ * @param {any} [preloadedState] The initial state. You may optionally specify it
+ * to hydrate the state from the server in universal apps, or to restore a
+ * previously serialized user session.
+ * If you use `combineReducers` to produce the root reducer function, this must be
+ * an object with the same shape as `combineReducers` keys.
+ *
+ * @param {Function} [enhancer] The store enhancer. You may optionally specify it
+ * to enhance the store with third-party capabilities such as middleware,
+ * time travel, persistence, etc. The only store enhancer that ships with Redux
+ * is `applyMiddleware()`.
+ *
+ * @returns {Store} A Redux store that lets you read the state, dispatch actions
+ * and subscribe to changes.
+ */
+
+/**
+   * This makes a shallow copy of currentListeners so we can use
+   * nextListeners as a temporary list while dispatching.
+   *
+   * This prevents any bugs around consumers calling
+   * subscribe/unsubscribe in the middle of a dispatch.
+   */
+
+/**
+   * Reads the state tree managed by the store.
+   *
+   * @returns {any} The current state tree of your application.
+   */
+
+/**
+   * Adds a change listener. It will be called any time an action is dispatched,
+   * and some part of the state tree may potentially have changed. You may then
+   * call `getState()` to read the current state tree inside the callback.
+   *
+   * You may call `dispatch()` from a change listener, with the following
+   * caveats:
+   *
+   * 1. The subscriptions are snapshotted just before every `dispatch()` call.
+   * If you subscribe or unsubscribe while the listeners are being invoked, this
+   * will not have any effect on the `dispatch()` that is currently in progress.
+   * However, the next `dispatch()` call, whether nested or not, will use a more
+   * recent snapshot of the subscription list.
+   *
+   * 2. The listener should not expect to see all state changes, as the state
+   * might have been updated multiple times during a nested `dispatch()` before
+   * the listener is called. It is, however, guaranteed that all subscribers
+   * registered before the `dispatch()` started will be called with the latest
+   * state by the time it exits.
+   *
+   * @param {Function} listener A callback to be invoked on every dispatch.
+   * @returns {Function} A function to remove this change listener.
+   */
+
+/**
+   * Dispatches an action. It is the only way to trigger a state change.
+   *
+   * The `reducer` function, used to create the store, will be called with the
+   * current state tree and the given `action`. Its return value will
+   * be considered the **next** state of the tree, and the change listeners
+   * will be notified.
+   *
+   * The base implementation only supports plain object actions. If you want to
+   * dispatch a Promise, an Observable, a thunk, or something else, you need to
+   * wrap your store creating function into the corresponding middleware. For
+   * example, see the documentation for the `redux-thunk` package. Even the
+   * middleware will eventually dispatch plain object actions using this method.
+   *
+   * @param {Object} action A plain object representing “what changed”. It is
+   * a good idea to keep actions serializable so you can record and replay user
+   * sessions, or use the time travelling `redux-devtools`. An action must have
+   * a `type` property which may not be `undefined`. It is a good idea to use
+   * string constants for action types.
+   *
+   * @returns {Object} For convenience, the same action object you dispatched.
+   *
+   * Note that, if you use a custom middleware, it may wrap `dispatch()` to
+   * return something else (for example, a Promise you can await).
+   */
+
+/**
+   * Replaces the reducer currently used by the store to calculate the state.
+   *
+   * You might need this if your app implements code splitting and you want to
+   * load some of the reducers dynamically. You might also need this if you
+   * implement a hot reloading mechanism for Redux.
+   *
+   * @param {Function} nextReducer The reducer for the store to use instead.
+   * @returns {void}
+   */
+
+// When a store is created, an "INIT" action is dispatched so that every
+
+// reducer returns their initial state. This effectively populates
+
+// the initial state tree.
+
+// This action has a similiar effect to ActionTypes.INIT.
+
+// Any reducers that existed in both the new and old rootReducer
+
+// will receive the previous state. This effectively populates
+
+// the new state tree with any relevant data from the old one.
+
+/**
+   * Interoperability point for observable/reactive libraries.
+   * @returns {observable} A minimal observable of state changes.
+   * For more information, see the observable proposal:
+   * https://github.com/tc39/proposal-observable
+   */
+
+/**
+       * The minimal observable subscription method.
+       * @param {Object} observer Any object that can be used as an observer.
+       * The observer object should have a `next` method.
+       * @returns {subscription} An object with an `unsubscribe` method that can
+       * be used to unsubscribe the observable from the store, and prevent further
+       * emission of values from the observable.
+       */
+
+/**
+ * Prints a warning in the console if it exists.
+ *
+ * @param {String} message The warning message.
+ * @returns {void}
+ */
+
+/**
+ * Turns an object whose values are different reducer functions, into a single
+ * reducer function. It will call every child reducer, and gather their results
+ * into a single state object, whose keys correspond to the keys of the passed
+ * reducer functions.
+ *
+ * @param {Object} reducers An object whose values correspond to different
+ * reducer functions that need to be combined into one. One handy way to obtain
+ * it is to use ES6 `import * as reducers` syntax. The reducers may never return
+ * undefined for any action. Instead, they should return their initial state
+ * if the state passed to them was undefined, and the current state for any
+ * unrecognized action.
+ *
+ * @returns {Function} A reducer function that invokes every reducer inside the
+ * passed object, and builds a state object with the same shape.
+ */
+
+// This is used to make sure we don't warn about the same
+
+// keys multiple times.
+
+/**
+ * Turns an object whose values are action creators, into an object with the
+ * same keys, but with every function wrapped into a `dispatch` call so they
+ * may be invoked directly. This is just a convenience method, as you can call
+ * `store.dispatch(MyActionCreators.doSomething())` yourself just fine.
+ *
+ * For convenience, you can also pass an action creator as the first argument,
+ * and get a dispatch wrapped function in return.
+ *
+ * @param {Function|Object} actionCreators An object whose values are action
+ * creator functions. One handy way to obtain it is to use ES6 `import * as`
+ * syntax. You may also pass a single function.
+ *
+ * @param {Function} dispatch The `dispatch` function available on your Redux
+ * store.
+ *
+ * @returns {Function|Object} The object mimicking the original object, but with
+ * every action creator wrapped into the `dispatch` call. If you passed a
+ * function as `actionCreators`, the return value will also be a single
+ * function.
+ */
+
+/**
+ * Composes single-argument functions from right to left. The rightmost
+ * function can take multiple arguments as it provides the signature for
+ * the resulting composite function.
+ *
+ * @param {...Function} funcs The functions to compose.
+ * @returns {Function} A function obtained by composing the argument functions
+ * from right to left. For example, compose(f, g, h) is identical to doing
+ * (...args) => f(g(h(...args))).
+ */
+
+/**
+ * Creates a store enhancer that applies middleware to the dispatch method
+ * of the Redux store. This is handy for a variety of tasks, such as expressing
+ * asynchronous actions in a concise manner, or logging every action payload.
+ *
+ * See `redux-thunk` package as an example of the Redux middleware.
+ *
+ * Because middleware is potentially asynchronous, this should be the first
+ * store enhancer in the composition chain.
+ *
+ * Note that each middleware will be given the `dispatch` and `getState` functions
+ * as named arguments.
+ *
+ * @param {...Function} middlewares The middleware chain to be applied.
+ * @returns {Function} A store enhancer applying the middleware.
+ */
+
+/*
+ * This is a dummy function to check if the function name has been altered by minification.
+ * If the function has been minified and NODE_ENV !== 'production', warn the user.
+ */
+
+/* 6 */
+
+/* 7 */
+
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/**
+ * Use invariant() to assert state which your program assumes to be true.
+ *
+ * Provide sprintf-style format (only %s is supported) and arguments
+ * to provide information about what broke and what you were
+ * expecting.
+ *
+ * The invariant message will be stripped in production, but the invariant
+ * will remain to ensure logic does not differ in production.
+ */
+
+// we don't care about invariant's own frame
+
+/* 8 */
+
+// CONCATENATED MODULE: ./src/constants/actions.js
+
+// CONCATENATED MODULE: ./src/constants/index.js
+
+/* unused concated harmony import ACTION_PREFIX */
+
+/* concated harmony reexport CALCULATOR_ROUTE */
+
+/* concated harmony reexport SETTING_PAGE_ROUTE */
+
+/* concated harmony reexport CALCULATOR_FUNC_ROUTE */
+
+/* 9 */
+
+/* 10 */
+
+/* 11 */
+
+// Color palette
+
+/* 12 */
+
+/* 13 */
+
+/* 14 */
+
+/**
+ * Copyright 2015, Yahoo! Inc.
+ * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
+ */
+
+/* 15 */
+
+/* 16 */
+
+// EXTERNAL MODULE: ./node_modules/react/index.js
+
+// CONCATENATED MODULE: ./node_modules/react-redux/es/utils/batch.js
+
+// Default to a dummy "batch" implementation that just runs the callback
+
+// Allow injecting another batching function later
+
+// CONCATENATED MODULE: ./node_modules/react-redux/es/components/Provider.js
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/extends.js
+
+// React currently throws a warning when using useLayoutEffect on the server.
+
+// To get around it, we can conditionally useEffect on the server (no-op) and
+
+// useLayoutEffect in the browser. We need useLayoutEffect because we want
+
+// `connect` to perform sync updates to a ref to save the latest props after
+
+// a render is actually committed to the DOM.
+
+/*
+  selectorFactory is a func that is responsible for returning the selector function used to
+  compute new props from state, props, and dispatch. For example:
+     export default connectAdvanced((dispatch, options) => (state, props) => ({
+      thing: state.things[props.thingId],
+      saveThing: fields => dispatch(actionCreators.saveThing(props.thingId, fields)),
+    }))(YourComponent)
+   Access to dispatch is provided to the factory so selectorFactories can bind actionCreators
+  outside of their selector as an optimization. Options passed to connectAdvanced are passed to
+  the selectorFactory, along with displayName and WrappedComponent, as the second argument.
+   Note that selectorFactory is responsible for all caching/memoization of inbound and outbound
+  props. Do not use connectAdvanced directly without memoizing results between calls to your
+  selector, otherwise the Connect component will re-render on every state or props change.
+*/
+
+// options object:
+
+// If we aren't running in "pure" mode, we don't want to memoize values.
+
+// To avoid conditionally calling hooks, we fall back to a tiny wrapper
+
+// that just executes the given callback immediately.
+
+// Distinguish between actual "data" props that were passed to the wrapper component,
+
+// and values needed to control behavior (forwarded refs, alternate context instances).
+
+// To maintain the wrapperProps object reference, memoize this destructuring.
+
+// Users may optionally pass in a custom context instance to use instead of our ReactReduxContext.
+
+// Memoize the check that determines which context instance we should use.
+
+// The child props selector needs the store reference as an input.
+
+// Re-create this selector whenever the store changes.
+
+// This Subscription's source should match where store came from: props vs. context. A component
+
+// connected to the store via props shouldn't use subscription from context, or vice versa.
+
+// `notifyNestedSubs` is duplicated to handle the case where the component is unmounted in
+
+// the middle of the notification loop, where `subscription` will then be null. This can
+
+// probably be avoided if Subscription's listeners logic is changed to not call listeners
+
+// that have been unsubscribed in the  middle of the notification loop.
+
+// Otherwise, put this component's subscription instance into context, so that
+
+// connected descendants won't update until after this component is done
+
+// Propagate any mapState/mapDispatch errors upwards
+
+// Set up refs to coordinate values between the subscription effect and the render logic
+
+// Tricky logic here:
+
+// - This render may have been triggered by a Redux store update that produced new child props
+
+// - However, we may have gotten new wrapper props after that
+
+// If we have new child props, and the same wrapper props, we know we should use the new child props as-is.
+
+// But, if we have new wrapper props, those might change the child props, so we have to recalculate things.
+
+// So, we'll use the child props from store update only if the wrapper props are the same as last time.
+
+// TODO We're reading the store directly in render() here. Bad idea?
+
+// This will likely cause Bad Things (TM) to happen in Concurrent Mode.
+
+// Note that we do this because on renders _not_ caused by store updates, we need the latest store state
+
+// to determine what the child props should be.
+
+// We need this to execute synchronously every time we re-render. However, React warns
+
+// about useLayoutEffect in SSR, so we try to detect environment and fall back to
+
+// just useEffect instead to avoid the warning, since neither will run anyway.
+
+// We want to capture the wrapper props and child props we used for later comparisons
+
+// If the render was from a store update, clear out that reference and cascade the subscriber update
+
+// Our re-subscribe logic only runs when the store/subscription setup changes
+
+// If we're not subscribed to the store, nothing to do here
+
+// Capture values for checking if and when this component unmounts
+
+// Actually run the selector with the most recent store state and wrapper props
+
+// to determine what the child props should be
+
+// If the child props haven't changed, nothing to do here - cascade the subscription update
+
+// Save references to the new child props.  Note that we track the "child props from store update"
+
+// as a ref instead of a useState/useReducer because we need a way to determine if that value has
+
+// been processed.  If this went into useState/useReducer, we couldn't clear out the value without
+
+// forcing another re-render, which we don't want.
+
+// If the child props _did_ change (or we caught an error), this wrapper component needs to re-render
+
+// Actually subscribe to the nearest connected ancestor (or store)
+
+// Pull data from the store after first render in case the store has
+
+// changed since we began.
+
+// It's possible that we caught an error due to a bad mapState function, but the
+
+// parent re-rendered without this component and we're about to unmount.
+
+// This shouldn't happen as long as we do top-down subscriptions correctly, but
+
+// if we ever do those wrong, this throw will surface the error in our tests.
+
+// In that case, throw the error from here so it doesn't get lost.
+
+// Now that all that's done, we can finally try to actually render the child component.
+
+// We memoize the elements for the rendered child component as an optimization.
+
+// If React sees the exact same element reference as last time, it bails out of re-rendering
+
+// that child, same as if it was wrapped in React.memo() or returned false from shouldComponentUpdate.
+
+// If we're in "pure" mode, ensure our wrapper component only re-renders when incoming props have changed.
+
+// CONCATENATED MODULE: ./node_modules/react-redux/es/utils/shallowEqual.js
+
+// EXTERNAL MODULE: ./node_modules/redux/es/redux.js
+
+// CONCATENATED MODULE: ./node_modules/react-redux/es/utils/isPlainObject.js
+
+// CONCATENATED MODULE: ./node_modules/react-redux/es/connect/wrapMapToProps.js
+
+// dependsOnOwnProps is used by createMapToPropsProxy to determine whether to pass props as args
+
+// to the mapToProps function being wrapped. It is also used by makePurePropsSelector to determine
+
+// whether mapToProps needs to be invoked when props have changed.
+
+// A length of one signals that mapToProps does not depend on props from the parent component.
+
+// A length of zero is assumed to mean mapToProps is getting args via arguments or ...args and
+
+// therefore not reporting its length accurately..
+
+// Used by whenMapStateToPropsIsFunction and whenMapDispatchToPropsIsFunction,
+
+// this function wraps mapToProps in a proxy function which does several things:
+
+//  * Detects whether the mapToProps function being called depends on props, which
+
+//    is used by selectorFactory to decide if it should reinvoke on props changes.
+
+//  * On first call, handles mapToProps if returns another function, and treats that
+
+//    new function as the true mapToProps for subsequent calls.
+
+//  * On first call, verifies the first result is a plain object, in order to warn
+
+//    the developer that their mapToProps function is not returning a valid result.
+
+// allow detectFactoryAndVerify to get ownProps
+
+// CONCATENATED MODULE: ./node_modules/react-redux/es/connect/mapDispatchToProps.js
+
+// CONCATENATED MODULE: ./node_modules/react-redux/es/connect/mapStateToProps.js
+
+// CONCATENATED MODULE: ./node_modules/react-redux/es/connect/mergeProps.js
+
+// CONCATENATED MODULE: ./node_modules/react-redux/es/connect/verifySubselectors.js
+
+// CONCATENATED MODULE: ./node_modules/react-redux/es/connect/selectorFactory.js
+
+// TODO: Add more comments
+
+// If pure is true, the selector returned by selectorFactory will memoize its results,
+
+// allowing connectAdvanced's shouldComponentUpdate to return false if final
+
+// props have not changed. If false, the selector will always return a new
+
+// object and shouldComponentUpdate will always return true.
+
+// CONCATENATED MODULE: ./node_modules/react-redux/es/connect/connect.js
+
+/*
+  connect is a facade over connectAdvanced. It turns its args into a compatible
+  selectorFactory, which has the signature:
+
+    (dispatch, options) => (nextState, nextOwnProps) => nextFinalProps
+  
+  connect passes its args to connectAdvanced as options, which will in turn pass them to
+  selectorFactory each time a Connect component instance is instantiated or hot reloaded.
+
+  selectorFactory returns a final props selector from its mapStateToProps,
+  mapStateToPropsFactories, mapDispatchToProps, mapDispatchToPropsFactories, mergeProps,
+  mergePropsFactories, and pure args.
+
+  The resulting final props selector is called by the Connect component instance whenever
+  it receives new props or store state.
+ */
+
+// createConnect with default args builds the 'official' connect behavior. Calling it with
+
+// different options opens up some testing and extensibility scenarios
+
+// used in error messages
+
+// used to compute Connect's displayName from the wrapped component's displayName.
+
+// if mapStateToProps is falsy, the Connect component doesn't subscribe to store state changes
+
+// passed through to selectorFactory
+
+// CONCATENATED MODULE: ./node_modules/react-redux/es/hooks/useReduxContext.js
+
+/**
+ * A hook to access the value of the `ReactReduxContext`. This is a low-level
+ * hook that you should usually not need to call directly.
+ *
+ * @returns {any} the value of the `ReactReduxContext`
+ *
+ * @example
+ *
+ * import React from 'react'
+ * import { useReduxContext } from 'react-redux'
+ *
+ * export const CounterComponent = ({ value }) => {
+ *   const { store } = useReduxContext()
+ *   return <div>{store.getState()}</div>
+ * }
+ */
+
+// CONCATENATED MODULE: ./node_modules/react-redux/es/hooks/useStore.js
+
+/**
+ * Hook factory, which creates a `useStore` hook bound to a given context.
+ *
+ * @param {Function} [context=ReactReduxContext] Context passed to your `<Provider>`.
+ * @returns {Function} A `useStore` hook bound to the specified context.
+ */
+
+/**
+ * A hook to access the redux store.
+ *
+ * @returns {any} the redux store
+ *
+ * @example
+ *
+ * import React from 'react'
+ * import { useStore } from 'react-redux'
+ *
+ * export const ExampleComponent = () => {
+ *   const store = useStore()
+ *   return <div>{store.getState()}</div>
+ * }
+ */
+
+// CONCATENATED MODULE: ./node_modules/react-redux/es/hooks/useDispatch.js
+
+/**
+ * Hook factory, which creates a `useDispatch` hook bound to a given context.
+ *
+ * @param {Function} [context=ReactReduxContext] Context passed to your `<Provider>`.
+ * @returns {Function} A `useDispatch` hook bound to the specified context.
+ */
+
+/**
+ * A hook to access the redux `dispatch` function.
+ *
+ * @returns {any|function} redux store's `dispatch` function
+ *
+ * @example
+ *
+ * import React, { useCallback } from 'react'
+ * import { useDispatch } from 'react-redux'
+ *
+ * export const CounterComponent = ({ value }) => {
+ *   const dispatch = useDispatch()
+ *   const increaseCounter = useCallback(() => dispatch({ type: 'increase-counter' }), [])
+ *   return (
+ *     <div>
+ *       <span>{value}</span>
+ *       <button onClick={increaseCounter}>Increase counter</button>
+ *     </div>
+ *   )
+ * }
+ */
+
+// CONCATENATED MODULE: ./node_modules/react-redux/es/hooks/useSelector.js
+
+// useLayoutEffect in the browser. We need useLayoutEffect to ensure the store
+
+// subscription callback always has the selector from the latest render commit
+
+// available, otherwise a store update may happen between render and the effect,
+
+// which may cause missed updates; we also must ensure the store subscription
+
+// is created synchronously, otherwise a store update may occur before the
+
+// subscription is created and an inconsistent state may be observed
+
+/**
+ * A hook to access the redux store's state. This hook takes a selector function
+ * as an argument. The selector is called with the store state.
+ *
+ * This hook takes an optional equality comparison function as the second parameter
+ * that allows you to customize the way the selected state is compared to determine
+ * whether the component needs to be re-rendered.
+ *
+ * @param {Function} selector the selector function
+ * @param {Function=} equalityFn the function that will be used to determine equality
+ *
+ * @returns {any} the selected state
+ *
+ * @example
+ *
+ * import React from 'react'
+ * import { useSelector } from 'react-redux'
+ *
+ * export const CounterComponent = () => {
+ *   const counter = useSelector(state => state.counter)
+ *   return <div>{counter}</div>
+ * }
+ */
+
+/**
+ * Hook factory, which creates a `useSelector` hook bound to a given context.
+ *
+ * @param {Function} [context=ReactReduxContext] Context passed to your `<Provider>`.
+ * @returns {Function} A `useSelector` hook bound to the specified context.
+ */
+
+// we ignore all errors here, since when the component
+
+// is re-rendered, the selectors are called again, and
+
+// will throw again, if neither props nor store state
+
+// changed
+
+// EXTERNAL MODULE: ./node_modules/react-dom/index.js
+
+// CONCATENATED MODULE: ./node_modules/react-redux/es/utils/reactBatchedUpdates.js
+
+/* eslint-disable import/no-unresolved */
+
+// CONCATENATED MODULE: ./node_modules/react-redux/es/index.js
+
+/* concated harmony reexport Provider */
+
+/* unused concated harmony import connectAdvanced */
+
+/* unused concated harmony import ReactReduxContext */
+
+/* concated harmony reexport connect */
+
+/* unused concated harmony import batch */
+
+/* concated harmony reexport useDispatch */
+
+/* unused concated harmony import createDispatchHook */
+
+/* concated harmony reexport useSelector */
+
+/* unused concated harmony import createSelectorHook */
+
+/* unused concated harmony import useStore */
+
+/* unused concated harmony import createStoreHook */
+
+/* unused concated harmony import shallowEqual */
+
+/* 17 */
+
+/*
+  MIT License http://www.opensource.org/licenses/mit-license.php
+  Author Tobias Koppers @sokra
+*/
+
+// css base code, injected by the css-loader
+
+// eslint-disable-next-line func-names
+
+// return the list of modules as css string
+
+// eslint-disable-next-line prefer-destructuring
+
+// Adapted from convert-source-map (MIT)
+
+// import a list of modules into the list
+
+// skip already imported module
+
+// this implementation is not 100% perfect for weird media query combinations
+
+// when a module is imported multiple times with different media queries.
+
+// I hope this will never occur (Hey this way we have smaller bundles)
+
+/* 18 */
+
+// DCE check should happen before ReactDOM bundle executes so that
+
+// DevTools can report bad minification during injection.
+
+/* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */
+
+// Verify that the code above has been dead code eliminated (DCE'd).
+
+// DevTools shouldn't crash React, no matter what.
+
+// We should still report in case we break this code.
+
+/* 19 */
+
+/* 20 */
+
+/* 21 */
+
+/* global window */
+
+/* 22 */
+
+//# sourceMappingURL=stylis.min.js.map
+
+/* 23 */
+
+/* 24 */
+
+/* 25 */
+
+/**
+ * Expose `pathToRegexp`.
+ */
+
+/**
+ * Compile a string to a template function for the path.
+ *
+ * @param  {string}             str
+ * @param  {Object=}            options
+ * @return {!function(Object=, Object=)}
+ */
+
+/**
+ * Prettier encoding of URI path segments.
+ *
+ * @param  {string}
+ * @return {string}
+ */
+
+/**
+ * The main path matching regexp utility.
+ *
+ * @type {RegExp}
+ */
+
+// Match escaped characters that would otherwise appear in future matches.
+
+// This allows the user to escape special characters that won't transform.
+
+// Match Express-style parameters and un-named parameters with a prefix
+
+// and optional suffixes. Matches appear as:
+
+// "/:test(\\d+)?" => ["/", "test", "\d+", undefined, "?", undefined]
+
+// "/route(\\d+)"  => [undefined, undefined, undefined, "\d+", undefined, undefined]
+
+// "/*"            => ["/", undefined, undefined, undefined, undefined, "*"]
+
+/**
+ * Parse a string for the raw tokens.
+ *
+ * @param  {string}  str
+ * @param  {Object=} options
+ * @return {!Array}
+ */
+
+// Ignore already escaped sequences.
+
+// Push the current path onto the tokens.
+
+// Match any characters still remaining.
+
+// If the path exists, push it onto the end.
+
+/**
+ * Encode the asterisk parameter. Similar to `pretty`, but allows slashes.
+ *
+ * @param  {string}
+ * @return {string}
+ */
+
+/**
+ * Expose a method for transforming tokens into the path function.
+ */
+
+// Compile all the patterns before compilation.
+
+// Compile all the tokens into regexps.
+
+// Prepend partial segment prefixes.
+
+/**
+ * Escape a regular expression string.
+ *
+ * @param  {string} str
+ * @return {string}
+ */
+
+/**
+ * Escape the capturing group by escaping special characters and meaning.
+ *
+ * @param  {string} group
+ * @return {string}
+ */
+
+/**
+ * Attach the keys as a property of the regexp.
+ *
+ * @param  {!RegExp} re
+ * @param  {Array}   keys
+ * @return {!RegExp}
+ */
+
+/**
+ * Get the flags for a regexp from the options.
+ *
+ * @param  {Object} options
+ * @return {string}
+ */
+
+/**
+ * Pull out keys from a regexp.
+ *
+ * @param  {!RegExp} path
+ * @param  {!Array}  keys
+ * @return {!RegExp}
+ */
+
+/**
+ * Expose a function for taking tokens and returning a RegExp.
+ *
+ * @param  {!Array}          tokens
+ * @param  {(Array|Object)=} keys
+ * @param  {Object=}         options
+ * @return {!RegExp}
+ */
+
+/** @type {!Object} */
+
+// Iterate over the tokens and create our regexp string.
+
+// In non-strict mode we allow a slash at the end of match. If the path to
+
+// match already ends with a slash, we remove it for consistency. The slash
+
+// is valid at the end of a path match, not in the middle. This is important
+
+// in non-ending mode, where "/test/" shouldn't match "/test//route".
+
+/**
+ * Normalize the given path string, returning a regular expression.
+ *
+ * An empty array can be passed in for the keys, which will hold the
+ * placeholder key descriptions. For example, using `/user/:id`, `keys` will
+ * contain `[{ name: 'id', delimiter: '/', optional: false, repeat: false }]`.
+ *
+ * @param  {(string|RegExp|Array)} path
+ * @param  {(Array|Object)=}       keys
+ * @param  {Object=}               options
+ * @return {!RegExp}
+ */
+
+// Use a negative lookahead to match only capturing groups.
+
+/**
+ * Transform an array into a regexp.
+ *
+ * @param  {!Array}  path
+ * @param  {Array}   keys
+ * @param  {!Object} options
+ * @return {!RegExp}
+ */
+
+/** @type {!Array} */
+
+/**
+ * Create a path regexp from string input.
+ *
+ * @param  {string}  path
+ * @param  {!Array}  keys
+ * @param  {!Object} options
+ * @return {!RegExp}
+ */
+
+/** @type {string} */
+
+/* 26 */
+
+/* 27 */
+
+/* 28 */
+
+/* 29 */
+
+/* 30 */
+
+/*
+object-assign
+(c) Sindre Sorhus
+@license MIT
+*/
+
+/* eslint-disable no-unused-vars */
+
+// Detect buggy property enumeration order in older V8 versions.
+
+// https://bugs.chromium.org/p/v8/issues/detail?id=4118
+
+// eslint-disable-line no-new-wrappers
+
+// https://bugs.chromium.org/p/v8/issues/detail?id=3056
+
+// We don't expect any of the above to throw, but better to be safe.
+
+/* 31 */
+
+// This works in non-strict mode
+
+// This works if eval is allowed (see CSP)
+
+// This works if the window reference is available
+
+// g can still be undefined, but nothing to do about it...
+
+// We return undefined, instead of nothing here, so it's
+
+// easier to handle this case. if(!global) { ...}
+
+/* 32 */
+
+/* 33 */
+
+// property
+
+// @import
+
+// selector
+
+// at-rule
+
+// @font-face, @page
+
+/* 34 */
+
+// SVG-related properties
+
+/* 35 */
+
+/* 36 */
+
+// @flow
+
+/* 37 */
+
+/* 38 */
+
+/* 39 */
+
+// CONCATENATED MODULE: ./node_modules/@emotion/memoize/dist/memoize.browser.esm.js
+
+/* o */
+
+/* n */
+
+/* Z+1 */
+
+// CONCATENATED MODULE: ./node_modules/@emotion/is-prop-valid/dist/is-prop-valid.browser.esm.js
+
+/* 40 */
+
+// CONCATENATED MODULE: ./node_modules/is-what/dist/index.esm.js
+
+/**
+ * Returns the object type of the given payload
+ *
+ * @param {*} payload
+ * @returns {string}
+ */
+
+/**
+ * Returns whether the payload is undefined
+ *
+ * @param {*} payload
+ * @returns {payload is undefined}
+ */
+
+/**
+ * Returns whether the payload is a plain JavaScript object (excluding special classes or objects with other prototypes)
+ *
+ * @param {*} payload
+ * @returns {payload is {[key: string]: any}}
+ */
+
+/**
+ * Returns whether the payload is an array
+ *
+ * @param {*} payload
+ * @returns {payload is undefined}
+ */
+
+/**
+ * Returns whether the payload is a string
+ *
+ * @param {*} payload
+ * @returns {payload is string}
+ */
+
+/**
+ * Returns whether the payload is a Symbol
+ *
+ * @param {*} payload
+ * @returns {payload is symbol}
+ */
+
+/**
+ * Returns whether the payload is a primitive type (eg. Boolean | Null | Undefined | Number | String | Symbol)
+ *
+ * @param {*} payload
+ * @returns {(payload is boolean | null | undefined | number | string | symbol)}
+ */
+
+// CONCATENATED MODULE: ./node_modules/merge-anything/dist/index.esm.js
+
+/* unused harmony export merge */
+
+/* unused harmony export concatArrays */
+
+/**
+ * Merge anything recursively.
+ * Objects get merged, special objects (classes etc.) are re-assigned "as is".
+ * Basic types overwrite objects or other basic types.
+ *
+ * @param {(IConfig | any)} origin
+ * @param {...any[]} newComers
+ * @returns the result
+ */
+
+// work directly on newComer if its not an object
+
+// extend merge rules
+
+// define newObject to merge all values upon
+
+// @ts-ignore
+
+// re-define the origin and newComer as targetVal and newVal
+
+// When newVal is an object do the merge recursively
+
+/* 41 */
+
+/* 42 */
+
+/* 43 */
+
+// Imports
+
+// Module
+
+/* 44 */
+
+/* 45 */
+
+/* 46 */
+
+/* 47 */
+
+// Test for IE <= 9 as proposed by Browserhacks
+
+// @see http://browserhacks.com/#hack-e71d8692f65334173fee715c222cb805
+
+// Tests for existence of standard globals is to allow style-loader
+
+// to operate correctly into non-standard environments
+
+// @see https://github.com/webpack-contrib/style-loader/issues/177
+
+// Special case to return head of iframe instead of iframe itself
+
+// This will throw an exception if access to iframe is blocked
+
+// due to cross-origin restrictions
+
+// istanbul ignore next
+
+/* istanbul ignore next  */
+
+// For old IE
+
+/* istanbul ignore if  */
+
+// istanbul ignore if
+
+// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+
+// tags it will allow on a page
+
+/* 48 */
+
+/** @license React v16.11.0
+ * react.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/* 49 */
+
+/** @license React v16.11.0
+ * react-dom.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/*
+ Modernizr 3.0.0pre (Custom Build) | MIT
+*/
+
+/* 50 */
+
+/* 51 */
+
+/** @license React v0.17.0
+ * scheduler.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/* 52 */
+
+// Important!
+
+// Keep this list in sync with production version in `./factoryWithTypeCheckers.js`.
+
+/* 53 */
+
+/* 54 */
+
+/** @license React v16.11.0
+ * react-is.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/* 55 */
+
+// module.parent = undefined by default
+
+/* 56 */
+
+/* 57 */
+
+/* 58 */
+
+// shim for using process in browser
+
+// cached from whatever global is present so that test runners that stub it
+
+// don't break things.  But we need to wrap it in a try catch in case it is
+
+// wrapped in strict mode code which doesn't define any globals.  It's inside a
+
+// function because try/catches deoptimize in certain engines.
+
+//normal enviroments in sane situations
+
+// if setTimeout wasn't available but was latter defined
+
+// when when somebody has screwed with setTimeout but no I.E. maddness
+
+// When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
+
+// same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
+
+// if clearTimeout wasn't available but was latter defined
+
+// When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
+
+// same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
+
+// Some versions of I.E. have different rules for clearTimeout vs setTimeout
+
+// v8 likes predictible objects
+
+// empty string to avoid regexp issues
+
+/* 59 */
+
+/**
+   * @return {null}
+   */
+
+/* 60 */
+
+/* 61 */
+
+/* 62 */
+
+/* 63 */
+
+/* 64 */
+
+/* 65 */
+
+/* 66 */
+
+/* 67 */
+
+/* 68 */
+
+/* 69 */
+
+/* 70 */
+
+/* 71 */
+
+/* 72 */
+
+/* 73 */
+
+/* 74 */
+
+/* 75 */
+
+/* 76 */
+
+/* 77 */
+
+/* 78 */
+
+/* 79 */
+
+/* 80 */
+
+/* 81 */
+
+/* 82 */
+
+/**
+ * Copyright (c) 2014-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+// If outerFn provided and outerFn.prototype is a Generator, then outerFn.prototype instanceof Generator.
+
+// The ._invoke method unifies the implementations of the .next,
+
+// .throw, and .return methods.
+
+// Be forgiving, per 25.3.3.3.3 of the spec:
+
+// https://people.mozilla.org/~jorendorff/es6-draft.html#sec-generatorresume
+
+// Setting context._sent for legacy support of Babel's
+
+// function.sent implementation.
+
+// If an exception is thrown from innerFn, we leave state ===
+
+// GenStateExecuting and loop back for another invocation.
+
+// Dispatch the exception by looping back around to the
+
+// context.dispatchException(context.arg) call above.
+
+// Call delegate.iterator[context.method](context.arg) and handle the
+
+// result, either by returning a { value, done } result from the
+
+// delegate iterator, or by modifying context.method and context.arg,
+
+// setting context.delegate to null, and returning the ContinueSentinel.
+
+// Try/catch helper to minimize deoptimizations. Returns a completion
+
+// record like context.tryEntries[i].completion. This interface could
+
+// have been (and was previously) designed to take a closure to be
+
+// invoked without arguments, but in all the cases we care about we
+
+// already have an existing method we want to call, so there's no need
+
+// to create a new function object. We can even get away with assuming
+
+// the method takes exactly one argument, since that happens to be true
+
+// in every case, so we don't have to touch the arguments object. The
+
+// only additional allocation required is the completion record, which
+
+// has a stable shape and so hopefully should be cheap to allocate.
+
+// Dummy constructor functions that we use as the .constructor and
+
+// .constructor.prototype properties for functions that return Generator
+
+// objects. For full spec compliance, you may wish to configure your
+
+// minifier not to mangle the names of these two functions.
+
+// This is a polyfill for %IteratorPrototype% for environments that
+
+// don't natively support it.
+
+// This environment has a native %IteratorPrototype%; use it instead
+
+// of the polyfill.
+
+// Helper for defining the .next, .throw, and .return methods of the
+
+// Iterator interface in terms of a single ._invoke method.
+
+// Define the unified helper method that is used to implement .next,
+
+// .throw, and .return (see defineIteratorMethods).
+
+// When a yielded Promise is resolved, its final value becomes
+
+// the .value of the Promise<{value,done}> result for the
+
+// current iteration.
+
+// If a rejected Promise was yielded, throw the rejection back
+
+// into the async generator function so it can be handled there.
+
+// If enqueue has been called before, then we want to wait until
+
+// all previous Promises have been resolved before calling invoke,
+
+// so that results are always delivered in the correct order. If
+
+// enqueue has not been called before, then it is important to
+
+// call invoke immediately, without waiting on a callback to fire,
+
+// so that the async generator function has the opportunity to do
+
+// any necessary setup in a predictable way. This predictability
+
+// is why the Promise constructor synchronously invokes its
+
+// executor callback, and why async functions synchronously
+
+// execute code before the first await. Since we implement simple
+
+// async functions in terms of async generators, it is especially
+
+// important to get this right, even though it requires care.
+
+// Avoid propagating failures to Promises returned by later
+
+// invocations of the iterator.
+
+// A .throw or .return when the delegate iterator has no .throw
+
+// method always terminates the yield* loop.
+
+// Note: ["return"] must be used for ES3 parsing compatibility.
+
+// If the delegate iterator has a return method, give it a
+
+// chance to clean up.
+
+// If maybeInvokeDelegate(context) changed context.method from
+
+// "return" to "throw", let that override the TypeError below.
+
+// Assign the result of the finished delegate to the temporary
+
+// variable specified by delegate.resultName (see delegateYield).
+
+// Resume execution at the desired location (see delegateYield).
+
+// If context.method was "throw" but the delegate handled the
+
+// exception, let the outer generator proceed normally. If
+
+// context.method was "next", forget context.arg since it has been
+
+// "consumed" by the delegate iterator. If context.method was
+
+// "return", allow the original .return call to continue in the
+
+// outer generator.
+
+// The delegate iterator is finished, so forget it and continue with
+
+// the outer generator.
+
+// Define Generator.prototype.{next,throw,return} in terms of the
+
+// unified ._invoke helper method.
+
+// The root entry object (effectively a try statement without a catch
+
+// or a finally block) gives us a place to store values thrown from
+
+// locations where there is no enclosing try statement.
+
+// Return an iterator with no values.
+
+// Regardless of whether this script is executing as a CommonJS module
+
+// or not, return the runtime object so that we can declare the variable
+
+// regeneratorRuntime in the outer scope, which allows this module to be
+
+// injected easily by `bin/regenerator --include-runtime script.js`.
+
+// For the native GeneratorFunction constructor, the best we can
+
+// do is to check its .name property.
+
+// Within the body of any async function, `await x` is transformed to
+
+// `yield regeneratorRuntime.awrap(x)`, so that the runtime can test
+
+// `hasOwn.call(value, "__await")` to determine if the yielded value is
+
+// meant to be awaited.
+
+// Note that simple async functions are implemented on top of
+
+// AsyncIterator objects; they just return a Promise for the value of
+
+// the final result produced by the iterator.
+
+// A Generator should always return itself as the iterator object when the
+
+// @@iterator function is called on it. Some browsers' implementations of the
+
+// iterator prototype chain incorrectly implement this, causing the Generator
+
+// object to not be returned from this call. This ensures that doesn't happen.
+
+// See https://github.com/facebook/regenerator/issues/274 for more details.
+
+// Rather than returning an object with a next method, we keep
+
+// things simple and return the next function itself.
+
+// To avoid creating an additional object, we just hang the .value
+
+// and .done properties off the next function object itself. This
+
+// also ensures that the minifier will not anonymize the function.
+
+// Resetting context._sent for legacy support of Babel's
+
+// Not sure about the optimal order of these conditions:
+
+// If the dispatched exception was caught by a catch block,
+
+// then let that catch block handle the exception normally.
+
+// Exception thrown outside of any try block that could handle
+
+// it, so set the completion value of the entire function to
+
+// throw the exception.
+
+// Ignore the finally entry if control is not jumping to a
+
+// location outside the try/catch block.
+
+// The context.catch method must only be called with a location
+
+// argument that corresponds to a known catch block.
+
+// Deliberately forget the last sent value so that we don't
+
+// accidentally pass it on to the delegate.
+
+// This module should not be running in strict mode, so the above
+
+// assignment should always work unless something is misconfigured. Just
+
+// in case runtime.js accidentally runs in strict mode, we can escape
+
+// strict mode using a global Function call. This could conceivably fail
+
+// if a Content Security Policy forbids using Function, but in that case
+
+// the proper solution is to fix the accidental strict mode problem. If
+
+// you've misconfigured your bundler to force strict mode and applied a
+
+// CSP to forbid Function, and you're not willing to fix either of those
+
+// problems, please detail your unique predicament in a GitHub issue.
+
+/* 83 */
+
+/* 84 */
+
+/* 85 */
+
+// EXTERNAL MODULE: ./node_modules/react-loader-spinner/dist/loader/css/react-spinner-loader.css
+
+// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/inheritsLoose.js
+
+// EXTERNAL MODULE: ./node_modules/prop-types/index.js
+
+// CONCATENATED MODULE: ./node_modules/resolve-pathname/esm/resolve-pathname.js
+
+// About 1.5x faster than the two-arg version of Array#splice()
+
+// This implementation is based heavily on node's url.parse
+
+// to is absolute
+
+// to is relative, drop the filename
+
+// CONCATENATED MODULE: ./node_modules/value-equal/esm/value-equal.js
+
+// CONCATENATED MODULE: ./node_modules/tiny-invariant/dist/tiny-invariant.esm.js
+
+// CONCATENATED MODULE: ./node_modules/history/esm/history.js
+
+// Two-arg form: push(path, state)
+
+// One-arg form: push(location)
+
+// Resolve incomplete/relative pathname relative to current location.
+
+// When there is no prior location and pathname is empty, set it to /
+
+// TODO: If another transition starts while we're still confirming
+
+// the previous one, we may end up in a weird state. Figure out the
+
+// best way to handle this.
+
+// Return false from a transition hook to cancel the transition.
+
+// eslint-disable-line no-alert
+
+/**
+ * Returns true if the HTML5 history API is supported. Taken from Modernizr.
+ *
+ * https://github.com/Modernizr/Modernizr/blob/master/LICENSE
+ * https://github.com/Modernizr/Modernizr/blob/master/feature-detects/history.js
+ * changed to avoid false negatives for Windows Phones: https://github.com/reactjs/react-router/issues/586
+ */
+
+// IE 11 sometimes throws when accessing window.history.state
+
+// See https://github.com/ReactTraining/history/pull/289
+
+/**
+ * Creates a history object that uses the HTML5 history API including
+ * pushState, replaceState, and the popstate event.
+ */
+
+// Ignore extraneous popstate events in WebKit.
+
+/**
+ * Returns true if a given popstate event is an extraneous WebKit event.
+ * Accounts for the fact that Chrome on iOS fires real popstate events
+ * containing undefined state when pressing the back button.
+ */
+
+// TODO: We could probably make this more reliable by
+
+// keeping a list of keys we've seen in sessionStorage.
+
+// Instead, we just default to 0 for keys we don't know.
+
+// Public interface
+
+// We can't use window.location.hash here because it's not
+
+// consistent across browsers - Firefox will pre-decode it!
+
+// Ensure we always have a properly-encoded hash.
+
+// A hashchange doesn't always == location change.
+
+// Ignore this change; we already setState in push/replace.
+
+// keeping a list of paths we've seen in sessionStorage.
+
+// Instead, we just default to 0 for paths we don't know.
+
+// Ensure the hash is encoded properly before doing anything else.
+
+// We cannot tell if a hashchange was caused by a PUSH, so we'd
+
+// rather setState here and ignore the hashchange. The caveat here
+
+// is that other hash histories in the page will consider it a POP.
+
+// We cannot tell if a hashchange was caused by a REPLACE, so we'd
+
+/**
+ * Creates a history object that stores locations in memory.
+ */
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/inheritsLoose.js
+
+// This is a bit of a hack. We have to start listening for location
+
+// changes here in the constructor in case there are any <Redirect>s
+
+// on the initial render. If there are, they will replace/push when
+
+// they mount and since cDM fires in children before parents, we may
+
+// get a new location before the <Router> is mounted.
+
+/**
+ * The public API for a <Router> that stores location in memory.
+ */
+
+/**
+ * The public API for prompting the user before navigating away from a screen.
+ */
+
+/**
+ * Public API for matching a URL pathname to a path.
+ */
+
+// the path used to match
+
+// the matched portion of the URL
+
+// whether or not we matched exactly
+
+/**
+ * The public API for matching a single path and rendering.
+ */
+
+// Preact uses an empty array as children by
+
+// default, so use null if that's the case.
+
+/**
+ * The public top-level API for a "static" <Router>, so-called because it
+ * can't actually change the current location. Instead, it just records
+ * location changes in a context object. Useful mainly in testing and
+ * server-rendering scenarios.
+ */
+
+/**
+ * The public API for rendering the first <Route> that matches.
+ */
+
+// We use React.Children.forEach instead of React.Children.toArray().find()
+
+// here because toArray adds keys to all child elements and we do not want
+
+// to trigger an unmount/remount for two <Route>s that render the same
+
+// component at different URLs.
+
+//# sourceMappingURL=react-router.js.map
+
+// CONCATENATED MODULE: ./node_modules/react-router-dom/esm/react-router-dom.js
+
+/**
+ * The public API for a <Router> that uses HTML5 history.
+ */
+
+/**
+ * The public API for a <Router> that uses window.location.hash.
+ */
+
+// onClick prevented default
+
+// ignore everything but left clicks
+
+// React 15 compat
+
+/**
+ * The public API for rendering a history-aware <a>.
+ */
+
+/**
+ * A <Link> wrapper that knows if it's "active" or not.
+ */
+
+// CONCATENATED MODULE: ./node_modules/redux-persist/es/integration/react.js
+
+// eslint-disable-line import/no-unresolved
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/classCallCheck.js
+
+/* import() */
+
+// CONCATENATED MODULE: ./node_modules/@redux-saga/core/dist/io-427945dd.js
+
+/*eslint-disable no-console*/
+
+// CONCATENATED MODULE: ./node_modules/@redux-saga/deferred/dist/redux-saga-deferred.esm.js
+
+// CONCATENATED MODULE: ./node_modules/@redux-saga/core/dist/redux-saga-core.esm.js
+
+/**
+  Executes a task 'atomically'. Tasks scheduled during this execution will be queued
+  and flushed after this task has finished (assuming the scheduler endup in a released
+  state).
+**/
+
+/**
+  Executes or queues a task depending on the state of the scheduler (`suspended` or `released`)
+**/
+
+/**
+ * Puts the scheduler in a `suspended` state and executes a task immediately.
+ */
+
+/**
+  Puts the scheduler in a `suspended` state. Scheduled tasks will be queued until the
+  scheduler is released.
+**/
+
+/**
+  Puts the scheduler in a `released` state.
+**/
+
+/**
+  Releases the current lock. Executes all queued tasks if the scheduler is in the released state.
+**/
+
+// prettier-ignore
+
+/**
+   Schedule the put in case another saga is holding a lock.
+   The put will be executed atomically. ie nested puts will execute after
+   this put has terminated.
+   **/
+
+// Race Auto cancellation
+
+// prevents unnecessary cancellation
+
+// catch synchronous failures; see #152
+
+// resolve iterator
+
+/* isRoot */
+
+// CPS (ie node style functions) can define their own cancellation logic
+
+// by setting cancel field on the cb
+
+// catch synchronous failures; see #152 and #441
+
+// i.e. a generator function returns an iterator
+
+// do not bubble up synchronous failures for detached forks
+
+// instead create a failed task. See #152 and #441
+
+/**
+ Used to track a parent task and its forks
+ In the fork model, forked tasks are attached by default to their parent
+ We model this using the concept of Parent task && main Task
+ main task is the main flow of the current Generator, the parent tasks is the
+ aggregation of the main tasks + all its forked tasks.
+ Thus the whole model represents an execution tree with multiple branches (vs the
+ linear execution tree in sequential (non parallel) programming)
+
+ A parent tasks has the following semantics
+ - It completes if all its forks either complete or all cancelled
+ - If it's cancelled, all forks are cancelled as well
+ - It aborts if any uncaught error bubbles up from forks
+ - If it completes, the return value is the one returned by the main task
+ **/
+
+// there can be only a single saga error created at any given moment
+
+// we've dumped the saga stack to string and are passing it to user's code
+
+// we know that it won't be needed anymore and we need to clear it
+
+// The status here may be RUNNING or CANCELLED
+
+// If the status is CANCELLED, then we do not need to change it here
+
+/**
+   This may be called by a parent generator to trigger/propagate cancellation
+   cancel all pending tasks (including the main task), then end the current task.
+    Cancellation propagates down to the whole execution tree held by this Parent task
+   It's also propagated to all joiners of this task and their execution tree/joiners
+    Cancellation is noop for terminated/Cancelled tasks tasks
+   **/
+
+// Setting status to CANCELLED does not necessarily mean that the task/iterators are stopped
+
+// effects in the iterator's finally block will still be executed
+
+// Ending with a TASK_CANCEL will propagate the Cancellation to all joiners
+
+/**
+      each effect runner must attach its own logic of cancellation to the provided callback
+      it allows this generator to propagate cancellation downward.
+       ATTENTION! effect runners must setup the cancel logic by setting cb.cancel = [cancelMethod]
+      And the setup must occur before calling the callback
+       This is a sort of inversion of control: called async functions are responsible
+      of completing the flow by calling the provided continuation; while caller functions
+      are responsible for aborting the current flow by calling the attached cancel function
+       Library users can attach their own cancellation logic to promises by defining a
+      promise[CANCEL] method in their returned promises
+      ATTENTION! calling cancel must have no effect on an already completed or cancelled effect
+    **/
+
+// anything else returned as is
+
+/**
+    Tracks the current effect cancellation
+    Each time the generator progresses. calling runEffect will set a new value
+    on it. It allows propagating cancellation to child effects
+  **/
+
+/** Creates a main task to track the main flow */
+
+/**
+    cancellation of the main task. We'll simply resume the Generator with a TASK_CANCEL
+  **/
+
+/**
+    attaches cancellation logic to this task's continuation
+    this will permit cancellation to propagate down the call chain
+  **/
+
+/**
+   Creates a new task descriptor for this generator.
+   A task is the aggregation of it's mainTask and all it's forked tasks.
+   **/
+
+// then return the task descriptor to the caller
+
+// kicks up the generator
+
+/**
+   * This is the generator driver
+   * It's a recursive async/continuation function which calls itself
+   * until the generator terminates or throws
+   * @param {internal commands(TASK_CANCEL | TERMINATE) | any} arg - value, generator will be resumed with.
+   * @param {boolean} isErr - the flag shows if effect finished with an error
+   *
+   * receives either (command | effect result, false) or (any thrown thing, true)
+   */
+
+// user handled the error, we can clear bookkept values
+
+/**
+          getting TASK_CANCEL automatically cancels the main task
+          We can get this value here
+           - By cancelling the parent task manually
+          - By joining a Cancelled task
+        **/
+
+/**
+          Cancels the current effect; this will propagate the cancellation down to any called tasks
+        **/
+
+/**
+          If this Generator has a `return` method then invokes it
+          This will jump to the finally block
+        **/
+
+// We get TERMINATE flag, i.e. by taking from a channel that ended using `take` (and not `takem` used to trap End of channels)
+
+/**
+          This Generator has ended, terminate the main task and notify the fork queue
+        **/
+
+// Completion callback passed to the appropriate effect runner
+
+// defensive measure
+
+// tracks down the current cancel
+
+// setup cancellation logic on the parent cb
+
+// prevents cancelling an already completed effect
+
+// propagates cancel downward
+
+// monitors are expected to have a certain interface, let's fill-in any missing ones
+
+// hit reducers
+
+// CONCATENATED MODULE: ./node_modules/redux-saga/dist/redux-saga-core-npm-proxy.esm.js
+
+// CONCATENATED MODULE: ./src/reducers/CalculatorReducer/index.js
+
+// EXTERNAL MODULE: ./src/reducers/ThemeReducer/actions.js
+
+// CONCATENATED MODULE: ./src/reducers/ThemeReducer/index.js
+
+// CONCATENATED MODULE: ./src/reducers/index.js
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/regenerator/index.js
+
+// CONCATENATED MODULE: ./node_modules/redux-saga/dist/redux-saga-effects-npm-proxy.esm.js
+
+// CONCATENATED MODULE: ./src/sagas/index.js
+
+// CONCATENATED MODULE: ./node_modules/redux-persist/es/constants.js
+
+// CONCATENATED MODULE: ./node_modules/redux-persist/es/stateReconciler/autoMergeLevel1.js
+
+/*
+  autoMergeLevel1: 
+    - merges 1 level of substate
+    - skips substate if already modified
+*/
+
+// only rehydrate if inboundState exists and is an object
+
+// ignore _persist data
+
+// otherwise hard set the new value
+
+// if reducer modifies substate, skip auto rehydration
+
+// CONCATENATED MODULE: ./node_modules/redux-persist/es/createPersistoid.js
+
+// @TODO remove once flow < 0.63 support is no longer required.
+
+// defaults
+
+// initialize stateful values
+
+//if the endState is undefined, no need to persist the existing serialized content
+
+// cleanup any removed keys just before write.
+
+// @TODO add fail handlers (typically storage full)
+
+// return `persistoid`
+
+// add any changed keys to the queue
+
+// is key already queued? noop
+
+// is keyspace ignored? noop
+
+//if any key is missing in the new state which was present in the lastState,
+
+//add it for processing too
+
+// start the time iterator if not running (read: throttle)
+
+// @NOTE in the future this may be exposed via config
+
+// CONCATENATED MODULE: ./node_modules/redux-persist/es/getStoredState.js
+
+// CONCATENATED MODULE: ./node_modules/redux-persist/es/purgeStoredState.js
+
+// CONCATENATED MODULE: ./node_modules/redux-persist/es/persistReducer.js
+
+/*
+  @TODO add validation / handling for:
+  - persisting a reducer which has nested _persist
+  - handling actions that fire before reydrate is called
+*/
+
+// update the persistoid only if we are rehydrated and not paused
+
+// $FlowIgnore need to update State type
+
+// only rehydrate if we are not already sealed
+
+// @NOTE PERSIST can be called multiple times, noop after the first
+
+// @NOTE PERSIST resumes if paused.
+
+// @NOTE only ever create persistoid once, ensure we call it at least once, even if _persist has already been set
+
+// We still need to call the base reducer because there might be nested
+
+// uses of persistReducer which need to be aware of the PERSIST action
+
+// if we have not already handled PERSIST, straight passthrough
+
+// noop on restState if purging
+
+// run base reducer:
+
+// is state modified ? return original : return updated
+
+// CONCATENATED MODULE: ./node_modules/redux-persist/es/stateReconciler/autoMergeLevel2.js
+
+// CONCATENATED MODULE: ./node_modules/redux-persist/es/persistStore.js
+
+// CONCATENATED MODULE: ./node_modules/redux-persist/es/index.js
+
+// EXTERNAL MODULE: ./node_modules/redux-persist/lib/storage/index.js
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/taggedTemplateLiteral.js
+
+// CONCATENATED MODULE: ./src/globalStyles.js
+
+// CONCATENATED MODULE: ./src/index.js
