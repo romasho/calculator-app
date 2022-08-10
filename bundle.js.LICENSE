@@ -671,6 +671,119 @@
 
 /* 7 */
 
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/extends.js
+
+// CONCATENATED MODULE: ./node_modules/resolve-pathname/esm/resolve-pathname.js
+
+// About 1.5x faster than the two-arg version of Array#splice()
+
+// This implementation is based heavily on node's url.parse
+
+// to is absolute
+
+// to is relative, drop the filename
+
+// CONCATENATED MODULE: ./node_modules/value-equal/esm/value-equal.js
+
+// Test for strict equality first.
+
+// Otherwise, if either of them == null they are not equal.
+
+// EXTERNAL MODULE: ./node_modules/tiny-invariant/dist/tiny-invariant.esm.js
+
+// Two-arg form: push(path, state)
+
+// One-arg form: push(location)
+
+// Resolve incomplete/relative pathname relative to current location.
+
+// When there is no prior location and pathname is empty, set it to /
+
+// TODO: If another transition starts while we're still confirming
+
+// the previous one, we may end up in a weird state. Figure out the
+
+// best way to handle this.
+
+// Return false from a transition hook to cancel the transition.
+
+// CONCATENATED MODULE: ./node_modules/history/esm/history.js
+
+/* unused harmony export parsePath */
+
+// eslint-disable-line no-alert
+
+/**
+ * Returns true if the HTML5 history API is supported. Taken from Modernizr.
+ *
+ * https://github.com/Modernizr/Modernizr/blob/master/LICENSE
+ * https://github.com/Modernizr/Modernizr/blob/master/feature-detects/history.js
+ * changed to avoid false negatives for Windows Phones: https://github.com/reactjs/react-router/issues/586
+ */
+
+// IE 11 sometimes throws when accessing window.history.state
+
+// See https://github.com/ReactTraining/history/pull/289
+
+/**
+ * Creates a history object that uses the HTML5 history API including
+ * pushState, replaceState, and the popstate event.
+ */
+
+// Ignore extraneous popstate events in WebKit.
+
+/**
+ * Returns true if a given popstate event is an extraneous WebKit event.
+ * Accounts for the fact that Chrome on iOS fires real popstate events
+ * containing undefined state when pressing the back button.
+ */
+
+// TODO: We could probably make this more reliable by
+
+// keeping a list of keys we've seen in sessionStorage.
+
+// Instead, we just default to 0 for keys we don't know.
+
+// Public interface
+
+// We can't use window.location.hash here because it's not
+
+// consistent across browsers - Firefox will pre-decode it!
+
+// Ensure we always have a properly-encoded hash.
+
+// A hashchange doesn't always == location change.
+
+// Ignore this change; we already setState in push/replace.
+
+// keeping a list of paths we've seen in sessionStorage.
+
+// Instead, we just default to 0 for paths we don't know.
+
+// Ensure the hash is encoded properly before doing anything else.
+
+// We cannot tell if a hashchange was caused by a PUSH, so we'd
+
+// rather setState here and ignore the hashchange. The caveat here
+
+// is that other hash histories in the page will consider it a POP.
+
+// We cannot tell if a hashchange was caused by a REPLACE, so we'd
+
+/**
+ * Creates a history object that stores locations in memory.
+ */
+
+// Mimic the behavior of DOM histories by
+
+// causing a render after a cancelled POP.
+
+/* 8 */
+
+/* 9 */
+
+/* 10 */
+
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -691,13 +804,11 @@
 
 // we don't care about invariant's own frame
 
-/* 8 */
+/* 11 */
 
-/* 9 */
+/* 12 */
 
 // CONCATENATED MODULE: ./src/constants/actions.js
-
-// EXTERNAL MODULE: ./src/constants/router.js
 
 // CONCATENATED MODULE: ./src/constants/index.js
 
@@ -709,26 +820,98 @@
 
 /* concated harmony reexport CALCULATOR_FUNC_ROUTE */
 
-/* 10 */
-
-/* 11 */
-
-/* 12 */
-
-// Color palette
-
 /* 13 */
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/inheritsLoose.js
+
+// EXTERNAL MODULE: ./node_modules/react/index.js
+
+// CONCATENATED MODULE: ./node_modules/react-router/esm/react-router.js
+
+/* unused harmony export MemoryRouter */
+
+/* unused harmony export Prompt */
+
+/* unused harmony export Redirect */
+
+/* unused harmony export StaticRouter */
+
+/* unused harmony export generatePath */
+
+/* unused harmony export useHistory */
+
+/* unused harmony export useLocation */
+
+/* unused harmony export useParams */
+
+/* unused harmony export useRouteMatch */
+
+/* unused harmony export withRouter */
+
+// TODO: Replace with React.createContext once we can assume React 16+
+
+// This is a bit of a hack. We have to start listening for location
+
+// changes here in the constructor in case there are any <Redirect>s
+
+// on the initial render. If there are, they will replace/push when
+
+// they mount and since cDM fires in children before parents, we may
+
+// get a new location before the <Router> is mounted.
+
+/**
+ * The public API for a <Router> that stores location in memory.
+ */
+
+/**
+ * The public API for prompting the user before navigating away from a screen.
+ */
+
+/**
+ * Public API for matching a URL pathname to a path.
+ */
+
+// the path used to match
+
+// the matched portion of the URL
+
+// whether or not we matched exactly
+
+/**
+ * The public API for matching a single path and rendering.
+ */
+
+// Preact uses an empty array as children by
+
+// default, so use null if that's the case.
+
+/**
+ * The public top-level API for a "static" <Router>, so-called because it
+ * can't actually change the current location. Instead, it just records
+ * location changes in a context object. Useful mainly in testing and
+ * server-rendering scenarios.
+ */
+
+/**
+ * The public API for rendering the first <Route> that matches.
+ */
+
+// We use React.Children.forEach instead of React.Children.toArray().find()
+
+// here because toArray adds keys to all child elements and we do not want
+
+// to trigger an unmount/remount for two <Route>s that render the same
+
+// component at different URLs.
 
 /* 14 */
 
 /* 15 */
 
-/**
- * Copyright 2015, Yahoo! Inc.
- * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
- */
-
 /* 16 */
+
+// Color palette
 
 /* 17 */
 
@@ -736,7 +919,42 @@
 
 /* 19 */
 
-// EXTERNAL MODULE: ./node_modules/react/index.js
+/* unused harmony export HashRouter */
+
+/* unused harmony export Link */
+
+/**
+ * The public API for a <Router> that uses window.location.hash.
+ */
+
+// onClick prevented default
+
+// ignore everything but left clicks
+
+// React 15 compat
+
+/**
+ * The public API for rendering a history-aware <a>.
+ */
+
+/**
+ * A <Link> wrapper that knows if it's "active" or not.
+ */
+
+/* 20 */
+
+/**
+ * Copyright 2015, Yahoo! Inc.
+ * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
+ */
+
+/* 21 */
+
+/* 22 */
+
+/* 23 */
+
+/* 24 */
 
 // CONCATENATED MODULE: ./node_modules/react-redux/es/utils/batch.js
 
@@ -745,8 +963,6 @@
 // Allow injecting another batching function later
 
 // CONCATENATED MODULE: ./node_modules/react-redux/es/components/Provider.js
-
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/extends.js
 
 // React currently throws a warning when using useLayoutEffect on the server.
 
@@ -1142,7 +1358,7 @@
 
 /* unused concated harmony import shallowEqual */
 
-/* 20 */
+/* 25 */
 
 /*
   MIT License http://www.opensource.org/licenses/mit-license.php
@@ -1169,7 +1385,7 @@
 
 // I hope this will never occur (Hey this way we have smaller bundles)
 
-/* 21 */
+/* 26 */
 
 // DCE check should happen before ReactDOM bundle executes so that
 
@@ -1183,23 +1399,23 @@
 
 // We should still report in case we break this code.
 
-/* 22 */
-
-/* 23 */
-
-/* 24 */
-
-/* global window */
-
-/* 25 */
-
-//# sourceMappingURL=stylis.min.js.map
-
-/* 26 */
-
 /* 27 */
 
 /* 28 */
+
+/* 29 */
+
+/* global window */
+
+/* 30 */
+
+//# sourceMappingURL=stylis.min.js.map
+
+/* 31 */
+
+/* 32 */
+
+/* 33 */
 
 /**
  * Expose `pathToRegexp`.
@@ -1368,45 +1584,323 @@
 
 /** @type {string} */
 
-/* 29 */
+/* 34 */
 
-/* 30 */
+/* 35 */
 
-/* 31 */
+// CONCATENATED MODULE: ./node_modules/@redux-saga/symbols/dist/redux-saga-symbols.esm.js
+
+// CONCATENATED MODULE: ./node_modules/@redux-saga/core/dist/io-427945dd.js
+
+/*eslint-disable no-console*/
+
+// CONCATENATED MODULE: ./node_modules/@redux-saga/deferred/dist/redux-saga-deferred.esm.js
+
+// CONCATENATED MODULE: ./node_modules/@redux-saga/core/dist/redux-saga-core.esm.js
+
+/**
+  Executes a task 'atomically'. Tasks scheduled during this execution will be queued
+  and flushed after this task has finished (assuming the scheduler endup in a released
+  state).
+**/
+
+/**
+  Executes or queues a task depending on the state of the scheduler (`suspended` or `released`)
+**/
+
+/**
+ * Puts the scheduler in a `suspended` state and executes a task immediately.
+ */
+
+/**
+  Puts the scheduler in a `suspended` state. Scheduled tasks will be queued until the
+  scheduler is released.
+**/
+
+/**
+  Puts the scheduler in a `released` state.
+**/
+
+/**
+  Releases the current lock. Executes all queued tasks if the scheduler is in the released state.
+**/
+
+// prettier-ignore
+
+/**
+   Schedule the put in case another saga is holding a lock.
+   The put will be executed atomically. ie nested puts will execute after
+   this put has terminated.
+   **/
+
+// Race Auto cancellation
+
+// prevents unnecessary cancellation
+
+// catch synchronous failures; see #152
+
+// resolve iterator
+
+/* isRoot */
+
+// CPS (ie node style functions) can define their own cancellation logic
+
+// by setting cancel field on the cb
+
+// catch synchronous failures; see #152 and #441
+
+// i.e. a generator function returns an iterator
+
+// do not bubble up synchronous failures for detached forks
+
+// instead create a failed task. See #152 and #441
+
+/**
+ Used to track a parent task and its forks
+ In the fork model, forked tasks are attached by default to their parent
+ We model this using the concept of Parent task && main Task
+ main task is the main flow of the current Generator, the parent tasks is the
+ aggregation of the main tasks + all its forked tasks.
+ Thus the whole model represents an execution tree with multiple branches (vs the
+ linear execution tree in sequential (non parallel) programming)
+
+ A parent tasks has the following semantics
+ - It completes if all its forks either complete or all cancelled
+ - If it's cancelled, all forks are cancelled as well
+ - It aborts if any uncaught error bubbles up from forks
+ - If it completes, the return value is the one returned by the main task
+ **/
+
+// there can be only a single saga error created at any given moment
+
+// we've dumped the saga stack to string and are passing it to user's code
+
+// we know that it won't be needed anymore and we need to clear it
+
+// The status here may be RUNNING or CANCELLED
+
+// If the status is CANCELLED, then we do not need to change it here
+
+/**
+   This may be called by a parent generator to trigger/propagate cancellation
+   cancel all pending tasks (including the main task), then end the current task.
+    Cancellation propagates down to the whole execution tree held by this Parent task
+   It's also propagated to all joiners of this task and their execution tree/joiners
+    Cancellation is noop for terminated/Cancelled tasks tasks
+   **/
+
+// Setting status to CANCELLED does not necessarily mean that the task/iterators are stopped
+
+// effects in the iterator's finally block will still be executed
+
+// Ending with a TASK_CANCEL will propagate the Cancellation to all joiners
+
+/**
+      each effect runner must attach its own logic of cancellation to the provided callback
+      it allows this generator to propagate cancellation downward.
+       ATTENTION! effect runners must setup the cancel logic by setting cb.cancel = [cancelMethod]
+      And the setup must occur before calling the callback
+       This is a sort of inversion of control: called async functions are responsible
+      of completing the flow by calling the provided continuation; while caller functions
+      are responsible for aborting the current flow by calling the attached cancel function
+       Library users can attach their own cancellation logic to promises by defining a
+      promise[CANCEL] method in their returned promises
+      ATTENTION! calling cancel must have no effect on an already completed or cancelled effect
+    **/
+
+// anything else returned as is
+
+/**
+    Tracks the current effect cancellation
+    Each time the generator progresses. calling runEffect will set a new value
+    on it. It allows propagating cancellation to child effects
+  **/
+
+/** Creates a main task to track the main flow */
+
+/**
+    cancellation of the main task. We'll simply resume the Generator with a TASK_CANCEL
+  **/
+
+/**
+    attaches cancellation logic to this task's continuation
+    this will permit cancellation to propagate down the call chain
+  **/
+
+/**
+   Creates a new task descriptor for this generator.
+   A task is the aggregation of it's mainTask and all it's forked tasks.
+   **/
+
+// then return the task descriptor to the caller
+
+// kicks up the generator
+
+/**
+   * This is the generator driver
+   * It's a recursive async/continuation function which calls itself
+   * until the generator terminates or throws
+   * @param {internal commands(TASK_CANCEL | TERMINATE) | any} arg - value, generator will be resumed with.
+   * @param {boolean} isErr - the flag shows if effect finished with an error
+   *
+   * receives either (command | effect result, false) or (any thrown thing, true)
+   */
+
+// user handled the error, we can clear bookkept values
+
+/**
+          getting TASK_CANCEL automatically cancels the main task
+          We can get this value here
+           - By cancelling the parent task manually
+          - By joining a Cancelled task
+        **/
+
+/**
+          Cancels the current effect; this will propagate the cancellation down to any called tasks
+        **/
+
+/**
+          If this Generator has a `return` method then invokes it
+          This will jump to the finally block
+        **/
+
+// We get TERMINATE flag, i.e. by taking from a channel that ended using `take` (and not `takem` used to trap End of channels)
+
+/**
+          This Generator has ended, terminate the main task and notify the fork queue
+        **/
+
+// Completion callback passed to the appropriate effect runner
+
+// defensive measure
+
+// tracks down the current cancel
+
+// setup cancellation logic on the parent cb
+
+// prevents cancelling an already completed effect
+
+// propagates cancel downward
+
+// monitors are expected to have a certain interface, let's fill-in any missing ones
+
+// hit reducers
+
+// CONCATENATED MODULE: ./node_modules/redux-saga/dist/redux-saga-core-npm-proxy.esm.js
+
+// CONCATENATED MODULE: ./src/reducers/CalculatorReducer/index.js
+
+// EXTERNAL MODULE: ./src/reducers/ThemeReducer/actions.js
+
+// EXTERNAL MODULE: ./src/theme.js
+
+// CONCATENATED MODULE: ./src/reducers/ThemeReducer/index.js
+
+// CONCATENATED MODULE: ./src/reducers/index.js
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/regenerator/index.js
+
+// CONCATENATED MODULE: ./node_modules/redux-saga/dist/redux-saga-effects-npm-proxy.esm.js
+
+// CONCATENATED MODULE: ./src/sagas/index.js
+
+// CONCATENATED MODULE: ./node_modules/redux-persist/es/constants.js
+
+// CONCATENATED MODULE: ./node_modules/redux-persist/es/stateReconciler/autoMergeLevel1.js
 
 /*
-object-assign
-(c) Sindre Sorhus
-@license MIT
+  autoMergeLevel1: 
+    - merges 1 level of substate
+    - skips substate if already modified
 */
 
-/* eslint-disable no-unused-vars */
+// only rehydrate if inboundState exists and is an object
 
-// Detect buggy property enumeration order in older V8 versions.
+// ignore _persist data
 
-// https://bugs.chromium.org/p/v8/issues/detail?id=4118
+// otherwise hard set the new value
 
-// eslint-disable-line no-new-wrappers
+// if reducer modifies substate, skip auto rehydration
 
-// https://bugs.chromium.org/p/v8/issues/detail?id=3056
+// CONCATENATED MODULE: ./node_modules/redux-persist/es/createPersistoid.js
 
-// We don't expect any of the above to throw, but better to be safe.
+// @TODO remove once flow < 0.63 support is no longer required.
 
-/* 32 */
+// defaults
 
-// This works in non-strict mode
+// initialize stateful values
 
-// This works if eval is allowed (see CSP)
+//if the endState is undefined, no need to persist the existing serialized content
 
-// This works if the window reference is available
+// cleanup any removed keys just before write.
 
-// g can still be undefined, but nothing to do about it...
+// @TODO add fail handlers (typically storage full)
 
-// We return undefined, instead of nothing here, so it's
+// return `persistoid`
 
-// easier to handle this case. if(!global) { ...}
+// add any changed keys to the queue
 
-/* 33 */
+// is key already queued? noop
+
+// is keyspace ignored? noop
+
+//if any key is missing in the new state which was present in the lastState,
+
+//add it for processing too
+
+// start the time iterator if not running (read: throttle)
+
+// @NOTE in the future this may be exposed via config
+
+// CONCATENATED MODULE: ./node_modules/redux-persist/es/getStoredState.js
+
+// CONCATENATED MODULE: ./node_modules/redux-persist/es/purgeStoredState.js
+
+// CONCATENATED MODULE: ./node_modules/redux-persist/es/persistReducer.js
+
+/*
+  @TODO add validation / handling for:
+  - persisting a reducer which has nested _persist
+  - handling actions that fire before reydrate is called
+*/
+
+// update the persistoid only if we are rehydrated and not paused
+
+// $FlowIgnore need to update State type
+
+// only rehydrate if we are not already sealed
+
+// @NOTE PERSIST can be called multiple times, noop after the first
+
+// @NOTE PERSIST resumes if paused.
+
+// @NOTE only ever create persistoid once, ensure we call it at least once, even if _persist has already been set
+
+// We still need to call the base reducer because there might be nested
+
+// uses of persistReducer which need to be aware of the PERSIST action
+
+// if we have not already handled PERSIST, straight passthrough
+
+// noop on restState if purging
+
+// run base reducer:
+
+// is state modified ? return original : return updated
+
+// CONCATENATED MODULE: ./node_modules/redux-persist/es/stateReconciler/autoMergeLevel2.js
+
+// CONCATENATED MODULE: ./node_modules/redux-persist/es/persistStore.js
+
+// CONCATENATED MODULE: ./node_modules/redux-persist/es/index.js
+
+// EXTERNAL MODULE: ./node_modules/redux-persist/lib/storage/index.js
+
+// CONCATENATED MODULE: ./src/store.js
+
+/* 36 */
+
+/* 37 */
 
 // shim for using process in browser
 
@@ -1440,11 +1934,49 @@ object-assign
 
 // empty string to avoid regexp issues
 
-/* 34 */
+/* 38 */
 
-/* 35 */
+/*
+object-assign
+(c) Sindre Sorhus
+@license MIT
+*/
 
-/* 36 */
+/* eslint-disable no-unused-vars */
+
+// Detect buggy property enumeration order in older V8 versions.
+
+// https://bugs.chromium.org/p/v8/issues/detail?id=4118
+
+// eslint-disable-line no-new-wrappers
+
+// https://bugs.chromium.org/p/v8/issues/detail?id=3056
+
+// We don't expect any of the above to throw, but better to be safe.
+
+/* 39 */
+
+// This works in non-strict mode
+
+// This works if eval is allowed (see CSP)
+
+// This works if the window reference is available
+
+// g can still be undefined, but nothing to do about it...
+
+// We return undefined, instead of nothing here, so it's
+
+// easier to handle this case. if(!global) { ...}
+
+/* 40 */
+
+/* 41 */
+
+// eslint-disable-line import/no-unresolved
+
+/* 42 */
+
+/* 43 */
 
 // property
 
@@ -1456,21 +1988,29 @@ object-assign
 
 // @font-face, @page
 
-/* 37 */
+/* 44 */
 
 // SVG-related properties
 
-/* 38 */
+/* 45 */
 
-/* 39 */
+/* 46 */
+
+/* 47 */
 
 // @flow
 
-/* 40 */
+/* 48 */
 
-/* 41 */
+/* 49 */
 
-/* 42 */
+/* 50 */
+
+/* 51 */
+
+/* import() */
+
+/* 52 */
 
 // CONCATENATED MODULE: ./node_modules/@emotion/memoize/dist/memoize.browser.esm.js
 
@@ -1482,7 +2022,7 @@ object-assign
 
 // CONCATENATED MODULE: ./node_modules/@emotion/is-prop-valid/dist/is-prop-valid.browser.esm.js
 
-/* 43 */
+/* 53 */
 
 // CONCATENATED MODULE: ./node_modules/is-what/dist/index.esm.js
 
@@ -1563,23 +2103,25 @@ object-assign
 
 // When newVal is an object do the merge recursively
 
-/* 44 */
+/* 54 */
 
-/* 45 */
+/* 55 */
 
-/* 46 */
+/* 56 */
+
+/* 57 */
 
 // Imports
 
 // Module
 
-/* 47 */
+/* 58 */
 
-/* 48 */
+/* 59 */
 
-/* 49 */
+/* 60 */
 
-/* 50 */
+/* 61 */
 
 // Test for IE <= 9 as proposed by Browserhacks
 
@@ -1611,7 +2153,7 @@ object-assign
 
 // tags it will allow on a page
 
-/* 51 */
+/* 62 */
 
 /** @license React v16.11.0
  * react.production.min.js
@@ -1622,7 +2164,7 @@ object-assign
  * LICENSE file in the root directory of this source tree.
  */
 
-/* 52 */
+/* 63 */
 
 /** @license React v16.11.0
  * react-dom.production.min.js
@@ -1637,9 +2179,9 @@ object-assign
  Modernizr 3.0.0pre (Custom Build) | MIT
 */
 
-/* 53 */
+/* 64 */
 
-/* 54 */
+/* 65 */
 
 /** @license React v0.17.0
  * scheduler.production.min.js
@@ -1650,15 +2192,15 @@ object-assign
  * LICENSE file in the root directory of this source tree.
  */
 
-/* 55 */
+/* 66 */
 
 // Important!
 
 // Keep this list in sync with production version in `./factoryWithTypeCheckers.js`.
 
-/* 56 */
+/* 67 */
 
-/* 57 */
+/* 68 */
 
 /** @license React v16.11.0
  * react-is.production.min.js
@@ -1669,41 +2211,19 @@ object-assign
  * LICENSE file in the root directory of this source tree.
  */
 
-/* 58 */
+/* 69 */
 
 // module.parent = undefined by default
-
-/* 59 */
-
-/* 60 */
-
-/* 61 */
-
-/**
-   * @return {null}
-   */
-
-/* 62 */
-
-/* 63 */
-
-/* 64 */
-
-/* 65 */
-
-/* 66 */
-
-/* 67 */
-
-/* 68 */
-
-/* 69 */
 
 /* 70 */
 
 /* 71 */
 
 /* 72 */
+
+/**
+   * @return {null}
+   */
 
 /* 73 */
 
@@ -1728,6 +2248,28 @@ object-assign
 /* 83 */
 
 /* 84 */
+
+/* 85 */
+
+/* 86 */
+
+/* 87 */
+
+/* 88 */
+
+/* 89 */
+
+/* 90 */
+
+/* 91 */
+
+/* 92 */
+
+/* 93 */
+
+/* 94 */
+
+/* 95 */
 
 /**
  * Copyright (c) 2014-present, Facebook, Inc.
@@ -1986,510 +2528,6 @@ object-assign
 
 // problems, please detail your unique predicament in a GitHub issue.
 
-/* 85 */
+/* 96 */
 
-/* 86 */
-
-/* 87 */
-
-// EXTERNAL MODULE: ./node_modules/react-loader-spinner/dist/loader/css/react-spinner-loader.css
-
-// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/inheritsLoose.js
-
-// EXTERNAL MODULE: ./node_modules/prop-types/index.js
-
-// CONCATENATED MODULE: ./node_modules/resolve-pathname/esm/resolve-pathname.js
-
-// About 1.5x faster than the two-arg version of Array#splice()
-
-// This implementation is based heavily on node's url.parse
-
-// to is absolute
-
-// to is relative, drop the filename
-
-// CONCATENATED MODULE: ./node_modules/value-equal/esm/value-equal.js
-
-// CONCATENATED MODULE: ./node_modules/tiny-invariant/dist/tiny-invariant.esm.js
-
-// CONCATENATED MODULE: ./node_modules/history/esm/history.js
-
-// Two-arg form: push(path, state)
-
-// One-arg form: push(location)
-
-// Resolve incomplete/relative pathname relative to current location.
-
-// When there is no prior location and pathname is empty, set it to /
-
-// TODO: If another transition starts while we're still confirming
-
-// the previous one, we may end up in a weird state. Figure out the
-
-// best way to handle this.
-
-// Return false from a transition hook to cancel the transition.
-
-// eslint-disable-line no-alert
-
-/**
- * Returns true if the HTML5 history API is supported. Taken from Modernizr.
- *
- * https://github.com/Modernizr/Modernizr/blob/master/LICENSE
- * https://github.com/Modernizr/Modernizr/blob/master/feature-detects/history.js
- * changed to avoid false negatives for Windows Phones: https://github.com/reactjs/react-router/issues/586
- */
-
-// IE 11 sometimes throws when accessing window.history.state
-
-// See https://github.com/ReactTraining/history/pull/289
-
-/**
- * Creates a history object that uses the HTML5 history API including
- * pushState, replaceState, and the popstate event.
- */
-
-// Ignore extraneous popstate events in WebKit.
-
-/**
- * Returns true if a given popstate event is an extraneous WebKit event.
- * Accounts for the fact that Chrome on iOS fires real popstate events
- * containing undefined state when pressing the back button.
- */
-
-// TODO: We could probably make this more reliable by
-
-// keeping a list of keys we've seen in sessionStorage.
-
-// Instead, we just default to 0 for keys we don't know.
-
-// Public interface
-
-// We can't use window.location.hash here because it's not
-
-// consistent across browsers - Firefox will pre-decode it!
-
-// Ensure we always have a properly-encoded hash.
-
-// A hashchange doesn't always == location change.
-
-// Ignore this change; we already setState in push/replace.
-
-// keeping a list of paths we've seen in sessionStorage.
-
-// Instead, we just default to 0 for paths we don't know.
-
-// Ensure the hash is encoded properly before doing anything else.
-
-// We cannot tell if a hashchange was caused by a PUSH, so we'd
-
-// rather setState here and ignore the hashchange. The caveat here
-
-// is that other hash histories in the page will consider it a POP.
-
-// We cannot tell if a hashchange was caused by a REPLACE, so we'd
-
-/**
- * Creates a history object that stores locations in memory.
- */
-
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/inheritsLoose.js
-
-// This is a bit of a hack. We have to start listening for location
-
-// changes here in the constructor in case there are any <Redirect>s
-
-// on the initial render. If there are, they will replace/push when
-
-// they mount and since cDM fires in children before parents, we may
-
-// get a new location before the <Router> is mounted.
-
-/**
- * The public API for a <Router> that stores location in memory.
- */
-
-/**
- * The public API for prompting the user before navigating away from a screen.
- */
-
-/**
- * Public API for matching a URL pathname to a path.
- */
-
-// the path used to match
-
-// the matched portion of the URL
-
-// whether or not we matched exactly
-
-/**
- * The public API for matching a single path and rendering.
- */
-
-// Preact uses an empty array as children by
-
-// default, so use null if that's the case.
-
-/**
- * The public top-level API for a "static" <Router>, so-called because it
- * can't actually change the current location. Instead, it just records
- * location changes in a context object. Useful mainly in testing and
- * server-rendering scenarios.
- */
-
-/**
- * The public API for rendering the first <Route> that matches.
- */
-
-// We use React.Children.forEach instead of React.Children.toArray().find()
-
-// here because toArray adds keys to all child elements and we do not want
-
-// to trigger an unmount/remount for two <Route>s that render the same
-
-// component at different URLs.
-
-//# sourceMappingURL=react-router.js.map
-
-// CONCATENATED MODULE: ./node_modules/react-router-dom/esm/react-router-dom.js
-
-/**
- * The public API for a <Router> that uses HTML5 history.
- */
-
-/**
- * The public API for a <Router> that uses window.location.hash.
- */
-
-// onClick prevented default
-
-// ignore everything but left clicks
-
-// React 15 compat
-
-/**
- * The public API for rendering a history-aware <a>.
- */
-
-/**
- * A <Link> wrapper that knows if it's "active" or not.
- */
-
-// CONCATENATED MODULE: ./node_modules/redux-persist/es/integration/react.js
-
-// eslint-disable-line import/no-unresolved
-
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/classCallCheck.js
-
-/* import() */
-
-// CONCATENATED MODULE: ./node_modules/@redux-saga/core/dist/io-427945dd.js
-
-/*eslint-disable no-console*/
-
-// CONCATENATED MODULE: ./node_modules/@redux-saga/deferred/dist/redux-saga-deferred.esm.js
-
-// CONCATENATED MODULE: ./node_modules/@redux-saga/core/dist/redux-saga-core.esm.js
-
-/**
-  Executes a task 'atomically'. Tasks scheduled during this execution will be queued
-  and flushed after this task has finished (assuming the scheduler endup in a released
-  state).
-**/
-
-/**
-  Executes or queues a task depending on the state of the scheduler (`suspended` or `released`)
-**/
-
-/**
- * Puts the scheduler in a `suspended` state and executes a task immediately.
- */
-
-/**
-  Puts the scheduler in a `suspended` state. Scheduled tasks will be queued until the
-  scheduler is released.
-**/
-
-/**
-  Puts the scheduler in a `released` state.
-**/
-
-/**
-  Releases the current lock. Executes all queued tasks if the scheduler is in the released state.
-**/
-
-// prettier-ignore
-
-/**
-   Schedule the put in case another saga is holding a lock.
-   The put will be executed atomically. ie nested puts will execute after
-   this put has terminated.
-   **/
-
-// Race Auto cancellation
-
-// prevents unnecessary cancellation
-
-// catch synchronous failures; see #152
-
-// resolve iterator
-
-/* isRoot */
-
-// CPS (ie node style functions) can define their own cancellation logic
-
-// by setting cancel field on the cb
-
-// catch synchronous failures; see #152 and #441
-
-// i.e. a generator function returns an iterator
-
-// do not bubble up synchronous failures for detached forks
-
-// instead create a failed task. See #152 and #441
-
-/**
- Used to track a parent task and its forks
- In the fork model, forked tasks are attached by default to their parent
- We model this using the concept of Parent task && main Task
- main task is the main flow of the current Generator, the parent tasks is the
- aggregation of the main tasks + all its forked tasks.
- Thus the whole model represents an execution tree with multiple branches (vs the
- linear execution tree in sequential (non parallel) programming)
-
- A parent tasks has the following semantics
- - It completes if all its forks either complete or all cancelled
- - If it's cancelled, all forks are cancelled as well
- - It aborts if any uncaught error bubbles up from forks
- - If it completes, the return value is the one returned by the main task
- **/
-
-// there can be only a single saga error created at any given moment
-
-// we've dumped the saga stack to string and are passing it to user's code
-
-// we know that it won't be needed anymore and we need to clear it
-
-// The status here may be RUNNING or CANCELLED
-
-// If the status is CANCELLED, then we do not need to change it here
-
-/**
-   This may be called by a parent generator to trigger/propagate cancellation
-   cancel all pending tasks (including the main task), then end the current task.
-    Cancellation propagates down to the whole execution tree held by this Parent task
-   It's also propagated to all joiners of this task and their execution tree/joiners
-    Cancellation is noop for terminated/Cancelled tasks tasks
-   **/
-
-// Setting status to CANCELLED does not necessarily mean that the task/iterators are stopped
-
-// effects in the iterator's finally block will still be executed
-
-// Ending with a TASK_CANCEL will propagate the Cancellation to all joiners
-
-/**
-      each effect runner must attach its own logic of cancellation to the provided callback
-      it allows this generator to propagate cancellation downward.
-       ATTENTION! effect runners must setup the cancel logic by setting cb.cancel = [cancelMethod]
-      And the setup must occur before calling the callback
-       This is a sort of inversion of control: called async functions are responsible
-      of completing the flow by calling the provided continuation; while caller functions
-      are responsible for aborting the current flow by calling the attached cancel function
-       Library users can attach their own cancellation logic to promises by defining a
-      promise[CANCEL] method in their returned promises
-      ATTENTION! calling cancel must have no effect on an already completed or cancelled effect
-    **/
-
-// anything else returned as is
-
-/**
-    Tracks the current effect cancellation
-    Each time the generator progresses. calling runEffect will set a new value
-    on it. It allows propagating cancellation to child effects
-  **/
-
-/** Creates a main task to track the main flow */
-
-/**
-    cancellation of the main task. We'll simply resume the Generator with a TASK_CANCEL
-  **/
-
-/**
-    attaches cancellation logic to this task's continuation
-    this will permit cancellation to propagate down the call chain
-  **/
-
-/**
-   Creates a new task descriptor for this generator.
-   A task is the aggregation of it's mainTask and all it's forked tasks.
-   **/
-
-// then return the task descriptor to the caller
-
-// kicks up the generator
-
-/**
-   * This is the generator driver
-   * It's a recursive async/continuation function which calls itself
-   * until the generator terminates or throws
-   * @param {internal commands(TASK_CANCEL | TERMINATE) | any} arg - value, generator will be resumed with.
-   * @param {boolean} isErr - the flag shows if effect finished with an error
-   *
-   * receives either (command | effect result, false) or (any thrown thing, true)
-   */
-
-// user handled the error, we can clear bookkept values
-
-/**
-          getting TASK_CANCEL automatically cancels the main task
-          We can get this value here
-           - By cancelling the parent task manually
-          - By joining a Cancelled task
-        **/
-
-/**
-          Cancels the current effect; this will propagate the cancellation down to any called tasks
-        **/
-
-/**
-          If this Generator has a `return` method then invokes it
-          This will jump to the finally block
-        **/
-
-// We get TERMINATE flag, i.e. by taking from a channel that ended using `take` (and not `takem` used to trap End of channels)
-
-/**
-          This Generator has ended, terminate the main task and notify the fork queue
-        **/
-
-// Completion callback passed to the appropriate effect runner
-
-// defensive measure
-
-// tracks down the current cancel
-
-// setup cancellation logic on the parent cb
-
-// prevents cancelling an already completed effect
-
-// propagates cancel downward
-
-// monitors are expected to have a certain interface, let's fill-in any missing ones
-
-// hit reducers
-
-// CONCATENATED MODULE: ./node_modules/redux-saga/dist/redux-saga-core-npm-proxy.esm.js
-
-// CONCATENATED MODULE: ./src/reducers/CalculatorReducer/index.js
-
-// EXTERNAL MODULE: ./src/reducers/ThemeReducer/actions.js
-
-// CONCATENATED MODULE: ./src/reducers/ThemeReducer/index.js
-
-// CONCATENATED MODULE: ./src/reducers/index.js
-
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/regenerator/index.js
-
-// CONCATENATED MODULE: ./node_modules/redux-saga/dist/redux-saga-effects-npm-proxy.esm.js
-
-// CONCATENATED MODULE: ./src/sagas/index.js
-
-// CONCATENATED MODULE: ./node_modules/redux-persist/es/constants.js
-
-// CONCATENATED MODULE: ./node_modules/redux-persist/es/stateReconciler/autoMergeLevel1.js
-
-/*
-  autoMergeLevel1: 
-    - merges 1 level of substate
-    - skips substate if already modified
-*/
-
-// only rehydrate if inboundState exists and is an object
-
-// ignore _persist data
-
-// otherwise hard set the new value
-
-// if reducer modifies substate, skip auto rehydration
-
-// CONCATENATED MODULE: ./node_modules/redux-persist/es/createPersistoid.js
-
-// @TODO remove once flow < 0.63 support is no longer required.
-
-// defaults
-
-// initialize stateful values
-
-//if the endState is undefined, no need to persist the existing serialized content
-
-// cleanup any removed keys just before write.
-
-// @TODO add fail handlers (typically storage full)
-
-// return `persistoid`
-
-// add any changed keys to the queue
-
-// is key already queued? noop
-
-// is keyspace ignored? noop
-
-//if any key is missing in the new state which was present in the lastState,
-
-//add it for processing too
-
-// start the time iterator if not running (read: throttle)
-
-// @NOTE in the future this may be exposed via config
-
-// CONCATENATED MODULE: ./node_modules/redux-persist/es/getStoredState.js
-
-// CONCATENATED MODULE: ./node_modules/redux-persist/es/purgeStoredState.js
-
-// CONCATENATED MODULE: ./node_modules/redux-persist/es/persistReducer.js
-
-/*
-  @TODO add validation / handling for:
-  - persisting a reducer which has nested _persist
-  - handling actions that fire before reydrate is called
-*/
-
-// update the persistoid only if we are rehydrated and not paused
-
-// $FlowIgnore need to update State type
-
-// only rehydrate if we are not already sealed
-
-// @NOTE PERSIST can be called multiple times, noop after the first
-
-// @NOTE PERSIST resumes if paused.
-
-// @NOTE only ever create persistoid once, ensure we call it at least once, even if _persist has already been set
-
-// We still need to call the base reducer because there might be nested
-
-// uses of persistReducer which need to be aware of the PERSIST action
-
-// if we have not already handled PERSIST, straight passthrough
-
-// noop on restState if purging
-
-// run base reducer:
-
-// is state modified ? return original : return updated
-
-// CONCATENATED MODULE: ./node_modules/redux-persist/es/stateReconciler/autoMergeLevel2.js
-
-// CONCATENATED MODULE: ./node_modules/redux-persist/es/persistStore.js
-
-// CONCATENATED MODULE: ./node_modules/redux-persist/es/index.js
-
-// EXTERNAL MODULE: ./node_modules/redux-persist/lib/storage/index.js
-
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/taggedTemplateLiteral.js
-
-// CONCATENATED MODULE: ./src/globalStyles.js
-
-// CONCATENATED MODULE: ./src/index.js
+/* 97 */
