@@ -80,13 +80,13 @@
 
 /* 1 */
 
-/* harmony export (binding) */
-
-/* 2 */
-
 // By explicitly using `prop-types` you are opting into new production behavior.
 
 // http://fb.me/prop-types-in-prod
+
+/* 2 */
+
+/* harmony export (binding) */
 
 /* 3 */
 
@@ -439,7 +439,13 @@
 
 /* 5 */
 
+/* 6 */
+
 /* unused harmony export __DO_NOT_USE__ActionTypes */
+
+/* unused harmony export applyMiddleware */
+
+/* unused harmony export compose */
 
 /**
  * These are private action types reserved by Redux.
@@ -634,41 +640,6 @@
  * function.
  */
 
-/**
- * Composes single-argument functions from right to left. The rightmost
- * function can take multiple arguments as it provides the signature for
- * the resulting composite function.
- *
- * @param {...Function} funcs The functions to compose.
- * @returns {Function} A function obtained by composing the argument functions
- * from right to left. For example, compose(f, g, h) is identical to doing
- * (...args) => f(g(h(...args))).
- */
-
-/**
- * Creates a store enhancer that applies middleware to the dispatch method
- * of the Redux store. This is handy for a variety of tasks, such as expressing
- * asynchronous actions in a concise manner, or logging every action payload.
- *
- * See `redux-thunk` package as an example of the Redux middleware.
- *
- * Because middleware is potentially asynchronous, this should be the first
- * store enhancer in the composition chain.
- *
- * Note that each middleware will be given the `dispatch` and `getState` functions
- * as named arguments.
- *
- * @param {...Function} middlewares The middleware chain to be applied.
- * @returns {Function} A store enhancer applying the middleware.
- */
-
-/*
- * This is a dummy function to check if the function name has been altered by minification.
- * If the function has been minified and NODE_ENV !== 'production', warn the user.
- */
-
-/* 6 */
-
 /* 7 */
 
 /**
@@ -721,18 +692,20 @@
 
 /* 15 */
 
+/* 16 */
+
 /**
  * Copyright 2015, Yahoo! Inc.
  * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
  */
-
-/* 16 */
 
 /* 17 */
 
 /* 18 */
 
 /* 19 */
+
+/* 20 */
 
 // EXTERNAL MODULE: ./node_modules/react/index.js
 
@@ -1140,7 +1113,7 @@
 
 /* unused concated harmony import shallowEqual */
 
-/* 20 */
+/* 21 */
 
 /*
   MIT License http://www.opensource.org/licenses/mit-license.php
@@ -1167,7 +1140,7 @@
 
 // I hope this will never occur (Hey this way we have smaller bundles)
 
-/* 21 */
+/* 22 */
 
 // DCE check should happen before ReactDOM bundle executes so that
 
@@ -1181,23 +1154,23 @@
 
 // We should still report in case we break this code.
 
-/* 22 */
-
 /* 23 */
 
 /* 24 */
 
-/* global window */
-
 /* 25 */
 
-//# sourceMappingURL=stylis.min.js.map
+/* global window */
 
 /* 26 */
+
+//# sourceMappingURL=stylis.min.js.map
 
 /* 27 */
 
 /* 28 */
+
+/* 29 */
 
 /**
  * Expose `pathToRegexp`.
@@ -1366,8 +1339,6 @@
 
 /** @type {string} */
 
-/* 29 */
-
 /* 30 */
 
 /* 31 */
@@ -1432,8 +1403,6 @@ object-assign
 
 /* 39 */
 
-/* 40 */
-
 // CONCATENATED MODULE: ./node_modules/@emotion/memoize/dist/memoize.browser.esm.js
 
 /* o */
@@ -1444,7 +1413,7 @@ object-assign
 
 // CONCATENATED MODULE: ./node_modules/@emotion/is-prop-valid/dist/is-prop-valid.browser.esm.js
 
-/* 41 */
+/* 40 */
 
 // CONCATENATED MODULE: ./node_modules/is-what/dist/index.esm.js
 
@@ -1525,23 +1494,23 @@ object-assign
 
 // When newVal is an object do the merge recursively
 
+/* 41 */
+
 /* 42 */
 
 /* 43 */
 
-/* 44 */
-
 // Imports
 
 // Module
+
+/* 44 */
 
 /* 45 */
 
 /* 46 */
 
 /* 47 */
-
-/* 48 */
 
 // Test for IE <= 9 as proposed by Browserhacks
 
@@ -1573,7 +1542,7 @@ object-assign
 
 // tags it will allow on a page
 
-/* 49 */
+/* 48 */
 
 /** @license React v16.11.0
  * react.production.min.js
@@ -1584,7 +1553,7 @@ object-assign
  * LICENSE file in the root directory of this source tree.
  */
 
-/* 50 */
+/* 49 */
 
 /** @license React v16.11.0
  * react-dom.production.min.js
@@ -1599,9 +1568,9 @@ object-assign
  Modernizr 3.0.0pre (Custom Build) | MIT
 */
 
-/* 51 */
+/* 50 */
 
-/* 52 */
+/* 51 */
 
 /** @license React v0.17.0
  * scheduler.production.min.js
@@ -1612,15 +1581,15 @@ object-assign
  * LICENSE file in the root directory of this source tree.
  */
 
-/* 53 */
+/* 52 */
 
 // Important!
 
 // Keep this list in sync with production version in `./factoryWithTypeCheckers.js`.
 
-/* 54 */
+/* 53 */
 
-/* 55 */
+/* 54 */
 
 /** @license React v16.11.0
  * react-is.production.min.js
@@ -1631,15 +1600,11 @@ object-assign
  * LICENSE file in the root directory of this source tree.
  */
 
-/* 56 */
+/* 55 */
 
 // module.parent = undefined by default
 
-/* 57 */
-
-/* 58 */
-
-/* 59 */
+/* 56 */
 
 // shim for using process in browser
 
@@ -1673,11 +1638,17 @@ object-assign
 
 // empty string to avoid regexp issues
 
-/* 60 */
+/* 57 */
 
 /**
    * @return {null}
    */
+
+/* 58 */
+
+/* 59 */
+
+/* 60 */
 
 /* 61 */
 
@@ -1725,268 +1696,7 @@ object-assign
 
 /* 83 */
 
-/**
- * Copyright (c) 2014-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-// If outerFn provided and outerFn.prototype is a Generator, then outerFn.prototype instanceof Generator.
-
-// The ._invoke method unifies the implementations of the .next,
-
-// .throw, and .return methods.
-
-// Be forgiving, per 25.3.3.3.3 of the spec:
-
-// https://people.mozilla.org/~jorendorff/es6-draft.html#sec-generatorresume
-
-// Setting context._sent for legacy support of Babel's
-
-// function.sent implementation.
-
-// If an exception is thrown from innerFn, we leave state ===
-
-// GenStateExecuting and loop back for another invocation.
-
-// Dispatch the exception by looping back around to the
-
-// context.dispatchException(context.arg) call above.
-
-// Call delegate.iterator[context.method](context.arg) and handle the
-
-// result, either by returning a { value, done } result from the
-
-// delegate iterator, or by modifying context.method and context.arg,
-
-// setting context.delegate to null, and returning the ContinueSentinel.
-
-// Try/catch helper to minimize deoptimizations. Returns a completion
-
-// record like context.tryEntries[i].completion. This interface could
-
-// have been (and was previously) designed to take a closure to be
-
-// invoked without arguments, but in all the cases we care about we
-
-// already have an existing method we want to call, so there's no need
-
-// to create a new function object. We can even get away with assuming
-
-// the method takes exactly one argument, since that happens to be true
-
-// in every case, so we don't have to touch the arguments object. The
-
-// only additional allocation required is the completion record, which
-
-// has a stable shape and so hopefully should be cheap to allocate.
-
-// Dummy constructor functions that we use as the .constructor and
-
-// .constructor.prototype properties for functions that return Generator
-
-// objects. For full spec compliance, you may wish to configure your
-
-// minifier not to mangle the names of these two functions.
-
-// This is a polyfill for %IteratorPrototype% for environments that
-
-// don't natively support it.
-
-// This environment has a native %IteratorPrototype%; use it instead
-
-// of the polyfill.
-
-// Helper for defining the .next, .throw, and .return methods of the
-
-// Iterator interface in terms of a single ._invoke method.
-
-// Define the unified helper method that is used to implement .next,
-
-// .throw, and .return (see defineIteratorMethods).
-
-// When a yielded Promise is resolved, its final value becomes
-
-// the .value of the Promise<{value,done}> result for the
-
-// current iteration.
-
-// If a rejected Promise was yielded, throw the rejection back
-
-// into the async generator function so it can be handled there.
-
-// If enqueue has been called before, then we want to wait until
-
-// all previous Promises have been resolved before calling invoke,
-
-// so that results are always delivered in the correct order. If
-
-// enqueue has not been called before, then it is important to
-
-// call invoke immediately, without waiting on a callback to fire,
-
-// so that the async generator function has the opportunity to do
-
-// any necessary setup in a predictable way. This predictability
-
-// is why the Promise constructor synchronously invokes its
-
-// executor callback, and why async functions synchronously
-
-// execute code before the first await. Since we implement simple
-
-// async functions in terms of async generators, it is especially
-
-// important to get this right, even though it requires care.
-
-// Avoid propagating failures to Promises returned by later
-
-// invocations of the iterator.
-
-// A .throw or .return when the delegate iterator has no .throw
-
-// method always terminates the yield* loop.
-
-// Note: ["return"] must be used for ES3 parsing compatibility.
-
-// If the delegate iterator has a return method, give it a
-
-// chance to clean up.
-
-// If maybeInvokeDelegate(context) changed context.method from
-
-// "return" to "throw", let that override the TypeError below.
-
-// Assign the result of the finished delegate to the temporary
-
-// variable specified by delegate.resultName (see delegateYield).
-
-// Resume execution at the desired location (see delegateYield).
-
-// If context.method was "throw" but the delegate handled the
-
-// exception, let the outer generator proceed normally. If
-
-// context.method was "next", forget context.arg since it has been
-
-// "consumed" by the delegate iterator. If context.method was
-
-// "return", allow the original .return call to continue in the
-
-// outer generator.
-
-// The delegate iterator is finished, so forget it and continue with
-
-// the outer generator.
-
-// Define Generator.prototype.{next,throw,return} in terms of the
-
-// unified ._invoke helper method.
-
-// The root entry object (effectively a try statement without a catch
-
-// or a finally block) gives us a place to store values thrown from
-
-// locations where there is no enclosing try statement.
-
-// Return an iterator with no values.
-
-// Regardless of whether this script is executing as a CommonJS module
-
-// or not, return the runtime object so that we can declare the variable
-
-// regeneratorRuntime in the outer scope, which allows this module to be
-
-// injected easily by `bin/regenerator --include-runtime script.js`.
-
-// For the native GeneratorFunction constructor, the best we can
-
-// do is to check its .name property.
-
-// Within the body of any async function, `await x` is transformed to
-
-// `yield regeneratorRuntime.awrap(x)`, so that the runtime can test
-
-// `hasOwn.call(value, "__await")` to determine if the yielded value is
-
-// meant to be awaited.
-
-// Note that simple async functions are implemented on top of
-
-// AsyncIterator objects; they just return a Promise for the value of
-
-// the final result produced by the iterator.
-
-// A Generator should always return itself as the iterator object when the
-
-// @@iterator function is called on it. Some browsers' implementations of the
-
-// iterator prototype chain incorrectly implement this, causing the Generator
-
-// object to not be returned from this call. This ensures that doesn't happen.
-
-// See https://github.com/facebook/regenerator/issues/274 for more details.
-
-// Rather than returning an object with a next method, we keep
-
-// things simple and return the next function itself.
-
-// To avoid creating an additional object, we just hang the .value
-
-// and .done properties off the next function object itself. This
-
-// also ensures that the minifier will not anonymize the function.
-
-// Resetting context._sent for legacy support of Babel's
-
-// Not sure about the optimal order of these conditions:
-
-// If the dispatched exception was caught by a catch block,
-
-// then let that catch block handle the exception normally.
-
-// Exception thrown outside of any try block that could handle
-
-// it, so set the completion value of the entire function to
-
-// throw the exception.
-
-// Ignore the finally entry if control is not jumping to a
-
-// location outside the try/catch block.
-
-// The context.catch method must only be called with a location
-
-// argument that corresponds to a known catch block.
-
-// Deliberately forget the last sent value so that we don't
-
-// accidentally pass it on to the delegate.
-
-// This module should not be running in strict mode, so the above
-
-// assignment should always work unless something is misconfigured. Just
-
-// in case runtime.js accidentally runs in strict mode, we can escape
-
-// strict mode using a global Function call. This could conceivably fail
-
-// if a Content Security Policy forbids using Function, but in that case
-
-// the proper solution is to fix the accidental strict mode problem. If
-
-// you've misconfigured your bundler to force strict mode and applied a
-
-// CSP to forbid Function, and you're not willing to fix either of those
-
-// problems, please detail your unique predicament in a GitHub issue.
-
 /* 84 */
-
-/* 85 */
-
-/* 86 */
 
 // EXTERNAL MODULE: ./node_modules/react-loader-spinner/dist/loader/css/react-spinner-loader.css
 
@@ -2176,223 +1886,15 @@ object-assign
 
 // eslint-disable-line import/no-unresolved
 
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/classCallCheck.js
+// EXTERNAL MODULE: ./src/constants/index.js + 2 modules
 
 /* import() */
 
-// CONCATENATED MODULE: ./node_modules/@redux-saga/core/dist/io-427945dd.js
+// EXTERNAL MODULE: ./src/theme.js
 
-/*eslint-disable no-console*/
+// CONCATENATED MODULE: ./src/globalStyles.js
 
-// CONCATENATED MODULE: ./node_modules/@redux-saga/deferred/dist/redux-saga-deferred.esm.js
-
-// CONCATENATED MODULE: ./node_modules/@redux-saga/core/dist/redux-saga-core.esm.js
-
-/**
-  Executes a task 'atomically'. Tasks scheduled during this execution will be queued
-  and flushed after this task has finished (assuming the scheduler endup in a released
-  state).
-**/
-
-/**
-  Executes or queues a task depending on the state of the scheduler (`suspended` or `released`)
-**/
-
-/**
- * Puts the scheduler in a `suspended` state and executes a task immediately.
- */
-
-/**
-  Puts the scheduler in a `suspended` state. Scheduled tasks will be queued until the
-  scheduler is released.
-**/
-
-/**
-  Puts the scheduler in a `released` state.
-**/
-
-/**
-  Releases the current lock. Executes all queued tasks if the scheduler is in the released state.
-**/
-
-// prettier-ignore
-
-/**
-   Schedule the put in case another saga is holding a lock.
-   The put will be executed atomically. ie nested puts will execute after
-   this put has terminated.
-   **/
-
-// Race Auto cancellation
-
-// prevents unnecessary cancellation
-
-// catch synchronous failures; see #152
-
-// resolve iterator
-
-/* isRoot */
-
-// CPS (ie node style functions) can define their own cancellation logic
-
-// by setting cancel field on the cb
-
-// catch synchronous failures; see #152 and #441
-
-// i.e. a generator function returns an iterator
-
-// do not bubble up synchronous failures for detached forks
-
-// instead create a failed task. See #152 and #441
-
-/**
- Used to track a parent task and its forks
- In the fork model, forked tasks are attached by default to their parent
- We model this using the concept of Parent task && main Task
- main task is the main flow of the current Generator, the parent tasks is the
- aggregation of the main tasks + all its forked tasks.
- Thus the whole model represents an execution tree with multiple branches (vs the
- linear execution tree in sequential (non parallel) programming)
-
- A parent tasks has the following semantics
- - It completes if all its forks either complete or all cancelled
- - If it's cancelled, all forks are cancelled as well
- - It aborts if any uncaught error bubbles up from forks
- - If it completes, the return value is the one returned by the main task
- **/
-
-// there can be only a single saga error created at any given moment
-
-// we've dumped the saga stack to string and are passing it to user's code
-
-// we know that it won't be needed anymore and we need to clear it
-
-// The status here may be RUNNING or CANCELLED
-
-// If the status is CANCELLED, then we do not need to change it here
-
-/**
-   This may be called by a parent generator to trigger/propagate cancellation
-   cancel all pending tasks (including the main task), then end the current task.
-    Cancellation propagates down to the whole execution tree held by this Parent task
-   It's also propagated to all joiners of this task and their execution tree/joiners
-    Cancellation is noop for terminated/Cancelled tasks tasks
-   **/
-
-// Setting status to CANCELLED does not necessarily mean that the task/iterators are stopped
-
-// effects in the iterator's finally block will still be executed
-
-// Ending with a TASK_CANCEL will propagate the Cancellation to all joiners
-
-/**
-      each effect runner must attach its own logic of cancellation to the provided callback
-      it allows this generator to propagate cancellation downward.
-       ATTENTION! effect runners must setup the cancel logic by setting cb.cancel = [cancelMethod]
-      And the setup must occur before calling the callback
-       This is a sort of inversion of control: called async functions are responsible
-      of completing the flow by calling the provided continuation; while caller functions
-      are responsible for aborting the current flow by calling the attached cancel function
-       Library users can attach their own cancellation logic to promises by defining a
-      promise[CANCEL] method in their returned promises
-      ATTENTION! calling cancel must have no effect on an already completed or cancelled effect
-    **/
-
-// anything else returned as is
-
-/**
-    Tracks the current effect cancellation
-    Each time the generator progresses. calling runEffect will set a new value
-    on it. It allows propagating cancellation to child effects
-  **/
-
-/** Creates a main task to track the main flow */
-
-/**
-    cancellation of the main task. We'll simply resume the Generator with a TASK_CANCEL
-  **/
-
-/**
-    attaches cancellation logic to this task's continuation
-    this will permit cancellation to propagate down the call chain
-  **/
-
-/**
-   Creates a new task descriptor for this generator.
-   A task is the aggregation of it's mainTask and all it's forked tasks.
-   **/
-
-// then return the task descriptor to the caller
-
-// kicks up the generator
-
-/**
-   * This is the generator driver
-   * It's a recursive async/continuation function which calls itself
-   * until the generator terminates or throws
-   * @param {internal commands(TASK_CANCEL | TERMINATE) | any} arg - value, generator will be resumed with.
-   * @param {boolean} isErr - the flag shows if effect finished with an error
-   *
-   * receives either (command | effect result, false) or (any thrown thing, true)
-   */
-
-// user handled the error, we can clear bookkept values
-
-/**
-          getting TASK_CANCEL automatically cancels the main task
-          We can get this value here
-           - By cancelling the parent task manually
-          - By joining a Cancelled task
-        **/
-
-/**
-          Cancels the current effect; this will propagate the cancellation down to any called tasks
-        **/
-
-/**
-          If this Generator has a `return` method then invokes it
-          This will jump to the finally block
-        **/
-
-// We get TERMINATE flag, i.e. by taking from a channel that ended using `take` (and not `takem` used to trap End of channels)
-
-/**
-          This Generator has ended, terminate the main task and notify the fork queue
-        **/
-
-// Completion callback passed to the appropriate effect runner
-
-// defensive measure
-
-// tracks down the current cancel
-
-// setup cancellation logic on the parent cb
-
-// prevents cancelling an already completed effect
-
-// propagates cancel downward
-
-// monitors are expected to have a certain interface, let's fill-in any missing ones
-
-// hit reducers
-
-// CONCATENATED MODULE: ./node_modules/redux-saga/dist/redux-saga-core-npm-proxy.esm.js
-
-// CONCATENATED MODULE: ./src/reducers/CalculatorReducer/index.js
-
-// EXTERNAL MODULE: ./src/reducers/ThemeReducer/actions.js
-
-// CONCATENATED MODULE: ./src/reducers/ThemeReducer/index.js
-
-// CONCATENATED MODULE: ./src/reducers/index.js
-
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/regenerator/index.js
-
-// CONCATENATED MODULE: ./node_modules/redux-saga/dist/redux-saga-effects-npm-proxy.esm.js
-
-// CONCATENATED MODULE: ./src/sagas/index.js
-
-// CONCATENATED MODULE: ./node_modules/redux-persist/es/constants.js
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/classCallCheck.js
 
 // CONCATENATED MODULE: ./node_modules/redux-persist/es/stateReconciler/autoMergeLevel1.js
 
@@ -2484,8 +1986,12 @@ object-assign
 
 // EXTERNAL MODULE: ./node_modules/redux-persist/lib/storage/index.js
 
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/taggedTemplateLiteral.js
+// CONCATENATED MODULE: ./src/reducers/CalculatorReducer/index.js
 
-// CONCATENATED MODULE: ./src/globalStyles.js
+// EXTERNAL MODULE: ./src/reducers/settingsReducer/actions.js
+
+// CONCATENATED MODULE: ./src/reducers/settingsReducer/index.js
+
+// CONCATENATED MODULE: ./src/reducers/index.js
 
 // CONCATENATED MODULE: ./src/index.js

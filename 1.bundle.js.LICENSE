@@ -1,14 +1,14 @@
 /***/
 
-/* harmony export (binding) */
-
-/* harmony import */
-
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/classCallCheck.js
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/extends.js
 
 /*#__PURE__*/
 
 // CONCATENATED MODULE: ./src/components/Button/index.jsx
+
+/* harmony export (binding) */
+
+/* harmony import */
 
 // EXTERNAL MODULE: ./node_modules/react/index.js
 
@@ -20,7 +20,7 @@
 
 // EXTERNAL MODULE: ./src/components/ControlPanel/class/components.js
 
-// EXTERNAL MODULE: ./src/components/Button/index.jsx + 1 modules
+// EXTERNAL MODULE: ./src/constants/index.js + 2 modules
 
 // CONCATENATED MODULE: ./src/components/ControlPanel/func/index.jsx
 
