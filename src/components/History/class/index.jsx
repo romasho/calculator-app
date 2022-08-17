@@ -50,13 +50,15 @@ class History extends React.Component {
             </HistoryExpression>
           ))}
         </DivWithCustomScroll>
-        <Button
-          onClick={this.props.handleChangeHide}
-          height="25px"
-          width="25px"
-          size="16px"
-          value={showFullHistory ? '↑' : '↓'}
-        />
+        {historyWithCurExpression.length > 8 && (
+          <Button
+            onClick={this.props.handleChangeHide}
+            height="25px"
+            width="25px"
+            size="16px"
+            value={showFullHistory ? '↑' : '↓'}
+          />
+        )}
       </CustomDiv>
     )
   }

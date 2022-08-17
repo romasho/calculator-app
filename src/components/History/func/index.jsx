@@ -62,13 +62,15 @@ export default function History() {
           </HistoryExpression>
         ))}
       </DivWithCustomScroll>
-      <Button
-        onClick={handleChangeHide}
-        height="25px"
-        width="25px"
-        size="16px"
-        value={showFullHistory ? '↑' : '↓'}
-      />
+      {historyWithCurExpression.length > 8 && (
+        <Button
+          onClick={handleChangeHide}
+          height="25px"
+          width="25px"
+          size="16px"
+          value={showFullHistory ? '↑' : '↓'}
+        />
+      )}
     </CustomDiv>
   )
 }
