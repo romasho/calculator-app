@@ -11,6 +11,10 @@ export default function History() {
   const state = useSelector(
     state => state.calculatorReducer,
   )
+
+  const isVisible = useSelector(
+    state => state.themeReducer.isHistoryVisible,
+  )
   const {
     firstOperand,
     secondOperand,
@@ -19,16 +23,18 @@ export default function History() {
   } = state
 
   return (
-    <CustomDiv>
+    <CustomDiv visible={isVisible}>
       <Heading>History</Heading>
       <DivWithCustomScroll>
         {[
-          `${firstOperand} ${operator ||
-            ''} ${secondOperand || ''}`,
+          {
+            expression: `${firstOperand} ${operator} ${secondOperand}`,
+            id: 'firstElem',
+          },
           ...history,
-        ].map((el, index) => (
-          <HistoryExpression key={index}>
-            {el}
+        ].map(el => (
+          <HistoryExpression key={el.id}>
+            {el.expression}
           </HistoryExpression>
         ))}
       </DivWithCustomScroll>

@@ -6,6 +6,7 @@ export const ADD_NUMBER = 'ADD_NUMBER'
 export const CLEAR_HISTORY = 'CLEAR_HISTORY'
 export const ADD_DOT = 'ADD_DOT'
 export const BRACKETS = 'BRACKETS'
+export const SWITCH_SIGN = 'SWITCH_SIGN'
 
 export function clear() {
   return { type: CLEAR }
@@ -37,4 +38,8 @@ export function clearHistory() {
 
 export function brackets(bracket) {
   return { type: BRACKETS, bracket }
+}
+
+export function switchSign() {
+  return { type: SWITCH_SIGN }
 }

@@ -7,6 +7,7 @@ export const CustomDiv = styled.div`
   border-left: 2px solid
     ${({ theme }) => theme.colors.secondaryText};
   margin: 1rem 0;
+  display: ${props => (props.visible ? 'block' : 'none')};
 `
 
 export const DivWithCustomScroll = styled.div`

@@ -1,25 +1,35 @@
 export * from './actions'
 export * from './router'
 
+export const CLEAR = 'clear'
+export const NUMBER = 'number'
+export const OPERATOR = 'operator'
+export const EQUAL = 'equal'
+export const DOT = 'dot'
+export const BRACKET = 'bracket'
+export const CE = 'clearEntry'
+export const SWITCH = 'switch'
+
 export const buttons = [
-  { value: 'C', type: 'clear' },
-  { value: '7', type: 'number' },
-  { value: '8', type: 'number' },
-  { value: '9', type: 'number' },
-  { value: '*', type: 'operators' },
-  { value: '-', type: 'operators' },
-  { value: '4', type: 'number' },
-  { value: '5', type: 'number' },
-  { value: '6', type: 'number' },
-  { value: '/', type: 'operators' },
-  { value: '+', type: 'operators' },
-  { value: '1', type: 'number' },
-  { value: '2', type: 'number' },
-  { value: '3', type: 'number' },
-  { value: '=', type: 'equal' },
-  { value: '.', type: 'dot' },
-  { value: '(', type: 'bracket' },
-  { value: '0', type: 'number' },
-  { value: ')', type: 'bracket' },
-  { value: 'CE', type: 'clearEntry' },
+  { value: 'C', type: CLEAR },
+  { value: '7', type: NUMBER },
+  { value: '8', type: NUMBER },
+  { value: '9', type: NUMBER },
+  { value: '*', type: OPERATOR },
+  { value: '-', type: OPERATOR },
+  { value: '4', type: NUMBER },
+  { value: '5', type: NUMBER },
+  { value: '6', type: NUMBER },
+  { value: '/', type: OPERATOR },
+  { value: '+', type: OPERATOR },
+  { value: '1', type: NUMBER },
+  { value: '2', type: NUMBER },
+  { value: '3', type: NUMBER },
+  { value: '=', type: EQUAL },
+  { value: '.', type: DOT },
+  { value: '(', type: BRACKET },
+  { value: '0', type: NUMBER },
+  { value: ')', type: BRACKET },
+  { value: 'CE', type: CE },
+  { value: '+/-', type: SWITCH },
 ]

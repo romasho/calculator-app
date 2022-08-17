@@ -13,32 +13,45 @@ import {
   addNumber,
   addDot,
   brackets,
+  switchSign,
 } from '@/reducers/CalculatorReducer/actions'
+import {
+  CLEAR,
+  NUMBER,
+  OPERATOR,
+  EQUAL,
+  DOT,
+  BRACKET,
+  CE,
+  SWITCH,
+} from '@/constants/index'
 
 class ControlPanel extends React.Component {
   updateStr(el) {
-    console.log('click')
     switch (el.type) {
-      case 'clear':
+      case CLEAR:
         this.props.clearDisplay()
         break
-      case 'clearEntry':
+      case CE:
         this.props.clearEnteryDisplay()
         break
-      case 'equal':
+      case EQUAL:
         this.props.calculateExpression()
         break
-      case 'operators':
+      case OPERATOR:
         this.props.addOperator(el.value)
         break
-      case 'number':
+      case NUMBER:
         this.props.addNumber(el.value)
         break
-      case 'dot':
+      case DOT:
         this.props.addDot()
         break
-      case 'bracket':
+      case BRACKET:
         this.props.addBrackets(el.value)
+        break
+      case SWITCH:
+        this.props.switchSign()
         break
       default:
         this.props.addNumber(el.value)
@@ -52,9 +65,7 @@ class ControlPanel extends React.Component {
           <Button
             key={el.value}
             value={el.value}
-            onClick={() => {
-              this.updateStr(el)
-            }}
+            onClick={() => this.updateStr(el)}
           />
         ))}
       </ButtonsContainer>
@@ -84,6 +95,9 @@ const mapDispatchToProps = dispatch => {
     },
     addBrackets: bracket => {
       dispatch(brackets(bracket))
+    },
+    switchSign: () => {
+      dispatch(switchSign())
     },
   }
 }

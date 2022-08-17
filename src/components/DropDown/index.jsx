@@ -46,7 +46,7 @@ export default class DropDown extends React.Component {
             key={el}
             onClick={() => {
               this.props.onHandleChange(el)
-              this.props.onHandleIsActive()
+              this.props.clickOutside()
             }}>
             {el} theme
           </Li>

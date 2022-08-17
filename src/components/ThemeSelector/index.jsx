@@ -8,7 +8,8 @@ import {
 } from '@/reducers/ThemeReducer/actions'
 
 import DropDown from '../DropDown'
-import { Button, Triangle } from './components'
+import BaseButton from '../BaseButton'
+import { Triangle } from './components'
 
 const themes = ['Dark', 'Light']
 
@@ -20,7 +21,7 @@ class ThemeSelector extends React.Component {
       isActive: false,
       selected: this.props.themeName,
     }
-    this.handleIsActive = this.handleIsActive.bind(this)
+    this.onClick = this.onClick.bind(this)
     this.handleChange = this.handleChange.bind(this)
   }
 
@@ -31,7 +32,7 @@ class ThemeSelector extends React.Component {
     this.setState({ selected: theme })
   }
 
-  handleIsActive() {
+  onClick() {
     this.setState(state => {
       return { isActive: !state.isActive }
     })
@@ -40,9 +41,9 @@ class ThemeSelector extends React.Component {
   render() {
     return (
       <div style={{ position: 'relative' }}>
-        <Button light onClick={this.handleIsActive}>
+        <BaseButton light handleClick={this.onClick}>
           {this.state.selected} theme
-        </Button>
+        </BaseButton>
         <Triangle />
         {this.state.isActive && (
           <DropDown
@@ -52,7 +53,7 @@ class ThemeSelector extends React.Component {
               this.setState({ isActive: false })
             }
             onHandleChange={this.handleChange}
-            onHandleIsActive={this.handleIsActive}
+            clickOutside={this.onClick}
           />
         )}
       </div>

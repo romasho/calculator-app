@@ -16,16 +16,18 @@ class History extends React.Component {
       history,
     } = this.props
     return (
-      <CustomDiv>
+      <CustomDiv visible={this.props.isHistoryVisible}>
         <Heading>History</Heading>
         <DivWithCustomScroll>
           {[
-            `${firstOperand} ${operator ||
-              ''} ${secondOperand || ''}`,
+            {
+              expression: `${firstOperand} ${operator} ${secondOperand}`,
+              id: 'firstElem',
+            },
             ...history,
-          ].map((el, index) => (
-            <HistoryExpression key={index}>
-              {el}
+          ].map(el => (
+            <HistoryExpression key={el.id}>
+              {el.expression}
             </HistoryExpression>
           ))}
         </DivWithCustomScroll>
@@ -40,6 +42,7 @@ const mapStateToProps = state => {
     secondOperand: state.calculatorReducer.secondOperand,
     operator: state.calculatorReducer.operator,
     history: state.calculatorReducer.history,
+    isHistoryVisible: state.themeReducer.isHistoryVisible,
   }
 }
 

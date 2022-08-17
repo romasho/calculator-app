@@ -1,12 +1,17 @@
 import {
   APPLY_DARK_THEME,
   APPLY_LIGHT_THEME,
+  TOGGLE_VISIBILITY,
 } from './actions'
 
 import theme from '@/theme'
 
 export default function themeReducer(
-  state = { ...theme, themeName: 'Light' },
+  state = {
+    ...theme,
+    themeName: 'Light',
+    isHistoryVisible: true,
+  },
   action,
 ) {
   switch (action.type) {
@@ -27,6 +32,11 @@ export default function themeReducer(
           ...state.colors,
           ...action.payload,
         },
+      }
+    case TOGGLE_VISIBILITY:
+      return {
+        ...state,
+        isHistoryVisible: !state.isHistoryVisible,
       }
     default:
       return state

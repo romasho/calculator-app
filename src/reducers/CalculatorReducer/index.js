@@ -7,6 +7,7 @@ import {
   CLEAR_HISTORY,
   ADD_DOT,
   BRACKETS,
+  SWITCH_SIGN,
 } from './actions'
 import {
   AddCommand,
@@ -42,7 +43,7 @@ function swithCommand(str, operand) {
 const initialState = {
   firstOperand: 0,
   secondOperand: '',
-  operator: null,
+  operator: '',
   history: [],
   counterBrackets: 0,
   bracketExpression: '',
@@ -125,7 +126,10 @@ export default function calculatorReducer(
           operator: action.opertor,
           bracketExpression: '',
           history: [
-            state.bracketExpression,
+            {
+              expression: state.bracketExpression,
+              id: new Date(),
+            },
             ...state.history,
           ],
         }
@@ -138,7 +142,10 @@ export default function calculatorReducer(
           operator: action.opertor,
           bracketExpression: '',
           history: [
-            `${state.firstOperand} ${state.operator} ${state.secondOperand}`,
+            {
+              expression: `${state.firstOperand} ${state.operator} ${state.secondOperand}`,
+              id: new Date(),
+            },
             ...state.history,
           ],
         }
@@ -162,13 +169,16 @@ export default function calculatorReducer(
           firstOperand: calculator.CurrentValue,
           counterBrackets: 0,
           secondOperand: '',
-          operator: action.value,
+          operator: '',
           bracketExpression: '',
           history: [
-            `${state.firstOperand} ${
-              state.operator
-            } ${state.secondOperand +
-              ')'.repeat(state.counterBrackets)}`,
+            {
+              expression: `${state.firstOperand} ${
+                state.operator
+              } ${state.secondOperand +
+                ')'.repeat(state.counterBrackets)}`,
+              id: new Date(),
+            },
             ...state.history,
           ],
         }
@@ -189,34 +199,46 @@ export default function calculatorReducer(
               ')'.repeat(state.counterBrackets),
           ),
           secondOperand: '',
-          operator: action.value,
+          operator: '',
           bracketExpression: '',
           history: [
-            `${state.firstOperand +
-              ')'.repeat(state.counterBrackets)}`,
+            {
+              expression: `${state.firstOperand +
+                ')'.repeat(state.counterBrackets)}`,
+              id: new Date(),
+            },
             ...state.history,
           ],
           counterBrackets: 0,
         }
-      } else {
+      } else if (state.secondOperand) {
         swithCommand(state.operator, state.secondOperand)
         return {
           ...state,
           firstOperand: calculator.CurrentValue,
           secondOperand: '',
-          operator: action.value,
+          operator: '',
           history: [
-            `${state.firstOperand} ${state.operator ||
-              ''} ${state.secondOperand}`,
+            {
+              expression: `${
+                state.firstOperand
+              } ${state.operator || ''} ${
+                state.secondOperand
+              }`,
+              id: new Date(),
+            },
             ...state.history,
           ],
         }
+      } else {
+        return {
+          ...state,
+        }
       }
     case CLEAR_HISTORY:
+      calculator.clear()
       return {
-        ...state,
-        firstOperand: 0,
-        history: [],
+        ...initialState,
       }
     case ADD_DOT:
       if (state.bracketExpression) {
@@ -262,7 +284,7 @@ export default function calculatorReducer(
         ...state,
         firstOperand: calculator.CurrentValue,
         secondOperand: '',
-        operator: null,
+        operator: '',
         bracketExpression: '',
         counterBrackets: 0,
       }
@@ -279,7 +301,7 @@ export default function calculatorReducer(
         return {
           ...state,
           firstOperand: calculator.CurrentValue,
-          operator: null,
+          operator: '',
           counterBrackets: 0,
           bracketExpression: '',
         }
@@ -329,7 +351,39 @@ export default function calculatorReducer(
             : state.secondOperand,
         }
       }
-
+    case SWITCH_SIGN:
+      if (state.counterBrackets > 0 && !state.operator) {
+        return {
+          ...state,
+          bracketExpression: state.bracketExpression,
+          firstOperand: state.bracketExpression,
+        }
+      } else if (
+        state.counterBrackets > 0 &&
+        state.operator
+      ) {
+        return {
+          ...state,
+          bracketExpression: state.bracketExpression,
+          secondOperand: state.bracketExpression,
+        }
+      } else if (!state.operator) {
+        calculator.execute(new MulCommand(-1))
+        return {
+          ...state,
+          firstOperand: calculator.CurrentValue,
+        }
+      } else {
+        const res =
+          state.secondOperand === '0' ||
+          !state.secondOperand
+            ? 0
+            : +state.secondOperand * -1
+        return {
+          ...state,
+          secondOperand: res,
+        }
+      }
     default:
       return state
   }

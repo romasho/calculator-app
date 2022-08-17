@@ -13,33 +13,47 @@ import {
   addNumber,
   addDot,
   brackets,
+  switchSign,
 } from '@/reducers/CalculatorReducer/actions'
+import {
+  CLEAR,
+  NUMBER,
+  OPERATOR,
+  EQUAL,
+  DOT,
+  BRACKET,
+  CE,
+  SWITCH,
+} from '@/constants/index'
 
 export default function ControlPanel() {
   const dispatch = useDispatch()
 
   function updateStr(el) {
     switch (el.type) {
-      case 'clear':
+      case CLEAR:
         dispatch(clear())
         break
-      case 'clearEntry':
+      case CE:
         dispatch(clearEntery())
         break
-      case 'equal':
+      case EQUAL:
         dispatch(calculate())
         break
-      case 'operators':
+      case OPERATOR:
         dispatch(addOperator(el.value))
         break
-      case 'number':
+      case NUMBER:
         dispatch(addNumber(el.value))
         break
-      case 'dot':
+      case DOT:
         dispatch(addDot())
         break
-      case 'bracket':
+      case BRACKET:
         dispatch(brackets(el.value))
+        break
+      case SWITCH:
+        dispatch(switchSign())
         break
       default:
     }
