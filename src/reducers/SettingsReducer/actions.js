@@ -1,6 +1,7 @@
 export const APPLY_DARK_THEME = 'APPLY_DARK_THEME'
 export const APPLY_LIGHT_THEME = 'APPLY_LIGHT_THEME'
 export const TOGGLE_VISIBILITY = 'TOGGLE_VISIBILITY'
+export const TOGGLE_HIDE = 'TOGGLE_HIDE'
 
 export const applyDarkTheme = theme => {
   return {
@@ -19,5 +20,11 @@ export const applyLightTheme = theme => {
 export const toggleVisibility = () => {
   return {
     type: TOGGLE_VISIBILITY,
+  }
+}
+
+export const toggleHide = () => {
+  return {
+    type: TOGGLE_HIDE,
   }
 }

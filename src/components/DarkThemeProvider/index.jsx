@@ -14,7 +14,7 @@ class DarkThemeProvider extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    theme: state.themeReducer,
+    theme: state.settingsReducer,
   }
 }
 

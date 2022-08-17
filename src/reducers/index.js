@@ -3,7 +3,7 @@ import { persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 
 import calculatorReducer from './CalculatorReducer'
-import themeReducer from './ThemeReducer'
+import settingsReducer from './settingsReducer'
 
 const authPersistConfig = {
   key: 'calc',
@@ -16,5 +16,5 @@ export const rootReducer = combineReducers({
     authPersistConfig,
     calculatorReducer,
   ),
-  themeReducer,
+  settingsReducer,
 })

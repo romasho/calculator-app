@@ -2,15 +2,17 @@ import {
   APPLY_DARK_THEME,
   APPLY_LIGHT_THEME,
   TOGGLE_VISIBILITY,
+  TOGGLE_HIDE,
 } from './actions'
 
 import theme from '@/theme'
 
-export default function themeReducer(
+export default function settingsReducer(
   state = {
     ...theme,
     themeName: 'Light',
-    isHistoryVisible: true,
+    showHistory: true,
+    showFullHistory: true,
   },
   action,
 ) {
@@ -36,7 +38,12 @@ export default function themeReducer(
     case TOGGLE_VISIBILITY:
       return {
         ...state,
-        isHistoryVisible: !state.isHistoryVisible,
+        showHistory: !state.showHistory,
+      }
+    case TOGGLE_HIDE:
+      return {
+        ...state,
+        showFullHistory: !state.showFullHistory,
       }
     default:
       return state

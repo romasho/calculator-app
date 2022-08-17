@@ -7,13 +7,19 @@ export const CustomDiv = styled.div`
   border-left: 2px solid
     ${({ theme }) => theme.colors.secondaryText};
   margin: 1rem 0;
-  display: ${props => (props.visible ? 'block' : 'none')};
+  display: ${props => (props.visible ? 'flex' : 'none')};
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: space-around;
+  align-items: center;
 `
 
 export const DivWithCustomScroll = styled.div`
   max-height: calc(100% - 60px);
   overflow-x: hidden;
   overflow-y: auto;
+  width: 100%;
   &::-webkit-scrollbar {
     width: 1rem;
   };

@@ -5,7 +5,7 @@ import { lightTheme, darkTheme } from '@/theme'
 import {
   applyLightTheme,
   applyDarkTheme,
-} from '@/reducers/ThemeReducer/actions'
+} from '@/reducers/settingsReducer/actions'
 
 import DropDown from '../DropDown'
 import BaseButton from '../BaseButton'
@@ -63,8 +63,8 @@ class ThemeSelector extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    themeName: state.themeReducer.themeName,
-    theme: state.themeReducer,
+    themeName: state.settingsReducer.themeName,
+    theme: state.settingsReducer,
   }
 }
 
