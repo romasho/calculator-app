@@ -27,7 +27,7 @@ import {
 } from '@/constants/index'
 
 class ControlPanel extends React.Component {
-  updateStr(el) {
+  updateStr = el => () => {
     switch (el.type) {
       case CLEAR:
         this.props.clearDisplay()
@@ -65,7 +65,7 @@ class ControlPanel extends React.Component {
           <Button
             key={el.value}
             value={el.value}
-            onClick={() => this.updateStr(el)}
+            onClick={this.updateStr(el)}
           />
         ))}
       </ButtonsContainer>

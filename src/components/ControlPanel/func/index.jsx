@@ -29,7 +29,7 @@ import {
 export default function ControlPanel() {
   const dispatch = useDispatch()
 
-  function updateStr(el) {
+  const updateStr = el => () => {
     switch (el.type) {
       case CLEAR:
         dispatch(clear())
@@ -65,9 +65,7 @@ export default function ControlPanel() {
         <Button
           key={el.value}
           value={el.value}
-          onClick={() => {
-            updateStr(el)
-          }}
+          onClick={updateStr(el)}
         />
       ))}
     </ButtonsContainer>
