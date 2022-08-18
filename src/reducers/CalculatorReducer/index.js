@@ -85,7 +85,9 @@ export default function calculatorReducer(
           state.secondOperand === '0' ||
           !state.secondOperand
             ? action.number
-            : state.secondOperand + action.number
+            : state.secondOperand.length < 11
+            ? state.secondOperand + action.number
+            : state.secondOperand
         return {
           ...state,
           secondOperand: res,

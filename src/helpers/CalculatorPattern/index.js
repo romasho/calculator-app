@@ -29,7 +29,7 @@ export default class CalculatorStore {
   addToCurrentValue(str) {
     if (this.value === 0 || this.value === '0') {
       this.value = str
-    } else {
+    } else if ((this.value + '').length < 11) {
       this.value += str
     }
   }
