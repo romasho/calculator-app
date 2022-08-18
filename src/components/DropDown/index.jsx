@@ -37,17 +37,17 @@ export default class DropDown extends React.Component {
     )
   }
 
+  handleClick = el => () => {
+    this.props.onHandleChange(el)
+    this.props.clickOutside()
+  }
+
   render() {
     if (!this.props.show) return null
     return (
       <Ul ref={this.ref}>
         {this.props.ListItems.map(el => (
-          <Li
-            key={el}
-            onClick={() => {
-              this.props.onHandleChange(el)
-              this.props.clickOutside()
-            }}>
+          <Li key={el} onClick={this.handleClick}>
             {el} theme
           </Li>
         ))}

@@ -7,7 +7,8 @@ export default class BaseButton extends React.Component {
     return (
       <Button
         onClick={this.props.handleClick}
-        light={this.props.light}>
+        light={this.props.light}
+      >
         {this.props.children}
       </Button>
     )

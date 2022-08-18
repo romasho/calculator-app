@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Triangle = styled.div`
   border: 17px solid transparent;
-  border-top: 25px solid #f2f2f2;
+  border-top: 25px solid ${({ theme }) => theme.colors.grey};
   display: block;
   width: 0;
   height: 0;

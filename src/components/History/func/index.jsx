@@ -14,22 +14,16 @@ import { toggleHide } from '@/reducers/settingsReducer/actions'
 export default function History() {
   const dispatch = useDispatch()
 
-  const state = useSelector(
-    state => state.calculatorReducer,
-  )
-
-  const settingsState = useSelector(
-    state => state.settingsReducer,
-  )
-
-  const { showHistory, showFullHistory } = settingsState
-
   const {
     firstOperand,
     secondOperand,
     operator,
     history,
-  } = state
+  } = useSelector(state => state.calculatorReducer)
+
+  const { showHistory, showFullHistory } = useSelector(
+    state => state.settingsReducer,
+  )
 
   const handleClick = () => dispatch(clearHistory())
   const handleChangeHide = () => dispatch(toggleHide())

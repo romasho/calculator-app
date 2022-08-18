@@ -31,7 +31,6 @@ class History extends React.Component {
 
     return (
       <CustomDiv visible={this.props.showHistory}>
-        {/* or {this.props.showHistory && <CustomDiv.... */}
         <Heading>History</Heading>
         <Button
           onClick={this.props.handleClick}

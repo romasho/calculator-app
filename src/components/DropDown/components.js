@@ -3,9 +3,10 @@ import styled from 'styled-components'
 export const Ul = styled.ul`
   list-style-type: none;
   position: absolute;
-  border: 2px solid #707070;
-  background: #ffffff;
-  width: 401px;
+  border: 2px solid
+    ${({ theme }) => theme.colors.secondaryText};
+  background: ${({ theme }) => theme.colors.mainBg};
+  width: 400px;
   top: 110px;
   left: 0;
 `
@@ -13,11 +14,12 @@ export const Ul = styled.ul`
 export const Li = styled.li`
   width: 397px;
   height: 62px;
-  border-bottom: 2px solid #707070;
-  font-size: 32px;
+  border-bottom: 2px solid
+    ${({ theme }) => theme.colors.secondaryText};
+  font-size: ${({ theme }) => theme.fontSizes[1]}px;
   padding: 15px 30px;
   cursor: pointer;
   &:hover {
-    background: #f2f2f2;
+    background: ${({ theme }) => theme.colors.secondary};
   }
 `
