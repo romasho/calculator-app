@@ -17,7 +17,7 @@ class SettingPage extends React.Component {
           <Heading>Settings</Heading>
           <ThemeSelector />
           <BaseButton handleClick={this.props.clearHistory}>
-            Cleear All History
+            Clear All History
           </BaseButton>
           <Checkbox />
         </Card>

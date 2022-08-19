@@ -5,5 +5,5 @@ export const Loader = styled(BaseLoader)`
   position: relative;
   margin: 0 auto;
   top: 50%;
-  left 50%;
+  left: 50%;
 `
